@@ -1,0 +1,84 @@
+---
+layout: default
+title: Obvious Ridge Route
+---
+
+<section class="page-header">
+    <div class="content">
+        <h1>Obvious Ridge Route</h1>
+        <p>Obvious Ridge Route is a global collective of collaborative talent that gets shit done.<br />
+            Our team is composed of experienced product managers, passionately creative ux/ui designers, <br /> and
+            talented software developers. <br />
+            When software can't automate it, our business process outsource team gets the job done.
+        </p>
+        <div class="btn-wrapper">
+            <button id="learn-more">Learn more</button>
+        </div>
+    </div>
+</section>
+<section class="main-content" id="main">
+    <div class="content">
+        <h2>Our book</h2>
+        <div class="container">
+            {% for item in site.data.pageinfo %}
+            <div class="item">
+                <picture>
+                    <img src="{{ item.img }}" />
+                </picture>
+                <div class="info">
+                    <h5>{{ item.title }}</h5>
+                    <span>{{ item.about }}</span>
+                    <p>{{ item.description }}</p>
+                    <a href="{{ site.baseurl }}{{ item.link }}">View project
+                        <img src="assets/images/icons/arrow.svg" />
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<section class="contact-us">
+    <div class="container">
+        <div>
+            <h2>Contact Us</h2>
+            <div class="form">
+                <div class="form-input">
+                    <label>Full name</label>
+                    <input type="text" name="name" />
+                </div>
+                <div class="form-input">
+                    <label>Email</label>
+                    <input type="email" name="email" />
+                </div>
+                <div class="form-input">
+                    <label>Your message</label>
+                    <textarea></textarea>
+                </div>
+                <button id="submit-info">Send</button>
+            </div>
+        </div>
+        <div class="contact">
+            <div>
+                <iframe width="520" height="264" id="gmap_canvas"
+                    src="https://maps.google.com/maps?q=Chicago&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                    scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <img src="assets/images/icons/email.svg" />
+                        <span>info@obviousridgeroute.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <img src="assets/images/icons/location.svg" />
+                        <span>Chicago, IL</span>
+                    </div>
+                    <div class="contact-item">
+                        <img src="assets/images/icons/phone.svg" />
+                        <span>+7 008 004 009</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="assets/js/index.js"></script>

@@ -29,7 +29,12 @@ url: "https://obvious-ridge-route.github.io" # the base hostname & protocol for 
 twitter_username: jekyllrb
 github_username:  jekyll
 
+
 # Build settings
+sass:
+  sass_dir: _sass
+  style: compressed
+
 theme: minima
 plugins:
   - jekyll-feed

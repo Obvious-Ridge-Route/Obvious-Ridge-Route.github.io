@@ -17,37 +17,14 @@
         background-position: bottom;
     }
     .content {
-        z-index: 99999;
-        margin-top: 17rem;
-        text-align: center;
-        color: #fff;
-
         h1 {
             font-weight: 500;
-            font-size: 48px;
-            line-height: 72px;
-        }
-
-        p {
-            font-weight: 500;
-            font-size: 16px;
-            line-height: 24px;
-            margin-top: 1rem;
+            font-size: 40px;
+            line-height: 60px;
         }
 
         button {
-            background: #098d3e;
-            border-radius: 4px;
-            font-weight: 500;
-            font-size: 20px;
-            line-height: 30px;
-            border: none;
-            outline: none;
-            color: #fff;
-            margin-top: 1.5rem;
-            cursor: pointer;
-            text-align: center;
-            padding: 12px 78px;
+            background: #9DBC2A;
         }
     }
 }

@@ -1,0 +1,31 @@
+{
+  "name": "obvious-ridge-route",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "jekyll:dev": "bundle exec jekyll serve --incremental --watch --livereload",
+    "jekyll:build": "JEKYLL_ENV=production bundle exec jekyll build",
+    "css:dev": "postcss _sass/main.scss --output assets/css/style.css --watch",
+    "css:build": "NODE_ENV=production postcss _sass/main.scss --output assets/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Obvious-Ridge-Route/Obvious-Ridge-Route.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Obvious-Ridge-Route/Obvious-Ridge-Route.github.io/issues"
+  },
+  "homepage": "https://github.com/Obvious-Ridge-Route/Obvious-Ridge-Route.github.io#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.4",
+    "cssnano": "^5.1.7",
+    "postcss": "^8.4.12",
+    "postcss-cli": "^9.1.0",
+    "tailwindcss": "^3.0.24"
+  }
+}

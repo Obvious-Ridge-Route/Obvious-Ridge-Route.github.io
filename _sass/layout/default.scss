@@ -24,79 +24,17 @@
         }
 
         button {
-            background: #9DBC2A;
+            background: #9dbc2a;
         }
     }
 }
-
-.main-content {
-    background: #fafafa;
-    .content h2 {
-        text-align: center;
-        padding-top: 3rem;
-        font-size: 32px;
-        font-weight: 500;
-        line-height: 48px;
-        color: #1f1f1f;
-    }
-    .container {
-        display: grid;
-        grid-gap: 3rem;
-        padding: 1.5rem 8rem 3rem 8rem;
-
-        .item {
-            display: flex;
-            width: 100%;
-            gap: 8rem;
-            justify-content: center;
-
-            picture {
-                max-width: 100%;
-                height: auto;
-
-                img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: contain;
-                }
-            }
-
-            .info {
-                max-width: 570px;
-
-                h5 {
-                    font-weight: 500;
-                    font-size: 20px;
-                    line-height: 30px;
-                    color: #1f1f1f;
-                    margin-bottom: 0.5rem;
-                }
-                span {
-                    font-weight: 500;
-                    font-size: 16px;
-                    line-height: 24px;
-                    color: #6f6f6f;
-                }
-                p {
-                    font-weight: 400;
-                    font-size: 16px;
-                    line-height: 24px;
-                    color: #6f6f6f;
-                }
-                a {
-                    text-decoration: none;
-                    display: flex;
-                    gap: 0.5rem;
-                    color: #3da039;
-                    margin-top: 1rem;
-                    transition: 0.4s ease;
-                    max-width: 140px;
-
-                    &:hover {
-                        margin-left: 10px;
-                    }
-                }
-            }
+.services {
+    .heading-wrapper{
+        &::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: url("../../assets/images/icons/star.svg");
         }
     }
 }

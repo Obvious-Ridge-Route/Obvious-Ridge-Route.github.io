@@ -7,16 +7,16 @@ title: Obvious Ridge Route
     <div class="content mt-24 px-36 text-white z-50">
         <h1>Obvious Ridge Route</h1>
         <div class="text-lg mt-4 font-medium">
-            <p class="mb-4">Obvious Ridge Route is a global collective of collaborative <br/> talent
+            <p class="mb-4">Obvious Ridge Route is a global collective of collaborative <br /> talent
                 that gets
                 shit done.
             </p>
             <p>
-                Our team is composed of experienced product managers, <br/> passionately creative ux/ui designers, and
-                talented software  <br /> developers.
+                Our team is composed of experienced product managers, <br /> passionately creative ux/ui designers, and
+                talented software <br /> developers.
             </p>
             <p class="mt-4">
-                When software can't automate it, our business <br/> process outsource team gets the job done.
+                When software can't automate it, our business <br /> process outsource team gets the job done.
             </p>
         </div>
 
@@ -26,48 +26,66 @@ title: Obvious Ridge Route
         </div>
     </div>
 </section>
-<section class="main-content" id="main">
-    <div class="content">
-        <h2>Our book</h2>
-        <div class="container">
-            {% for item in site.data.pageinfo %}
-            <div class="item">
-                <picture>
-                    <img src="{{ item.img }}" />
-                </picture>
-                <div class="info">
-                    <h5>{{ item.title }}</h5>
-                    <span>{{ item.about }}</span>
-                    <p>{{ item.description }}</p>
-                    <a href="{{ site.baseurl }}{{ item.link }}">View project
-                        <img src="assets/images/icons/arrow.svg" />
-                    </a>
-                </div>
+<section class="services">
+    <h3 class="text-center font-medium uppercase tracking-wider text-2xl mb-8">Services</h3>
+    <div class="grid grid-cols-2 gap-8 place-content-center place-items-center max-w-3xl mx-auto mb-14">
+        {% for item in site.data.services %}
+        <div class="bg-black text-white p-8 min-h-54">
+            <div class="flex gap-4 items-center relative heading-wrapper">
+                <h3 class="font-semibold uppercase ml-10">{{item.title}}</h3>
             </div>
-            {% endfor %}
+            <p class="mt-4">
+                {{item.description}}
+            </p>
         </div>
+        {% endfor %}
+    </div>
+</section>
+<section class="main-content" id="main">
+    <h3 class="text-center font-medium uppercase tracking-wider text-2xl mb-8">Works</h3>
+    <div class="grid gap-8 place-content-center place-items-center max-w-3xl mx-auto mb-14">
+        {% for item in site.data.pageinfo %}
+        <div class="flex justify-center gap-16 w-full bg-gray p-16 rounded-3xl items-center">
+            <div class="max-w-full h-auto">
+                <img class="w-full h-full object-contain" src="{{ item.img }}" />
+            </div>
+            <div class="max-w-sm">
+                <h5 class="tracking-wider text-xl leading-7 font-semibold">{{ item.title }}</h5>
+                <span class="tracking-wider text-base leading-6 text-grey-jo font-medium">{{ item.about }}</span>
+                <p class="mt-4">{{ item.description }}</p>
+
+                <a class="flex mt-6 items-center gap-2 justify-end text-green"
+                    href="{{ site.baseurl }}{{ item.link }}">View project
+                    <img src="assets/images/icons/arrow.svg" />
+                </a>
+            </div>
+        </div>
+        {% endfor %}
     </div>
 </section>
 <section class="contact-us">
-    <div class="container">
-        <div>
-            <h2>Contact Us</h2>
-            <div class="form">
-                <div class="form-input">
-                    <label>Full name</label>
-                    <input type="text" name="name" />
-                </div>
-                <div class="form-input">
-                    <label>Email</label>
-                    <input type="email" name="email" />
-                </div>
-                <div class="form-input">
-                    <label>Your message</label>
-                    <textarea></textarea>
-                </div>
-                <button id="submit-info">Send</button>
+    <div class="text-center pt-6">
+        <h1 class="text-3xl font-medium">Contact Us</h1>
+        <p class="mt-2">Have an inquiry or some feedback for us? Fill out the form <br /> below to contact our team.</p>
+    </div>
+    <div class="max-w-xl mx-auto flex">
+
+        <div class="form w-full">
+            <div class="form-input w-full">
+                <label>Full name</label>
+                <input class="w-full" type="text" name="name" />
             </div>
+            <div class="form-input w-full">
+                <label>Email</label>
+                <input class="w-full" type="email" name="email" />
+            </div>
+            <div class="form-input w-full">
+                <label>Your message</label>
+                <textarea class="w-full"></textarea>
+            </div>
+            <button id="submit-info">Send</button>
         </div>
+
         <div class="contact">
             <div>
                 <iframe width="520" height="264" id="gmap_canvas"

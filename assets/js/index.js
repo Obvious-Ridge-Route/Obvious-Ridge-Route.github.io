@@ -18,12 +18,14 @@ document.addEventListener('DOMContentLoaded', () => {
   button.onclick = () => {
     doScrolling("#works", os === 'Iphone' ? 300 : os === "iOS" ? 1000 : 50);
   };
-  let nav = document.querySelector('nav')
-  nav.addEventListener('click', (e) => {
-    let from = e.target;
-    if (!from.className || !/btn--/i.test(from.className)) return;
-    let scrollId = [...from.classList].pop().substring(5);
-    doScrolling(`#${scrollId}`, os === 'Iphone' ? 300 : os === "iOS" ? 1000 : 50)
+  let btnGroup = document.querySelectorAll('.btn-group')
+  btnGroup.forEach(el => {
+    el.addEventListener('click', (e) => {
+      let from = e.target;
+      if (!from.className || !/btn--/i.test(from.className)) return;
+      let scrollId = [...from.classList].pop().substring(5);
+      doScrolling(`#${scrollId}`, os === 'Iphone' ? 300 : os === "iOS" ? 1000 : 50)
+    })
   })
 
   function getElementY(query) {

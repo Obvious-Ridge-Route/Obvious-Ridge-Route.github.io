@@ -506,6 +506,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mb-1 {
   margin-bottom: 0.25rem;
 }
+.mb-12 {
+  margin-bottom: 3rem;
+}
 .inline-block {
   display: inline-block;
 }
@@ -617,8 +620,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-b {
   border-bottom-width: 1px;
 }
+.border-t {
+  border-top-width: 1px;
+}
 .border-grey-yoda {
   border-color: rgba(11, 9, 9, 0.5);
+}
+.border-gray {
+  --tw-border-opacity: 1;
+  border-color: rgb(240 240 245 / var(--tw-border-opacity));
 }
 .bg-black {
   --tw-bg-opacity: 1;

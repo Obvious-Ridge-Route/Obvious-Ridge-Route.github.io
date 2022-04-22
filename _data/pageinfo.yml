@@ -1,43 +1,43 @@
 - title: Site Specs
   about: Enterprise Construction Management App
   description: Site Specs is a construction management application that leverages APIs and machine learning algorithms to automate data collection and reporting. By integrating machine learning algorithms and APIs, Site Specs makes simple daily reporting tasks like progress photos extremely powerful.
-  img: assets/images/sitespecs.svg
+  img: assets/images/sitespecs/sitespecs.svg
   link: /sitespecs
 
 - title: Adultmembersites.com
   about: Adult Content Platform
   description: Adult content building platform in which users can deploy their own subscription content sites.  Extremely complex architecture with security, intuitive interface for the host and subscribers, and heavy data load.
-  img: assets/images/ams.svg
+  img: assets/images/ams/ams.svg
   link: /ams
 
 - title: Origin Reports
   about: Data Visualisation Platform
   description: Origin reports is a data analysis platform in which users can upload large data sets in the form of CSV files and immediately analyse up to 200 data visualizations depending on the dataset.
-  img: assets/images/origin.svg
+  img: assets/images/origin/origin.svg
   link: /origin-reports
 
 - title: Miestro
   about: Online Training Platform
   description: Miestro is an online training platform used by professionals and teachers to deploy training content to their audiences.
-  img: assets/images/miestro.svg
+  img: assets/images/miestro/miestro.svg
   link: /miestro
 
 - title: FrenDAO
   about: Charity NFT Minting
   description: FrenDAO is a charity NFT project that raised money for a fren in need.  This project was put together to raise funds to help a young man in his 20s with cancer.  Users can load the site, connect their crypto wallet, and mint a Griffin NFT as well as receive a physical Griffin plushy toy.
-  img: assets/images/frendao.svg
+  img: assets/images/frendao/frendao.svg
   link: /frendao
 
 - title: Concave
   about: Defi Protocol
   description: Concave is a decentralized finance co-op that provides financial instruments for crypto anons and degens alike. We provided logo/branding design as well as UX/UI design.
-  img: assets/images/concave.svg
+  img: assets/images/concave/concave.svg
   link: /concave
 
 
 - title: Sustain DAO
   about: Decentralized Autonomous Organisation
   description: SustainDAO is a decentralized autonomous organization on a mission to make bitcoin the most sustainable asset class on earth. This web3 protocol uses governance to incentive bitcoin miners to operate sustainably using renewable energy sources. - Sauces
-  img: assets/images/sustaindao.svg
+  img: assets/images/sustaindao/sustaindao.svg
   link: /sustaindao
   

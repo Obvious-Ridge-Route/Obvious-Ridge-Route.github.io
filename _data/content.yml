@@ -1,0 +1,15 @@
+- id: sitespecs
+  herotitle: Site Specs
+  description: Why Site Specs? Increase productivity. Site Specs increases jobsite productivity ten fold. Less paperwork and more building.
+  heroimg: assets/images/sitespecs/sitespecs-hero.svg
+  icon: assets/images/sitespecs/sitespecs-small.svg
+  overview: 
+    - img: assets/images/sitespecs/sitespecs-overview.svg
+      desc: Site Specs is a construction management application that leverages APIs and machine learning algorithms to automate data collection and reporting. By integrating machine learning algorithms and APIs, Site Specs makes simple daily reporting tasks like progress photos extremely powerful.
+      techstack: 
+        - title: Figma
+        - title: CSS
+        - title: HTML
+        - title: JavaScript
+  design: assets/images/sitespecs/sitespecs-design.svg
+   

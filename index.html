@@ -3,7 +3,7 @@ layout: default
 title: Obvious Ridge Route
 ---
 
-<section class="page-header">
+<section class="bg-black relative grid h-screen page-header">
     <div class="content mt-24 px-36 text-white z-50">
         <h1>Obvious Ridge Route</h1>
         <div class="text-lg mt-4 font-medium">
@@ -21,12 +21,12 @@ title: Obvious Ridge Route
         </div>
 
         <div class="btn-wrapper mt-9">
-            <button class="border-0 outline-none cursor-pointer text-white text-center font-semibold text-xl py-4 px-16"
+            <button class="border-0 outline-none cursor-pointer text-white text-center font-semibold text-xl py-4 px-16 bg-green"
                 id="learn-more">Explore</button>
         </div>
     </div>
 </section>
-<section class="services">
+<section class="services" id="services">
     <h3 class="text-center font-medium uppercase tracking-wider text-2xl mb-8">Services</h3>
     <div class="grid grid-cols-2 gap-8 place-content-center place-items-center max-w-3xl mx-auto mb-14">
         {% for item in site.data.services %}
@@ -41,7 +41,7 @@ title: Obvious Ridge Route
         {% endfor %}
     </div>
 </section>
-<section class="main-content" id="main">
+<section class="main-content" id="works">
     <h3 class="text-center font-medium uppercase tracking-wider text-2xl mb-8">Works</h3>
     <div class="grid gap-8 place-content-center place-items-center max-w-3xl mx-auto mb-14">
         {% for item in site.data.pageinfo %}
@@ -63,49 +63,52 @@ title: Obvious Ridge Route
         {% endfor %}
     </div>
 </section>
-<section class="contact-us">
+<section class="contact-us" id="contact">
     <div class="text-center pt-6">
         <h1 class="text-3xl font-medium">Contact Us</h1>
         <p class="mt-2">Have an inquiry or some feedback for us? Fill out the form <br /> below to contact our team.</p>
     </div>
-    <div class="max-w-xl mx-auto flex">
-
-        <div class="form w-full">
-            <div class="form-input w-full">
-                <label>Full name</label>
-                <input class="w-full" type="text" name="name" />
-            </div>
-            <div class="form-input w-full">
-                <label>Email</label>
-                <input class="w-full" type="email" name="email" />
-            </div>
-            <div class="form-input w-full">
-                <label>Your message</label>
-                <textarea class="w-full"></textarea>
-            </div>
-            <button id="submit-info">Send</button>
+    <div class="max-w-xl mx-auto flex mt-8 contact-container text-black">
+        <div class="form w-full bg-white text-black flex justify-around flex-col p-8">
+            <h3 class="font-medium text-lg leading-7">Send us a Message</h3>
+            <form class="mt-8">
+                <div class="form-input w-full mb-6">
+                    <label class="mb-1 inline-block">Full name</label>
+                    <input class="w-full outline-0 border-b border-grey-yoda" placeholder="Enter your full name"
+                        type="text" name="name" />
+                </div>
+                <div class="form-input w-full mb-6">
+                    <label class="mb-1 inline-block">Email</label>
+                    <input class="w-full outline-0 border-b border-grey-yoda" placeholder="Enter your e-mail"
+                        type="email" name="email" />
+                </div>
+                <div class="form-input w-full mb-6">
+                    <label class="mb-1 inline-block">Your message</label>
+                    <textarea class="w-full outline-0 border-b border-grey-yoda resize-none h-16 pt-6"
+                        placeholder="Enter your message"></textarea>
+                </div>
+                <button class="w-full uppercase bg-green font-semibold text-white py-4" id="submit-info">Send</button>
+            </form>
         </div>
 
-        <div class="contact">
-            <div>
-                <iframe width="520" height="264" id="gmap_canvas"
-                    src="https://maps.google.com/maps?q=Chicago&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0"
-                    scrolling="no" marginheight="0" marginwidth="0"></iframe>
-                <div class="contact-info">
-                    <div class="contact-item">
+        <div class="contact bg-gray flex justify-around items-center px-5 py-8 flex-col">
+            <div class="flex flex-col gap-9">
+                <h3 class="text-lg leading-7 font-medium">Contact Information</h3>
+                <div class="flex flex-col gap-6">
+                    <div class="flex items-center gap-3">
                         <img src="assets/images/icons/email.svg" />
-                        <span>info@obviousridgeroute.com</span>
+                        <span class="text-sm">info@obviousridgeroute.com</span>
                     </div>
-                    <div class="contact-item">
+                    <div class="flex items-center gap-3">
                         <img src="assets/images/icons/location.svg" />
-                        <span>Chicago, IL</span>
-                    </div>
-                    <div class="contact-item">
-                        <img src="assets/images/icons/phone.svg" />
-                        <span>+7 008 004 009</span>
+                        <span class="text-sm">Chicago, IL</span>
                     </div>
                 </div>
             </div>
+            <iframe width="320" height="164" id="gmap_canvas"
+                src="https://maps.google.com/maps?q=Chicago&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                scrolling="no" marginheight="0" marginwidth="0"></iframe>
+
         </div>
     </div>
 </section>

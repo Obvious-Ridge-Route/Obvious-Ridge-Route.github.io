@@ -13,7 +13,8 @@ module.exports = {
       'green': '#9DBC2A',
       'white-smoke': '#FBFBFB',
       'gray': '#F0F0F5',
-      'grey-jo': '#A4A4A9'
+      'grey-jo': '#A4A4A9',
+      'grey-yoda': 'rgba(11, 9, 9, 0.5)'
     },
     minWidth: {
       '0': '0',
@@ -69,7 +70,7 @@ module.exports = {
       'screen': '100vh',
       '14': '3.5rem',
       '48': '12rem',
-   },
+    },
   },
   variants: {
     extend: {}

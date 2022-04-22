@@ -71,6 +71,14 @@ module.exports = {
       '14': '3.5rem',
       '48': '12rem',
     },
+    screens: {
+      'xsm': '420px',
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1300px',
+      '2xl': '1536px',
+    }
   },
   variants: {
     extend: {}

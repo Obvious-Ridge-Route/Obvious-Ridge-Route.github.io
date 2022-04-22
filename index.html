@@ -3,8 +3,8 @@ layout: default
 title: Obvious Ridge Route
 ---
 
-<section class="bg-black relative grid h-screen page-header">
-    <div class="content mt-24 px-36 text-white z-50">
+<section class="relative grid page-header">
+    <div class="content mt-24 px-6 text-center md:text-left md:px-36 text-white">
         <h1>Obvious Ridge Route</h1>
         <div class="text-lg mt-4 font-medium">
             <p class="mb-4">Obvious Ridge Route is a global collective of collaborative <br /> talent
@@ -27,9 +27,9 @@ title: Obvious Ridge Route
         </div>
     </div>
 </section>
-<section class="services" id="services">
+<section class="services pt-5" id="services">
     <h3 class="text-center font-medium uppercase tracking-wider text-2xl mb-8">Services</h3>
-    <div class="grid grid-cols-2 gap-8 place-content-center place-items-center max-w-3xl mx-auto mb-14">
+    <div class="grid px-6 xl:px-0 xl:grid-cols-2 gap-8 place-content-center place-items-center max-w-3xl mx-auto mb-14">
         {% for item in site.data.services %}
         <div class="bg-black text-white p-8 min-h-54">
             <div class="flex gap-4 items-center relative heading-wrapper">
@@ -42,11 +42,12 @@ title: Obvious Ridge Route
         {% endfor %}
     </div>
 </section>
-<section class="main-content" id="works">
+<section class="main-content pt-5 px-6 xl:px-0" id="works">
     <h3 class="text-center font-medium uppercase tracking-wider text-2xl mb-8">Works</h3>
-    <div class="grid gap-8 place-content-center place-items-center max-w-3xl mx-auto mb-14">
+    <div class="grid gap-8 place-content-center place-items-center max-w-3xl mx-auto mb-14 ">
         {% for item in site.data.pageinfo %}
-        <div class="flex justify-center gap-16 w-full bg-gray p-16 rounded-3xl items-center">
+        <div
+            class="flex flex-col xl:flex-row justify-center gap-8 xl:gap-16 xl:w-full bg-gray p-6 xl:p-16 rounded-3xl items-center">
             <div class="max-w-full h-auto">
                 <img class="w-full h-full object-contain" src="{{ item.img }}" />
             </div>
@@ -55,7 +56,7 @@ title: Obvious Ridge Route
                 <span class="tracking-wider text-base leading-6 text-grey-jo font-medium">{{ item.about }}</span>
                 <p class="mt-4">{{ item.description }}</p>
 
-                <a class="flex mt-6 items-center gap-2 justify-end text-green"
+                <a class="flex mt-6 items-center gap-2 xl:justify-end text-green"
                     href="{{ site.baseurl }}{{ item.link }}">View project
                     <img src="assets/images/icons/arrow.svg" />
                 </a>
@@ -64,12 +65,12 @@ title: Obvious Ridge Route
         {% endfor %}
     </div>
 </section>
-<section class="contact-us mb-12" id="contact">
+<section class="contact-us pb-12 px-6 bg-black text-white" id="contact">
     <div class="text-center pt-6">
-        <h1 class="text-3xl font-medium">Contact Us</h1>
+        <h1 class="font-medium text-xl md:text-3xl">Contact Us</h1>
         <p class="mt-2">Have an inquiry or some feedback for us? Fill out the form <br /> below to contact our team.</p>
     </div>
-    <div class="max-w-xl mx-auto flex mt-8 contact-container text-black">
+    <div class="max-w-xl mx-auto flex mt-8 contact-container text-black flex-col lg:flex-row">
         <div class="form w-full bg-white text-black flex justify-around flex-col p-8">
             <h3 class="font-medium text-lg leading-7">Send us a Message</h3>
             <form class="mt-8">
@@ -88,28 +89,32 @@ title: Obvious Ridge Route
                     <textarea class="w-full outline-0 border-b border-grey-yoda resize-none h-16 pt-6"
                         placeholder="Enter your message"></textarea>
                 </div>
-                <button class="w-full uppercase bg-green font-semibold text-white py-4" id="submit-info">Send</button>
+                <div>
+                    <button class="w-full uppercase bg-green font-semibold text-white py-4" id="submit-info">Send</button>
+                </div>
             </form>
         </div>
 
         <div class="contact bg-gray flex justify-around items-center px-5 py-8 flex-col">
-            <div class="flex flex-col gap-9">
+            <div class="flex flex-col gap-2 xsm:gap-9 mb-5 lg:mb-0">
                 <h3 class="text-lg leading-7 font-medium">Contact Information</h3>
                 <div class="flex flex-col gap-6">
                     <div class="flex items-center gap-3">
                         <img src="assets/images/icons/email.svg" />
-                        <span class="text-sm">United States, Illinois, Chicago</span>
+                        <span class="text-sm">mike@obviousreidgeroute.com</span>
                     </div>
                     <div class="flex items-center gap-3">
                         <img src="assets/images/icons/location.svg" />
-                        <span class="text-sm">Chicago, IL</span>
+                        <span class="text-sm">United States, Illinois, Chicago</span>
                     </div>
                 </div>
             </div>
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11895.177849209758!2d-87.64595454713786!3d41.88164315021113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2cda3388b6dd%3A0x942c920a8b709156!2sWest%20Loop%2C%20Chicago%2C%20IL%2C%20USA!5e0!3m2!1sen!2s!4v1650624633911!5m2!1sen!2s"
-                width="320" height="164" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="hidden sm:block">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11895.177849209758!2d-87.64595454713786!3d41.88164315021113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2cda3388b6dd%3A0x942c920a8b709156!2sWest%20Loop%2C%20Chicago%2C%20IL%2C%20USA!5e0!3m2!1sen!2s!4v1650624633911!5m2!1sen!2s"
+                    width="320" height="164" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </div>
     </div>
 </section>

@@ -427,6 +427,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .container {
   width: 100%;
 }
+@media (min-width: 420px) {
+
+  .container {
+    max-width: 420px;
+  }
+}
 @media (min-width: 640px) {
 
   .container {
@@ -445,10 +451,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     max-width: 1024px;
   }
 }
-@media (min-width: 1280px) {
+@media (min-width: 1300px) {
 
   .container {
-    max-width: 1280px;
+    max-width: 1300px;
   }
 }
 @media (min-width: 1536px) {
@@ -459,9 +465,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .relative {
   position: relative;
-}
-.z-50 {
-  z-index: 50;
 }
 .mx-auto {
   margin-left: auto;
@@ -500,14 +503,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mb-6 {
   margin-bottom: 1.5rem;
 }
-.mb-2 {
-  margin-bottom: 0.5rem;
-}
 .mb-1 {
   margin-bottom: 0.25rem;
 }
-.mb-12 {
-  margin-bottom: 3rem;
+.mb-5 {
+  margin-bottom: 1.25rem;
 }
 .inline-block {
   display: inline-block;
@@ -518,6 +518,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .grid {
   display: grid;
 }
+.hidden {
+  display: none;
+}
 .h-auto {
   height: auto;
 }
@@ -526,9 +529,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .h-16 {
   height: 4rem;
-}
-.h-screen {
-  height: 100vh;
 }
 .min-h-54 {
   min-height: 14rem;
@@ -554,9 +554,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .resize-none {
   resize: none;
 }
-.grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
 .flex-col {
   flex-direction: column;
 }
@@ -569,9 +566,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .items-center {
   align-items: center;
 }
-.justify-end {
-  justify-content: flex-end;
-}
 .justify-center {
   justify-content: center;
 }
@@ -580,9 +574,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .justify-around {
   justify-content: space-around;
-}
-.justify-evenly {
-  justify-content: space-evenly;
 }
 .gap-8 {
   gap: 2rem;
@@ -596,20 +587,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .gap-2 {
   gap: 0.5rem;
 }
-.gap-3 {
-  gap: 0.75rem;
-}
-.gap-5 {
-  gap: 1.25rem;
-}
-.gap-7 {
-  gap: 1.75rem;
-}
 .gap-9 {
   gap: 2.25rem;
 }
 .gap-6 {
   gap: 1.5rem;
+}
+.gap-3 {
+  gap: 0.75rem;
 }
 .rounded-3xl {
   border-radius: 1.5rem;
@@ -630,6 +615,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-border-opacity: 1;
   border-color: rgb(240 240 245 / var(--tw-border-opacity));
 }
+.bg-green {
+  --tw-bg-opacity: 1;
+  background-color: rgb(157 188 42 / var(--tw-bg-opacity));
+}
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(31 31 31 / var(--tw-bg-opacity));
@@ -642,10 +631,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
-.bg-green {
-  --tw-bg-opacity: 1;
-  background-color: rgb(157 188 42 / var(--tw-bg-opacity));
-}
 .object-contain {
   -o-object-fit: contain;
      object-fit: contain;
@@ -653,12 +638,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .p-8 {
   padding: 2rem;
 }
-.p-16 {
-  padding: 4rem;
+.p-6 {
+  padding: 1.5rem;
 }
-.px-36 {
-  padding-left: 9rem;
-  padding-right: 9rem;
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 .py-4 {
   padding-top: 1rem;
@@ -668,14 +653,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 4rem;
   padding-right: 4rem;
 }
-.py-6 {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-}
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
 .px-5 {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
@@ -684,8 +661,29 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.px-12 {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+.px-14 {
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
+}
+.pt-5 {
+  padding-top: 1.25rem;
+}
+.pb-12 {
+  padding-bottom: 3rem;
+}
 .pt-6 {
   padding-top: 1.5rem;
+}
+.pb-6 {
+  padding-bottom: 1.5rem;
 }
 .text-center {
   text-align: center;
@@ -710,13 +708,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-size: 1.875rem;
   line-height: 2.25rem;
 }
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-}
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 .font-medium {
   font-weight: 500;
@@ -738,6 +736,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .leading-4 {
   line-height: 1rem;
+}
+.leading-5 {
+  line-height: 1.25rem;
 }
 .tracking-wider {
   letter-spacing: 0.05em;
@@ -766,7 +767,94 @@ Ensure the default browser behavior of the `hidden` attribute.
   outline-width: 0px;
 }
 @import 'base/reset.scss';
-@import 'layout/nav.scss';
 @import 'layout/default.scss';
-@import 'layout/footer.scss';
 @import 'media/index.scss';
+@media (min-width: 420px) {
+
+  .xsm\:flex-row {
+    flex-direction: row;
+  }
+
+  .xsm\:gap-12 {
+    gap: 3rem;
+  }
+
+  .xsm\:gap-16 {
+    gap: 4rem;
+  }
+
+  .xsm\:gap-9 {
+    gap: 2.25rem;
+  }
+}
+@media (min-width: 640px) {
+
+  .sm\:block {
+    display: block;
+  }
+}
+@media (min-width: 768px) {
+
+  .md\:flex-row {
+    flex-direction: row;
+  }
+
+  .md\:gap-0 {
+    gap: 0px;
+  }
+
+  .md\:px-36 {
+    padding-left: 9rem;
+    padding-right: 9rem;
+  }
+
+  .md\:text-left {
+    text-align: left;
+  }
+
+  .md\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+}
+@media (min-width: 1024px) {
+
+  .lg\:mb-0 {
+    margin-bottom: 0px;
+  }
+
+  .lg\:flex-row {
+    flex-direction: row;
+  }
+}
+@media (min-width: 1300px) {
+
+  .xl\:w-full {
+    width: 100%;
+  }
+
+  .xl\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .xl\:flex-row {
+    flex-direction: row;
+  }
+
+  .xl\:justify-end {
+    justify-content: flex-end;
+  }
+
+  .xl\:gap-16 {
+    gap: 4rem;
+  }
+
+  .xl\:p-16 {
+    padding: 4rem;
+  }
+
+  .xl\:px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}

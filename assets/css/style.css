@@ -509,6 +509,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mb-5 {
   margin-bottom: 1.25rem;
 }
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
 .inline-block {
   display: inline-block;
 }
@@ -547,6 +550,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .max-w-xl {
   max-width: 60rem;
+}
+.max-w-md {
+  max-width: 40rem;
 }
 .cursor-pointer {
   cursor: pointer;
@@ -625,6 +631,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
+.bg-white-smoke {
+  --tw-bg-opacity: 1;
+  background-color: rgb(251 251 251 / var(--tw-bg-opacity));
+}
 .object-contain {
   -o-object-fit: contain;
      object-fit: contain;
@@ -659,6 +669,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
 .pt-5 {
   padding-top: 1.25rem;
 }
@@ -671,32 +685,44 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pb-6 {
   padding-bottom: 1.5rem;
 }
+.pb-10 {
+  padding-bottom: 2.5rem;
+}
+.pt-12 {
+  padding-top: 3rem;
+}
+.pt-8 {
+  padding-top: 2rem;
+}
+.pl-8 {
+  padding-left: 2rem;
+}
+.pl-6 {
+  padding-left: 1.5rem;
+}
 .text-center {
   text-align: center;
 }
 .text-lg {
   font-size: 1.125rem;
-  line-height: 1.75rem;
 }
 .text-xl {
   font-size: 1.25rem;
-  line-height: 1.75rem;
 }
 .text-2xl {
   font-size: 1.5rem;
-  line-height: 2rem;
 }
 .text-base {
   font-size: 1rem;
-  line-height: 1.5rem;
 }
 .text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+  font-size: .875rem;
 }
 .text-4xl {
   font-size: 2.25rem;
-  line-height: 2.5rem;
+}
+.text-4\.5xl {
+  font-size: 2.5rem;
 }
 .font-medium {
   font-weight: 500;
@@ -721,6 +747,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .leading-5 {
   line-height: 1.25rem;
+}
+.leading-9 {
+  line-height: 2.25rem;
 }
 .tracking-wider {
   letter-spacing: 0.05em;
@@ -750,7 +779,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 @import 'base/reset.scss';
 @import 'layout/default.scss';
+@import 'layout/page.scss';
 @import 'media/index.scss';
+.dark .dark\:bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 31 31 / var(--tw-bg-opacity));
+}
+.dark .dark\:text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
 @media (min-width: 420px) {
 
   .xsm\:flex-row {
@@ -796,7 +834,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .md\:text-3xl {
     font-size: 1.875rem;
-    line-height: 2.25rem;
   }
 }
 @media (min-width: 1024px) {

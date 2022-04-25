@@ -1,5 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
-
+  const { location: { pathname } } = window
+  switch (pathname) {
+    case '/':
+    case '/sustaindao':
+    case '/miestro':
+    case '/concave':
+      document.querySelector('html').classList.add('dark');
+      break;
+    default: break;
+  }
+  let logo = document.querySelector('nav img')
+  if (document.querySelector('html').classList.contains('dark')) {
+    logo.src = logo.dataset.dark_src;
+  } else {
+    logo.src = logo.dataset.src;
+  }
   const getMobileOS = () => {
     const ua = navigator.userAgent
     if (/android/i.test(ua)) {

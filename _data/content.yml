@@ -3,6 +3,7 @@
   description: Why Site Specs? Increase productivity. Site Specs increases jobsite productivity ten fold. Less paperwork and more building.
   heroimg: assets/images/sitespecs/sitespecs-hero.svg
   icon: assets/images/sitespecs/sitespecs-small.svg
+  link: https://sitespecs.io/
   overview: 
     - img: assets/images/sitespecs/sitespecs-overview.svg
       desc: Site Specs is a construction management application that leverages APIs and machine learning algorithms to automate data collection and reporting. By integrating machine learning algorithms and APIs, Site Specs makes simple daily reporting tasks like progress photos extremely powerful.
@@ -12,4 +13,20 @@
         - title: HTML
         - title: JavaScript
   design: assets/images/sitespecs/sitespecs-design.svg
+   
+- id: miestro
+  herotitle: Miestro
+  description: Miestro is an all-in-one system that makes it easy to create beautiful online classes, member sites, masterclasses and market them to your customers.
+  heroimg: assets/images/miestro/miestro-hero.svg
+  icon: assets/images/miestro/miestro-small.svg
+  link: https://miestro.com/
+  overview: 
+    - img: assets/images/miestro/miestro-overview.svg
+      desc: Miestro is an online training platform used by professionals and teachers to deploy training content to their audiences. 
+      techstack: 
+        - title: Figma
+        - title: CSS
+        - title: HTML
+        - title: JavaScript
+  design: assets/images/miestro/miestro-design.svg
    

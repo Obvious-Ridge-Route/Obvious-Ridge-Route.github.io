@@ -55,6 +55,7 @@ module.exports = {
     maxWidth: {
       'xs': '20rem',
       'sm': '30rem',
+      'lsm': '35rem',
       'md': '40rem',
       'lg': '50rem',
       'xl': '60rem',
@@ -78,7 +79,19 @@ module.exports = {
       'lg': '1024px',
       'xl': '1300px',
       '2xl': '1536px',
-    }
+    },
+    fontSize: {
+      'xs': '.75rem', // 12px
+      'sm': '.875rem', // 14px
+      'base': '1rem', // 16px
+      'lg': '1.125rem', // 18px
+      'xl': '1.25rem', // 20px
+      '2xl': '1.5rem', // 24px
+      '3xl': '1.875rem', // 30px
+      '4xl': '2.25rem', // 36px
+      '4.5xl': '2.5rem', // 40px
+      '5xl': '3rem', // 48px,
+    },
   },
   variants: {
     extend: {}

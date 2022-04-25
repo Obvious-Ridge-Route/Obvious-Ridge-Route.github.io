@@ -1,9 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
- {% include head.html %}
+{% include head.html %}
+
 <body>
     {% include header.html %}
+    {% assign id = page.url | remove: ".html" | remove: "/" %}
+    {% for item in site.data.content %}
+    {% if item.id == id %}
+    <section class="page-section bg-white-smoke dark:bg-black dark:text-white px-6 md:px-36 pb-10">
+        <div class="flex justify-between">
+            <div class="flex justify-center flex-col max-w-md">
+                <h1 class="text-4.5xl">{{item.herotitle}}</h1>
+                <p class="mt-4 font-medium">{{item.description}}</p>
+                <div class="mt-6">
+                    <button class="bg-green flex gap-2 items-center text-white uppercase font-semibold py-4 px-6 justify-center">
+                        <a href="{{ item.link }}">Discover the website</a>
+                        <img src="assets/images/icons/arrow-up-right.svg">
+                    </button>
+                </div>
+            </div>
+            <div class="hero-img">
+                <img data-src="{{item.heroimg}}" src="{{item.heroimg}}" />
+            </div>
+        </div>
+    </section>
+    <section class="page-overview page-section px-6 md:px-36 pt-12">
+        <div class="overview bg-white-smoke rounded-3xl px-8">
+            <div class="flex justify-center w-full pt-8">
+                <img src="{{item.icon}}">
+            </div>
+            <div class="flex items-center justify-between pb-10">
+                {% for detail in item.overview %}
+                <div class="max-w-md">
+                    <div>
+                        <h3 class="uppercase text-2xl leading-9 tracking-wider font-medium">Overview</h3>
+                        <p class="mt-4 text-base leading-6">{{detail.desc}}</p>
+                    </div>
+                    <div class="mt-6">
+                        <h3 class="uppercase text-2xl leading-9 tracking-wider font-medium">Technological stack</h3>
+                        <ul class="mt-4">
+                            {% for tech in detail.techstack %}
+                            <li class="mb-2 text-base leading-6 relative pl-6">{{tech.title}}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="img">
+                    <img src="{{detail.img}}" alt="">
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <p>{{ item.details }}</p>
+    </section>
+    <section class="designs page-section">
+        <h3>Designs</h3>
+        {% if id == "origin-reports" or id == "miestro" %}
+        {% for image in item.design.images %}
+        <div class="{{id}}-container">
+            <div class="skeleton unique-skeleton wrapper">
+                <img data-src="{{image.img}}" src="{{image.img}}" />
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <div class="mobile-container mobile-{{id}}">
+            {% for mobile in item.design.mobile %}
+            <div class="mobile-img skeleton mobile-skeleton mobile-img-{{id}}">
+                <img data-src="{{ mobile.img }}" alt="">
+            </div>
+            {% endfor %}
+        </div>
+        <div class="desktop-container desktop-{{ id }}">
+            {% for desktop in item.design.desktop %}
+            <div class="desktop-img {{id}}-skeleton skeleton">
+                <img data-src="{{ desktop.img }}" alt="">
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </section>
+
+    <section class="other-projects page-section" id="projects">
+        <h3>See other projects</h3>
+        <div class="container">
+            {% for el in item.other %}
+            <div class="item">
+                <div class="wrapper">
+                    <a href="{{ site.baseurl }}{{ el.link }}">
+                        <img src="{{el.img}}" />
+                    </a>
+                </div>
+                <a href="{{ site.baseurl }}{{ el.link }}">
+                    View project
+                    <img src="assets/images/arrow.svg" />
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+    {% endfor %}
+
     {{content}}
     {% include footer.html %}
 </body>
+
 </html>

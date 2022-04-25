@@ -1,0 +1,16 @@
+.page-overview {
+    ul {
+        li {
+            &::before {
+                position: absolute;
+                top: 8px;
+                left: 2px;
+                content: "";
+                background-image: url('../../assets/images/icons/star.svg');
+                width: 10px;
+                height: 10px;
+                background-size: contain;
+            }
+        }
+    }
+}

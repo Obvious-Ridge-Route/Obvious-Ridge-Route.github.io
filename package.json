@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "jekyll:dev": "bundle exec jekyll serve --incremental --watch --livereload --host=0.0.0.0",
+    "dev": "run-p dev:{jekyll,css}",
+    "dev:jekyll": "bundle exec jekyll serve --incremental --watch --livereload --host=0.0.0.0",
+    "dev:css": "postcss _sass/main.scss --output assets/css/style.css --watch",
     "jekyll:build": "JEKYLL_ENV=production bundle exec jekyll build",
-    "css:dev": "postcss _sass/main.scss --output assets/css/style.css --watch",
     "css:build": "NODE_ENV=production postcss _sass/main.scss --output assets/css/style.css"
   },
   "repository": {
@@ -29,6 +30,7 @@
     "tailwindcss": "^3.0.24"
   },
   "dependencies": {
+    "npm-run-all": "^4.1.5",
     "tailwindcss-dark-mode": "^1.1.7",
     "tailwindcss-filters": "^3.0.0"
   }

@@ -5,14 +5,14 @@
   icon: assets/images/sitespecs/sitespecs-small.svg
   link: https://sitespecs.io/
   overview: 
-    - img: assets/images/sitespecs/sitespecs-overview.svg
+    - img: assets/images/sitespecs/sitespecs-overview.png
       desc: Site Specs is a construction management application that leverages APIs and machine learning algorithms to automate data collection and reporting. By integrating machine learning algorithms and APIs, Site Specs makes simple daily reporting tasks like progress photos extremely powerful.
       techstack: 
         - title: Figma
         - title: CSS
         - title: HTML
         - title: JavaScript
-  design: assets/images/sitespecs/sitespecs-design.svg
+  design: assets/images/sitespecs/sitespecs-design.png
    
 - id: miestro
   herotitle: Miestro
@@ -21,12 +21,71 @@
   icon: assets/images/miestro/miestro-small.svg
   link: https://miestro.com/
   overview: 
-    - img: assets/images/miestro/miestro-overview.svg
+    - img: assets/images/miestro/miestro-overview.png
       desc: Miestro is an online training platform used by professionals and teachers to deploy training content to their audiences. 
       techstack: 
         - title: Figma
         - title: CSS
         - title: HTML
         - title: JavaScript
-  design: assets/images/miestro/miestro-design.svg
+  design: assets/images/miestro/miestro-design.png
+
+
+- id: ams
+  herotitle: AdultMemberSites
+  description: Create a professional adult membership site - no coding required. Subscriptions, chat, video library, custom domains and more -#OwnYourOwnBrand.
+  heroimg: assets/images/ams/ams-hero.svg
+  icon: assets/images/ams/ams-small.svg
+  link: https://adultmembersites.com/
+  overview: 
+    - img: assets/images/ams/ams-overview.png
+      desc: Adult content building platform in which users can deploy their own subscription content sites.  Extremely complex architecture with security, intuitive interface for the host and subscribers, and heavy data load.
+      techstack: 
+        - title: Figma
+        - title: CSS
+        - title: HTML
+        - title: JavaScript
+  design: assets/images/ams/ams-design.png
    
+- id: sustaindao
+  herotitle: SustainDAO
+  description: Uniting crypto anons, bitcoin investors, maximalists, miners, cypherpunks, counter culturalists, millennials, gen z, and your grandma on a mission to make bitcoin our planet's most sustainable asset class.
+  heroimg: assets/images/sustaindao/sustaindao-hero.svg
+  icon: assets/images/sustaindao/sustaindao-small.svg
+  link: https://sustaindao.xyz/
+  overview: 
+    - img: assets/images/sustaindao/sustaindao-overview.png
+      desc: Adult content building platform in which users can deploy their own subscription content sites.  Extremely complex architecture with security, intuitive interface for the host and subscribers, and heavy data load.
+      techstack: 
+        - title: Figma
+        - title: CSS
+        - title: HTML
+        - title: JavaScript
+  design: assets/images/sustaindao/sustaindao-design.png
+   
+- id: concave
+  herotitle: Concave
+  description: Concave is a decentralized finance co-op that provides financial instruments for crypto anons and degens alike. We provided logo/branding design as well as UX/UI design.
+  heroimg: assets/images/concave/concave-hero.svg
+  icon: assets/images/concave/concave-small.png
+  link: https://concave.lol/
+  overview: 
+    - img: assets/images/concave/concave-overview.png
+      desc: Concave is a community-driven, product and investment organization that aims to bring value to stakers through the development of innovative DeFi products and active treasury management. Concave introduce several novel solutions to grow its treasury while ensuring long-term stakers receive the highest returns.
+      techstack: 
+        - title: ORR provided UX/UI design 
+  design: assets/images/concave/concave-design.png
+
+
+- id: origin-reports
+  herotitle: Editorial Office Reporting
+  description: Visualize the health of your journals with professional looking charts and tables created in a fraction of the time spent using Microsoft® Excel with Editorial Manager® and ScholarOne™ Manuscripts (eJP coming soon). 
+  heroimg: assets/images/origin/origin-hero.svg
+  icon: assets/images/origin/origin-small.png
+  link: https://originreports.org/
+  overview: 
+    - img: assets/images/origin/origin-overview.png
+      desc: Origin reports is a data analysis platform in which users can upload large data sets in the form of CSV files and immediately analyse up to 200 data visualizations depending on the dataset.
+      techstack: 
+        - title: ORR provided UX/UI design 
+  design: assets/images/origin/origin-design.png

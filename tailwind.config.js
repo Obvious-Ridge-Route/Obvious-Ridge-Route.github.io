@@ -78,7 +78,8 @@ module.exports = {
       'md': '768px',
       'lg': '1024px',
       'xl': '1300px',
-      '2xl': '1536px',
+      'desktop': '1420px',
+      'desktop-lg':'1536px'
     },
     fontSize: {
       'xs': '.75rem', // 12px

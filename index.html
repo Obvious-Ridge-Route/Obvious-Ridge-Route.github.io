@@ -3,31 +3,34 @@ layout: default
 title: Obvious Ridge Route
 ---
 
-<section class="relative grid page-header">
-    <div class="content mt-24 px-6 text-center md:text-left md:px-36 text-white">
-        <h1>Obvious Ridge Route</h1>
-        <div class="text-lg mt-4 font-medium">
-            <p class="mb-4">Obvious Ridge Route is a global collective of collaborative <br /> talent
-                that gets
-                shit done.
-            </p>
-            <p>
-                Our team is composed of experienced product managers, <br /> passionately creative ux/ui designers, and
-                talented software <br /> developers.
-            </p>
-            <p class="mt-4">
-                When software can't automate it, our business <br /> process outsource team gets the job done.
-            </p>
-        </div>
+<section class="relative page-header">
+    <div class="flex justify-center md:justify-start w-full">
+        <div class="content mt-24 px-6 md:px-36 text-center md:text-left text-white">
+            <h1>Obvious Ridge Route</h1>
+            <div class="text-lg mt-4 font-medium">
+                <p class="mb-4">Obvious Ridge Route is a global collective of collaborative <br /> talent
+                    that gets
+                    shit done.
+                </p>
+                <p>
+                    Our team is composed of experienced product managers, <br /> passionately creative ux/ui designers,
+                    and
+                    talented software <br /> developers.
+                </p>
+                <p class="mt-4">
+                    When software can't automate it, our business <br /> process outsource team gets the job done.
+                </p>
+            </div>
 
-        <div class="btn-wrapper mt-9">
-            <button
-                class="border-0 outline-none cursor-pointer text-white text-center font-semibold text-xl py-4 px-16 bg-green"
-                id="learn-more">Explore</button>
+            <div class="btn-wrapper mt-9">
+                <button
+                    class="border-0 outline-none cursor-pointer text-center font-semibold text-xl py-4 px-16 bg-white text-black"
+                    id="learn-more">Explore</button>
+            </div>
         </div>
     </div>
 </section>
-<section class="services pt-5" id="services">
+<section class="services pt-20" id="services">
     <h3 class="text-center font-medium uppercase tracking-wider text-2xl mb-8">Services</h3>
     <div class="grid px-6 xl:px-0 xl:grid-cols-2 gap-8 place-content-center place-items-center max-w-3xl mx-auto mb-14">
         {% for item in site.data.services %}
@@ -56,7 +59,7 @@ title: Obvious Ridge Route
                 <span class="tracking-wider text-base leading-6 text-grey-jo font-medium">{{ item.about }}</span>
                 <p class="mt-4">{{ item.description }}</p>
 
-                <a class="flex mt-6 items-center gap-2 xl:justify-end text-green"
+                <a class="flex mt-6 items-center gap-2 xl:justify-end text-black"
                     href="{{ site.baseurl }}{{ item.link }}">View project
                     <img src="assets/images/icons/arrow.svg" />
                 </a>
@@ -90,7 +93,8 @@ title: Obvious Ridge Route
                         placeholder="Enter your message"></textarea>
                 </div>
                 <div>
-                    <button class="w-full uppercase bg-green font-semibold text-white py-4" id="submit-info">Send</button>
+                    <button class="w-full uppercase bg-black font-semibold text-white py-4"
+                        id="submit-info">Send</button>
                 </div>
             </form>
         </div>

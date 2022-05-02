@@ -13,14 +13,20 @@
     }
 }
 
-@media only screen and (min-width: 1900px) {
-    .page-header {
-        height: 68vh;
-    }
-}
-
 @media only screen and (min-width: 1024px) {
     .contact-us {
         background: linear-gradient(180deg, #1f1f1f 60%, #ffffff 40%);
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .page-header {
+        background-position: center bottom;
+    }
+}
+
+@media screen and (max-width:1000px){
+    .page-header{
+        background-image: url("../images/mountains.svg"), linear-gradient(#1f1f1f, #1f1f1f);
     }
 }

@@ -530,6 +530,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-5 {
   margin-top: 1.25rem;
 }
+.-mt-52 {
+  margin-top: -13rem;
+}
 .inline-block {
   display: inline-block;
 }
@@ -550,6 +553,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .h-16 {
   height: 4rem;
+}
+.h-12 {
+  height: 3rem;
 }
 .min-h-54 {
   min-height: 14rem;
@@ -619,6 +625,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .justify-around {
   justify-content: space-around;
+}
+.justify-evenly {
+  justify-content: space-evenly;
 }
 .gap-8 {
   gap: 2rem;
@@ -745,6 +754,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pl-10 {
   padding-left: 2.5rem;
+}
+.pb-40 {
+  padding-bottom: 10rem;
+}
+.pb-48 {
+  padding-bottom: 12rem;
+}
+.pb-52 {
+  padding-bottom: 13rem;
 }
 .text-center {
   text-align: center;
@@ -934,6 +952,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .xl\:max-w-2xl {
     max-width: 70rem;
+  }
+
+  .xl\:max-w-3xl {
+    max-width: 80rem;
   }
 
   .xl\:grid-cols-2 {

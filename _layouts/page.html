@@ -63,39 +63,43 @@
         </div>
     </section>
     {% endunless %}
-    <section class="other-projects page-section mt-10 pb-10 relative px-4" id="projects">
+    <section class="other-projects page-section mt-10 pb-52 relative px-4" id="projects">
         <h3 class="text-2xl text-center tracking-wider uppercase font-medium">See other projects</h3>
-        <div class="swiper py-4 max-w-md xl:max-w-2xl min-h-80 mt-4">
-            <div class="swiper-wrapper py-4 items-center">
-                {% for project in site.data.other %}
-                <div
-                    class="swiper-slide flex flex-col xl:justify-between min-h-60 p-8 bg-gray text-black dark:bg-black dark:text-white">
-                    <h2
-                        class="text-lg relative slide-title dark:slide-title-dark font-semibold tracking-wide leading-7 pl-10">
-                        {{project.title}}</h2>
+        <div class="relative">
+            <div class="swiper py-4 max-w-md xl:max-w-2xl min-h-80 mt-4">
+                <div class="swiper-wrapper py-4 items-center">
+                    {% for project in site.data.other %}
                     <div
-                        class="flex flex-col gap-8 items-start justify-around xmd:gap-0 xmd:flex-row xmd:items-center mt-4">
-                        <div>
-                            <img src="{{project.img}}" />
+                        class="swiper-slide flex flex-col xl:justify-between min-h-60 p-8 bg-gray text-black dark:bg-black dark:text-white">
+                        <h2
+                            class="text-lg relative slide-title dark:slide-title-dark font-semibold tracking-wide leading-7 pl-10">
+                            {{project.title}}</h2>
+                        <div
+                            class="flex flex-col gap-8 items-start justify-around xmd:gap-0 xmd:flex-row xmd:items-center mt-4">
+                            <div>
+                                <img src="{{project.img}}" />
+                            </div>
+                            <div class="flex flex-col max-w-xs">
+                                <h3>{{project.about}}</h3>
+                                <p class="mt-4">{{project.description}}</p>
+                            </div>
                         </div>
-                        <div class="flex flex-col max-w-xs">
-                            <h3>{{project.about}}</h3>
-                            <p class="mt-4">{{project.description}}</p>
+                        <div class="flex justify-end mt-5">
+                            <a class="flex gap-2 items-center dark:image-link-dark"
+                                href="{{page.baseurl}}{{project.link}}">
+                                View project
+                                <img src="assets/images/icons/arrow.svg" />
+                            </a>
                         </div>
                     </div>
-                    <div class="flex justify-end mt-5">
-                        <a class="flex gap-2 items-center dark:image-link-dark" href="{{page.baseurl}}{{project.link}}">
-                            View project
-                            <img src="assets/images/icons/arrow.svg" />
-                        </a>
-                    </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
+            </div>
+            <div class="flex justify-between mx-auto items-center h-12 max-w-md xl:max-w-3xl -mt-52">
+                <div class="button-prev"></div>
+                <div class="button-next"></div>
             </div>
         </div>
-
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
 
         <div class="swiper-pagination"></div>
     </section>

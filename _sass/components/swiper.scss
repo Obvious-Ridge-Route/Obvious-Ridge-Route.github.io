@@ -1,29 +1,23 @@
-.swiper-button-next,
-.swiper-button-prev {
+.button-next,
+.button-prev {
     display: none !important;
-    margin: 30px auto;
+    position: relative !important;
     width: 20px !important;
     height: 20px !important;
     border-top: 4px solid #cccccc;
     border-left: 4px solid #cccccc;
-    &::before,
-    &::after {
-        content: none !important;
-    }
     @media screen and (min-width: 1300px) {
         display: inline-block !important;
     }
 }
 
-.swiper-button-prev {
-    left: 40px !important;
+.button-prev {
     transform: rotate(-45deg);
     border-top-right-radius: 2px;
     border-bottom-right-radius: 2px;
 }
 
-.swiper-button-next {
-    right: 40px !important;
+.button-next {
     transform: rotate(135deg);
     border-top-right-radius: 2px;
     border-bottom-left-radius: 2px;
@@ -41,7 +35,7 @@
 }
 
 .swiper-pagination {
-    bottom: auto !important;
+    bottom: 15px !important;
 }
 
 .slide-title {

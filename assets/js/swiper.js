@@ -16,8 +16,8 @@ const swiper = new Swiper('.swiper', {
       }
     },
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: '.button-next',
+      prevEl: '.button-prev',
     },
     direction: 'horizontal',
   });

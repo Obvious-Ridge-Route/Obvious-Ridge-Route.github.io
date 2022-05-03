@@ -81,11 +81,31 @@
   herotitle: Editorial Office Reporting
   description: Visualize the health of your journals with professional looking charts and tables created in a fraction of the time spent using Microsoft® Excel with Editorial Manager® and ScholarOne™ Manuscripts (eJP coming soon). 
   heroimg: assets/images/origin/origin-hero.svg
-  icon: assets/images/origin/origin-small.png
+  icon: assets/images/origin/origin-small.svg
   link: https://originreports.org/
   overview: 
     - img: assets/images/origin/origin-overview.png
       desc: Origin reports is a data analysis platform in which users can upload large data sets in the form of CSV files and immediately analyse up to 200 data visualizations depending on the dataset.
       techstack: 
-        - title: ORR provided UX/UI design 
+        - title: Figma
+        - title: CSS
+        - title: HTML
+        - title: JavaScript 
   design: assets/images/origin/origin-design.png
+
+
+- id: frendao
+  herotitle: Frendao
+  description: FrenDAO is a charity NFT project that raised money for a fren in need.  This project was put together to raise funds to help a young man in his 20s with cancer.  
+  heroimg: assets/images/frendao/frendao-hero.svg
+  icon: assets/images/frendao/frendao-small.svg
+  link: https://frendao.xyz/
+  overview: 
+    - img: assets/images/frendao/frendao-overview.png
+      desc: FrenDAO is a charity NFT project that raised money for a fren in need.  This project was put together to raise funds to help a young man in his 20s with cancer.  Users can load the site, connect their crypto wallet, and mint a Griffin NFT as well as receive a physical Griffin plushy toy.
+      techstack: 
+        - title: Figma
+        - title: CSS
+        - title: HTML
+        - title: JavaScript 
+  design: assets/images/frendao/frendao-design.png

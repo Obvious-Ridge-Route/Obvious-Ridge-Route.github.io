@@ -1,0 +1,70 @@
+.swiper-button-next,
+.swiper-button-prev {
+    display: none !important;
+    margin: 30px auto;
+    width: 20px !important;
+    height: 20px !important;
+    border-top: 4px solid #cccccc;
+    border-left: 4px solid #cccccc;
+    &::before,
+    &::after {
+        content: none !important;
+    }
+    @media screen and (min-width: 1300px) {
+        display: inline-block !important;
+    }
+}
+
+.swiper-button-prev {
+    left: 40px !important;
+    transform: rotate(-45deg);
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.swiper-button-next {
+    right: 40px !important;
+    transform: rotate(135deg);
+    border-top-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+.swiper-pagination-bullet-active {
+    background-color: #000 !important;
+    transform: scale(1.5);
+    transition: 0.4s ease;
+}
+.swiper-slide-active {
+    z-index: 999;
+    @media screen and (min-width: 1300px) {
+        height: 350px !important;
+    }
+}
+
+.swiper-pagination {
+    bottom: auto !important;
+}
+
+.slide-title {
+    &::before {
+        position: absolute;
+        top: 2px;
+        left: 3px;
+        content: "";
+        background-image: url("../../assets/images/icons/star.svg");
+        filter: brightness(0);
+        width: 26px;
+        height: 26px;
+        background-size: contain;
+    }
+}
+
+.dark .dark\:slide-title-dark {
+    &::before {
+        filter: brightness(1) !important;
+    }
+}
+.dark .dark\:image-link-dark {
+    img {
+        filter: invert(1) !important;
+    }
+}

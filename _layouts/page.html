@@ -7,7 +7,7 @@
     {% assign id = page.url | remove: ".html" | remove: "/" %}
     {% for item in site.data.content %}
     {% if item.id == id %}
-    
+
     <section class="page-section bg-white-smoke dark:bg-black dark:text-white px-6 md:px-36 pb-10">
         <div class="flex justify-between gap-2 flex-col-reverse items-center xl:flex-row">
             <div class="flex justify-center flex-col max-w-md items-center xl:items-start">
@@ -55,24 +55,56 @@
         </div>
         <p>{{ item.details }}</p>
     </section>
+    {% unless id == 'frendao' %}
     <section class="designs page-section mt-10 ">
         <h3 class="text-2xl text-center tracking-wider uppercase font-medium">Design</h3>
-       <div class="px-6 md:px-36 mt-6 bg-white-smoke dark:bg-black">
-           <img class="object-cover" src="{{item.design}}"/>
-       </div>
-    </section>
-
-    <section class="other-projects page-section mt-10" id="projects">
-        <h3 class="text-2xl text-center tracking-wider uppercase font-medium">See other projects</h3>
-        <div class="swiper-container mt-4">
-            
+        <div class="px-6 md:px-36 mt-6 bg-white-smoke dark:bg-black">
+            <img class="object-cover" src="{{item.design}}" />
         </div>
+    </section>
+    {% endunless %}
+    <section class="other-projects page-section mt-10 pb-10 relative px-4" id="projects">
+        <h3 class="text-2xl text-center tracking-wider uppercase font-medium">See other projects</h3>
+        <div class="swiper py-4 max-w-md xl:max-w-2xl min-h-80 mt-4">
+            <div class="swiper-wrapper py-4 items-center">
+                {% for project in site.data.other %}
+                <div
+                    class="swiper-slide flex flex-col xl:justify-between min-h-60 p-8 bg-gray text-black dark:bg-black dark:text-white">
+                    <h2
+                        class="text-lg relative slide-title dark:slide-title-dark font-semibold tracking-wide leading-7 pl-10">
+                        {{project.title}}</h2>
+                    <div
+                        class="flex flex-col gap-8 items-start justify-around xmd:gap-0 xmd:flex-row xmd:items-center mt-4">
+                        <div>
+                            <img src="{{project.img}}" />
+                        </div>
+                        <div class="flex flex-col max-w-xs">
+                            <h3>{{project.about}}</h3>
+                            <p class="mt-4">{{project.description}}</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-end mt-5">
+                        <a class="flex gap-2 items-center dark:image-link-dark" href="{{page.baseurl}}{{project.link}}">
+                            View project
+                            <img src="assets/images/icons/arrow.svg" />
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <div class="swiper-pagination"></div>
     </section>
     {% endif %}
     {% endfor %}
 
     {{content}}
     {% include footer.html %}
+    <script src="{{page.baseurl}}/assets/js/swiper.js"></script>
 </body>
 
 </html>

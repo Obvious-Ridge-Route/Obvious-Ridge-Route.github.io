@@ -6,7 +6,7 @@
     height: 20px !important;
     border-top: 4px solid #cccccc;
     border-left: 4px solid #cccccc;
-    @media screen and (min-width: 1300px) {
+    @media screen and (min-width: 800px) {
         display: inline-block !important;
     }
 }
@@ -30,7 +30,7 @@
 .swiper-slide-active {
     z-index: 999;
     @media screen and (min-width: 1300px) {
-        height: 350px !important;
+        min-height: 350px !important;
     }
 }
 

@@ -75,6 +75,8 @@ module.exports = {
       'screen': '100vh',
       '14': '3.5rem',
       '48': '12rem',
+      '60':'15.5rem',
+      '72':'20rem'
     },
     screens: {
       'xsm': '420px',

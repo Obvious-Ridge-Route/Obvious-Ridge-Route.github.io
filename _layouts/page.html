@@ -66,11 +66,11 @@
     <section class="other-projects page-section mt-10 pb-52 relative px-4" id="projects">
         <h3 class="text-2xl text-center tracking-wider uppercase font-medium">See other projects</h3>
         <div class="relative">
-            <div class="swiper py-4 max-w-md xl:max-w-2xl min-h-80 mt-4">
+            <div class="swiper py-4 max-w-md xl:max-w-2xl mt-4">
                 <div class="swiper-wrapper py-4 items-center">
                     {% for project in site.data.other %}
                     <div
-                        class="swiper-slide flex flex-col xl:justify-between min-h-60 p-8 bg-gray text-black dark:bg-black dark:text-white">
+                        class="swiper-slide h-60 flex flex-col xl:justify-between min-h-60 p-8 bg-gray text-black dark:bg-black dark:text-white">
                         <h2
                             class="text-lg relative slide-title dark:slide-title-dark font-semibold tracking-wide leading-7 pl-10">
                             {{project.title}}</h2>
@@ -95,12 +95,11 @@
                     {% endfor %}
                 </div>
             </div>
-            <div class="flex justify-between mx-auto items-center h-12 max-w-md xl:max-w-3xl -mt-52">
+            <div class="flex justify-between mx-auto items-center h-12 max-w-lg xl:max-w-3xl -mt-52">
                 <div class="button-prev"></div>
                 <div class="button-next"></div>
             </div>
         </div>
-
         <div class="swiper-pagination"></div>
     </section>
     {% endif %}

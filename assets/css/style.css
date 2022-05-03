@@ -554,26 +554,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-16 {
   height: 4rem;
 }
-.h-12 {
-  height: 3rem;
-}
 .h-60 {
   height: 15rem;
 }
-.max-h-full {
-  max-height: 100%;
-}
-.max-h-72 {
-  max-height: 20rem;
-}
-.max-h-60 {
-  max-height: 15.5rem;
+.h-12 {
+  height: 3rem;
 }
 .min-h-54 {
   min-height: 14rem;
-}
-.min-h-80 {
-  min-height: 20rem;
 }
 .min-h-60 {
   min-height: 15.5rem;
@@ -914,10 +902,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 @media (min-width: 768px) {
-
-  .md\:max-h-72 {
-    max-height: 20rem;
-  }
 
   .md\:flex-row {
     flex-direction: row;

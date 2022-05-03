@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "run-p dev:{jekyll,css}",
-    "dev:jekyll": "bundle exec jekyll serve --incremental --watch --livereload --host=0.0.0.0",
+    "dev:jekyll": "bundle exec jekyll serve --port 3001 --host=0.0.0.0",
     "dev:css": "postcss _sass/main.scss --output assets/css/style.css --watch",
     "jekyll:build": "JEKYLL_ENV=production bundle exec jekyll build",
     "css:build": "NODE_ENV=production postcss _sass/main.scss --output assets/css/style.css"

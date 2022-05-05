@@ -5,21 +5,18 @@
   description: Why Site Specs? Increase productivity. Site Specs increases jobsite productivity ten fold. Less paperwork and more building.
 
 - img: assets/images/ams/ams-md.svg
-  img-dark: assets/images/ams/ams-md-dark.svg
   link: /ams
   title: Adultmembersites.com
   about: Adult Content Platform
   description: Create a professional adult membership site - no coding required. Subscriptions, chat, video library, custom domains and more - '#OwnYourOwnBrand'.
 
 - img: assets/images/frendao/frendao-md.svg
-  img-dark: assets/images/frendao/frendao-md-dark.svg
   link: /frendao
   title: FrenDAO
   about: Charity NFT Minting
   description: FrenDAO is a charity NFT project that raised money for a fren in need.  This project was put together to raise funds to help a young man in his 20s with cancer. 
 
 - img: assets/images/concave/concave-md.svg
-  img-dark: assets/images/concave/concave-md-dark.svg
   link: /concave
   title: Concave
   about: Defi Protocol

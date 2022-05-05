@@ -16,7 +16,7 @@
                 <div class="mt-6">
                     <button
                         class="bg-black dark:bg-white flex gap-2 items-center text-white dark:text-black uppercase font-semibold py-4 px-6 justify-center">
-                        <a href="{{ item.link }}">Discover the website</a>
+                        <a href="{{ item.link }}">Visit the website</a>
                         <img class="dark:brightness-0" src="assets/images/icons/arrow-up-right.svg">
                     </button>
                 </div>
@@ -77,7 +77,11 @@
                         <div
                             class="flex flex-col gap-8 items-start justify-around xmd:gap-0 xmd:flex-row xmd:items-center mt-4">
                             <div>
+                                {% if project.link == '/ams' or project.link == '/frendao' or project.link == '/concave' or project.link == '/miestro' %}
+                                <img class="invert dark:invert-0" src="{{project.img}}" />
+                                {% else %}
                                 <img src="{{project.img}}" />
+                                {% endif %}
                             </div>
                             <div class="flex flex-col max-w-xs">
                                 <h3>{{project.about}}</h3>

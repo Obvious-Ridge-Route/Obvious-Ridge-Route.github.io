@@ -55,7 +55,7 @@
   link: https://sustaindao.xyz/
   overview: 
     - img: assets/images/sustaindao/sustaindao-overview.png
-      desc: Adult content building platform in which users can deploy their own subscription content sites.  Extremely complex architecture with security, intuitive interface for the host and subscribers, and heavy data load.
+      desc: SustainDAO is a decentralized autonomous organization on a mission to make bitcoin the most sustainable asset class on earth. This web3 protocol uses governance to incentive bitcoin miners to operate sustainably using renewable energy sources. - Sauces
       techstack: 
         - title: Figma
         - title: CSS

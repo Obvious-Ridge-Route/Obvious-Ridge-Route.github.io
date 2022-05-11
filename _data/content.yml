@@ -65,7 +65,7 @@
    
 - id: concave
   herotitle: Concave
-  description: Concave is a decentralized finance co-op that provides financial instruments for crypto anons and degens alike. We provided logo/branding design as well as UX/UI design.
+  description: Concave is a decentralized finance co-op that provides financial instruments for crypto anons and degens alike. We provided logo/branding design as well as UI/UX design.
   heroimg: assets/images/concave/concave-hero.svg
   icon: assets/images/concave/concave-small.png
   link: https://concave.lol/
@@ -73,7 +73,7 @@
     - img: assets/images/concave/concave-overview.png
       desc: Concave is a community-driven, product and investment organization that aims to bring value to stakers through the development of innovative DeFi products and active treasury management. Concave introduce several novel solutions to grow its treasury while ensuring long-term stakers receive the highest returns.
       techstack: 
-        - title: ORR provided UX/UI design 
+        - title: ORR provided UI/UX design 
   design: assets/images/concave/concave-design.png
 
 

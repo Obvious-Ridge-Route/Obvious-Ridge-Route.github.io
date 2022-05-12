@@ -5,7 +5,7 @@ title: Obvious Ridge Route
 
 <section class="relative page-header">
     <div class="flex justify-center md:justify-start w-full">
-        <div class="content mt-24 px-6 md:px-36 text-center md:text-left text-white">
+        <div class="content mt-24 px-6 md:px-36 xmd:text-center md:text-left text-white">
             <h1>Obvious Ridge Route</h1>
             <div class="text-lg mt-4 font-medium">
                 <p class="mb-4">Obvious Ridge Route is a global collective of collaborative <br /> talent
@@ -22,9 +22,9 @@ title: Obvious Ridge Route
                 </p>
             </div>
 
-            <div class="btn-wrapper mt-9">
+            <div class="btn-wrapper mt-6">
                 <button
-                    class="border-0 outline-none cursor-pointer text-center font-semibold text-xl py-4 px-16 bg-white text-black"
+                    class="border-0 outline-none cursor-pointer text-center font-semibold text-xl py-[0.6rem] px-[4.3rem] bg-white text-black"
                     id="learn-more">Explore</button>
             </div>
         </div>
@@ -32,14 +32,14 @@ title: Obvious Ridge Route
 </section>
 <section class="services pt-20" id="services">
     <h3 class="text-center font-medium uppercase tracking-wider text-2xl mb-8">Services</h3>
-    <div class="grid px-6 xl:px-0 xl:grid-cols-2 gap-8 place-content-center place-items-center max-w-3xl mx-auto mb-14">
+    <div class="grid px-6 xl:px-0 xl:grid-cols-2 gap-8 place-content-center place-items-center max-w-2.5xl mx-auto mb-14">
         {% for item in site.data.services %}
-        <div class="bg-black text-white p-8 min-h-54">
+        <div class="bg-black text-white p-8 min-h-54 ">
             <div class="flex gap-4 items-center relative heading-wrapper">
                 <h3 class="font-semibold uppercase ml-10">{{item.title}}</h3>
             </div>
             <p class="mt-4">
-                {{item.description}}
+                {{item.description }}
             </p>
         </div>
         {% endfor %}
@@ -71,7 +71,7 @@ title: Obvious Ridge Route
 <section class="contact-us pb-12 px-6 bg-black text-white" id="contact">
     <div class="text-center pt-6">
         <h1 class="font-medium text-xl md:text-3xl">Contact Us</h1>
-        <p class="mt-2">Have an inquiry or some feedback for us? Fill out the form <br /> below to contact our team.</p>
+        <p class="mt-2 text-gray">Have an inquiry or some feedback for us? Fill out the form <br /> below to contact our team.</p>
     </div>
     <div class="max-w-xl mx-auto flex mt-8 contact-container text-black flex-col lg:flex-row">
         <div class="form w-full bg-white text-black flex justify-around flex-col p-8">
@@ -93,7 +93,7 @@ title: Obvious Ridge Route
                         placeholder="Enter your message"></textarea>
                 </div>
                 <div>
-                    <button class="w-full uppercase bg-black font-semibold text-white py-4"
+                    <button class="w-full uppercase bg-black font-semibold text-white py-4 text-xl leading-[1.125rem]"
                         id="submit-info">Send</button>
                 </div>
             </form>

@@ -491,8 +491,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mb-4 {
   margin-bottom: 1rem;
 }
-.mt-9 {
-  margin-top: 2.25rem;
+.mt-6 {
+  margin-top: 1.5rem;
 }
 .mb-8 {
   margin-bottom: 2rem;
@@ -502,9 +502,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .ml-10 {
   margin-left: 2.5rem;
-}
-.mt-6 {
-  margin-top: 1.5rem;
 }
 .mt-2 {
   margin-top: 0.5rem;
@@ -593,6 +590,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .max-w-lg {
   max-width: 50rem;
 }
+.max-w-2\.5xl {
+  max-width: 73rem;
+}
 .cursor-pointer {
   cursor: pointer;
 }
@@ -616,9 +616,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .items-center {
   align-items: center;
-}
-.justify-end {
-  justify-content: flex-end;
 }
 .justify-center {
   justify-content: center;
@@ -697,13 +694,17 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
+.py-\[0\.6rem\] {
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+}
+.px-\[4\.3rem\] {
+  padding-left: 4.3rem;
+  padding-right: 4.3rem;
+}
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
-}
-.px-16 {
-  padding-left: 4rem;
-  padding-right: 4rem;
 }
 .px-5 {
   padding-left: 1.25rem;
@@ -800,6 +801,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .leading-6 {
   line-height: 1.5rem;
 }
+.leading-\[1\.125rem\] {
+  line-height: 1.125rem;
+}
 .leading-4 {
   line-height: 1rem;
 }
@@ -826,6 +830,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-grey-jo {
   --tw-text-opacity: 1;
   color: rgb(164 164 169 / var(--tw-text-opacity));
+}
+.text-gray {
+  --tw-text-opacity: 1;
+  color: rgb(240 240 245 / var(--tw-text-opacity));
 }
 .outline-none {
   outline: 2px solid transparent;
@@ -902,6 +910,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   .xmd\:gap-0 {
     gap: 0px;
   }
+
+  .xmd\:text-center {
+    text-align: center;
+  }
 }
 @media (min-width: 640px) {
 
@@ -917,6 +929,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .md\:justify-start {
     justify-content: flex-start;
+  }
+
+  .md\:justify-end {
+    justify-content: flex-end;
   }
 
   .md\:gap-0 {

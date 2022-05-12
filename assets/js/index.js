@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const { location: { pathname } } = window
   switch (pathname) {
-    case '/':
+    case pathname.startsWith('/index') ? pathname : '/' :
     case '/sustaindao':
     case '/miestro':
     case '/concave':
@@ -30,17 +30,27 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   let os = getMobileOS();
   let button = document.querySelector("#learn-more");
-  button.onclick = () => {
-    doScrolling("#works", os === 'Iphone' ? 300 : os === "iOS" ? 1000 : 50);
-  };
+  if(button){
+    button.onclick = () => {
+      doScrolling("#works", os === 'Iphone' ? 300 : os === "iOS" ? 1000 : 50);
+    };
+  }
   let btnGroup = document.querySelectorAll('.btn-group')
-  btnGroup.forEach(el => {
-    el.addEventListener('click', (e) => {
-      let from = e.target;
-      if (!from.className || !/btn--/i.test(from.className)) return;
-      let scrollId = [...from.classList].pop().substring(5);
-      doScrolling(`#${scrollId}`, os === 'Iphone' ? 300 : os === "iOS" ? 1000 : 50)
-    })
+  btnGroup.forEach(group => {
+      let anchors = [...group.children]
+      anchors.forEach(a => {
+         const { location: { pathname } } = window;
+          if(pathname !== '/'){
+            a.href = a.dataset.href;
+            return;
+          }
+          a.addEventListener('click', e => {
+            let str = e.target.dataset.href;
+            let res = str.match(/#\w+/g).toString();
+            doScrolling(`${res}`, os === 'Iphone' ? 300 : os === "iOS" ? 1000 : 50)
+          })
+      })
+     
   })
 
   function getElementY(query) {

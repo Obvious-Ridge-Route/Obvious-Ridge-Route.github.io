@@ -1,4 +1,6 @@
-const swiper = new Swiper('.swiper', {
+document.addEventListener('DOMContentLoaded', () => {
+    
+  const swiper = new Swiper('.swiper', {
     direction: 'vertical',
     loop: true,
     pagination: {
@@ -8,12 +10,14 @@ const swiper = new Swiper('.swiper', {
     breakpoints: {
       320: {
         slidesPerView: 1,
-        spaceBetween: 0
+        spaceBetween: 0,
+        allowTouchMove:true
       },
       1300: {
-        slidesPerView: 2,
-        spaceBetween: -200,
-        centeredSlides:true
+        slidesPerView: 5,
+        spaceBetween: 0,
+        centeredSlides:true,
+        allowTouchMove: false
       }
     },
     navigation: {
@@ -23,3 +27,9 @@ const swiper = new Swiper('.swiper', {
     direction: 'horizontal',
   });
   
+  if (document.querySelector('html').classList.contains('dark')) {
+      document.querySelectorAll('.swiper-slide').forEach(slide => slide.classList.add('slide-dark'))
+    }
+  })
+
+ 

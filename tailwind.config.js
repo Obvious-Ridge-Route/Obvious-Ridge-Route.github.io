@@ -59,6 +59,7 @@ module.exports = {
       'xsm':'18.5rem',
       'xs': '20rem',
       'sm': '30rem',
+      'msm':'32rem',
       'lsm': '35rem',
       'md': '40rem',
       'lg': '50rem',

@@ -530,6 +530,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .-mt-52 {
   margin-top: -13rem;
 }
+.-mt-60 {
+  margin-top: -15rem;
+}
 .inline-block {
   display: inline-block;
 }
@@ -578,6 +581,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .max-w-md {
   max-width: 40rem;
 }
+.max-w-lsm {
+  max-width: 35rem;
+}
 .max-w-\[30rem\] {
   max-width: 30rem;
 }
@@ -586,6 +592,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .max-w-lg {
   max-width: 50rem;
+}
+.max-w-msm {
+  max-width: 32rem;
 }
 .cursor-pointer {
   cursor: pointer;
@@ -957,6 +966,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 @media (min-width: 1300px) {
+
+  .xl\:-mt-60 {
+    margin-top: -15rem;
+  }
 
   .xl\:w-full {
     width: 100%;

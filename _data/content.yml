@@ -80,7 +80,7 @@
 - id: origin-reports
   herotitle: Editorial Office Reporting
   description: Visualize the health of your journals with professional looking charts and tables created in a fraction of the time spent using Microsoft® Excel with Editorial Manager® and ScholarOne™ Manuscripts (eJP coming soon). 
-  heroimg: assets/images/origin/origin-hero.svg
+  heroimg: assets/images/origin/origin-hero.png
   icon: assets/images/origin/origin-small.svg
   link: https://originreports.org/
   overview: 

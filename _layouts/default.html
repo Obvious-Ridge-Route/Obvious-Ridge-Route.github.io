@@ -1,9 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
- {% include head.html %}
+{% include head.html %}
+
 <body>
     {% include header.html %}
     {{content}}
     {% include footer.html %}
+
+    <div id="success-modal" class="hidden">
+        <div class="content">
+            <div class="relative w-full h-full flex items-center justify-center">
+                <div class="flex flex-col items-center gap-3">
+                    <div class="icon">
+                        <img src="{{ site.baseurl }}/assets/images/success.svg" alt="">
+                    </div>
+                    <h1 class="font-medium text-xl sm:text-4.5xl leading-7 sm:leading-[60px]">Thank you!</h1>
+                    <p style="color:#6f6f6f;" class="text-base sm:text-2xl leading-9">Your submission has been sent.</p>
+                </div>
+                <span class="close-btn absolute top-3 right-5 cursor-pointer text-2xl">&#x2715;</span>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

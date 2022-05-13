@@ -13,6 +13,10 @@ body {
     scroll-behavior: smooth;
 }
 
+#message{
+    resize: none;
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {

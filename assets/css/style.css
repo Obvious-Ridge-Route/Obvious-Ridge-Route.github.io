@@ -475,8 +475,23 @@ Ensure the default browser behavior of the `hidden` attribute.
     max-width: 1536px;
   }
 }
+.absolute {
+  position: absolute;
+}
 .relative {
   position: relative;
+}
+.top-3 {
+  top: 0.75rem;
+}
+.right-3 {
+  right: 0.75rem;
+}
+.right-4 {
+  right: 1rem;
+}
+.right-5 {
+  right: 1.25rem;
 }
 .mx-auto {
   margin-left: auto;
@@ -509,11 +524,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-8 {
   margin-top: 2rem;
 }
-.mb-6 {
-  margin-bottom: 1.5rem;
-}
 .mb-1 {
   margin-bottom: 0.25rem;
+}
+.mb-6 {
+  margin-bottom: 1.5rem;
 }
 .mb-5 {
   margin-bottom: 1.25rem;
@@ -529,9 +544,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .-mt-52 {
   margin-top: -13rem;
-}
-.-mt-60 {
-  margin-top: -15rem;
 }
 .inline-block {
   display: inline-block;
@@ -551,11 +563,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-full {
   height: 100%;
 }
-.h-16 {
-  height: 4rem;
-}
 .h-12 {
   height: 3rem;
+}
+.h-0 {
+  height: 0px;
+}
+.h-8 {
+  height: 2rem;
 }
 .min-h-54 {
   min-height: 14rem;
@@ -581,8 +596,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 .max-w-md {
   max-width: 40rem;
 }
-.max-w-lsm {
-  max-width: 35rem;
+.max-w-msm {
+  max-width: 32rem;
 }
 .max-w-\[30rem\] {
   max-width: 30rem;
@@ -593,14 +608,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 .max-w-lg {
   max-width: 50rem;
 }
-.max-w-msm {
-  max-width: 32rem;
-}
 .cursor-pointer {
   cursor: pointer;
-}
-.resize-none {
-  resize: none;
 }
 .flex-col {
   flex-direction: column;
@@ -804,17 +813,23 @@ Ensure the default browser behavior of the `hidden` attribute.
 .leading-6 {
   line-height: 1.5rem;
 }
+.leading-5 {
+  line-height: 1.25rem;
+}
 .leading-\[1\.125rem\] {
   line-height: 1.125rem;
 }
 .leading-4 {
   line-height: 1rem;
 }
-.leading-5 {
-  line-height: 1.25rem;
-}
 .leading-9 {
   line-height: 2.25rem;
+}
+.leading-\[\] {
+  line-height: ;
+}
+.leading-\[60px\] {
+  line-height: 60px;
 }
 .tracking-wider {
   letter-spacing: 0.05em;
@@ -838,6 +853,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(240 240 245 / var(--tw-text-opacity));
 }
+.text-danger {
+  --tw-text-opacity: 1;
+  color: rgb(255 54 54 / var(--tw-text-opacity));
+}
+.opacity-0 {
+  opacity: 0;
+}
+.opacity-100 {
+  opacity: 1;
+}
 .outline-none {
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -848,6 +873,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .invert {
   --tw-invert: invert(100%);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.ease-linear {
+  transition-timing-function: linear;
 }
 @import 'base/reset.scss';
 @import 'layout/default.scss';
@@ -922,6 +955,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .sm\:block {
     display: block;
+  }
+
+  .sm\:text-4\.5xl {
+    font-size: 2.5rem;
+  }
+
+  .sm\:text-2xl {
+    font-size: 1.5rem;
+  }
+
+  .sm\:leading-\[60px\] {
+    line-height: 60px;
   }
 }
 @media (min-width: 768px) {

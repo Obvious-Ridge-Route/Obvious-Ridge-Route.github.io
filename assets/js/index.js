@@ -85,4 +85,65 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+    const form = document.getElementById('submit-data');
+    const username = document.getElementById('fullname');
+    const email = document.getElementById('email');
+    const message = document.getElementById('message');
+
+    let modal = document.getElementById('success-modal')
+    function openSuccessModal(){
+      modal.classList.remove('hidden')
+    }
+
+    function showError(input, message) {
+       let error = input.nextElementSibling;
+       error.innerText = message;
+    }
+
+    function showSucces(input) {
+        input.nextElementSibling.innerText=''
+        let messages = document.querySelectorAll('.warning-message');
+        let isValid = [...messages].every(message => message.innerText.length === 0)
+        if(isValid){
+          openSuccessModal()
+        }
+      }
+
+    function checkEmail(input) {
+        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if(re.test(input.value.trim())) {
+            showSucces(input)
+        }else {
+            showError(input,'Email is not invalid');
+        }
+    }
+
+    function checkLength(input, min ,max) {
+        if(input.value.length < min) {
+            showError(input, `${getFieldName(input)} must be at least ${min} characters`);
+        }else if(input.value.length > max) {
+            showError(input, `${getFieldName(input)} must be les than ${max} characters`);
+        }else {
+            showSucces(input);
+        }
+    }
+
+    //get FieldName
+    function getFieldName(input) {
+        return input.id.charAt(0).toUpperCase() + input.id.slice(1);
+    }
+    form.addEventListener('submit',function(e) {
+        e.preventDefault();
+        checkLength(username,3,15);
+        checkLength(message,3,250);
+        checkEmail(email);
+    });
+
+    document.addEventListener('click', e => {
+      if(e.target.id === 'success-modal' || e.target.classList[0] === 'close-btn'){
+        modal.classList.add('hidden')
+      }
+    })
+
 })

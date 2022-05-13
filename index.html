@@ -32,7 +32,8 @@ title: Obvious Ridge Route
 </section>
 <section class="services pt-20" id="services">
     <h3 class="text-center font-medium uppercase tracking-wider text-2xl mb-8">Services</h3>
-    <div class="grid px-6 xl:px-0 xl:grid-cols-2 gap-8 place-content-center place-items-center max-w-2.5xl mx-auto mb-14">
+    <div
+        class="grid px-6 xl:px-0 xl:grid-cols-2 gap-8 place-content-center place-items-center max-w-2.5xl mx-auto mb-14">
         {% for item in site.data.services %}
         <div class="bg-black text-white p-8 min-h-54 ">
             <div class="flex gap-4 items-center relative heading-wrapper">
@@ -71,30 +72,35 @@ title: Obvious Ridge Route
 <section class="contact-us pb-12 px-6 bg-black text-white" id="contact">
     <div class="text-center pt-6">
         <h1 class="font-medium text-xl md:text-3xl">Contact Us</h1>
-        <p class="mt-2 text-gray">Have an inquiry or some feedback for us? Fill out the form <br /> below to contact our team.</p>
+        <p class="mt-2 text-gray">Have an inquiry or some feedback for us? Fill out the form <br /> below to contact our
+            team.</p>
     </div>
     <div class="max-w-xl mx-auto flex mt-8 contact-container text-black flex-col lg:flex-row">
         <div class="form w-full bg-white text-black flex justify-around flex-col p-8">
             <h3 class="font-medium text-lg leading-7">Send us a Message</h3>
-            <form class="mt-8">
+            <form id="submit-data" class="mt-8" action="#">
+                <label class="mb-1 inline-block">Full name</label>
                 <div class="form-input w-full mb-6">
-                    <label class="mb-1 inline-block">Full name</label>
-                    <input class="w-full outline-0 border-b border-grey-yoda" placeholder="Enter your full name"
-                        type="text" name="name" />
+                    <input id="fullname" class="w-full outline-0 border-b border-grey-yoda" type="text" name="name"
+                        placeholder="Enter your full name">
+                    <span class="mt-2 text-danger text-sm leading-5 warning-message"></span>
                 </div>
+                <label class="mb-1 inline-block">Email</label>
                 <div class="form-input w-full mb-6">
-                    <label class="mb-1 inline-block">Email</label>
-                    <input class="w-full outline-0 border-b border-grey-yoda" placeholder="Enter your e-mail"
-                        type="email" name="email" />
+                    <input id="email" class="w-full outline-0 border-b border-grey-yoda" type="email" name="email"
+                        placeholder="Enter your e-mail">
+                    <span class="mt-2 text-danger text-sm leading-5 warning-message"></span>
                 </div>
+                <label class="mb-1 inline-block">Your message</label>
                 <div class="form-input w-full mb-6">
-                    <label class="mb-1 inline-block">Your message</label>
-                    <textarea class="w-full outline-0 border-b border-grey-yoda resize-none h-16 pt-6"
+                    <textarea id="message" class="w-full outline-0 border-b border-grey-yoda" maxlength="300"
                         placeholder="Enter your message"></textarea>
+                    <span class="mt-2 text-danger text-sm leading-5 warning-message"></span>
                 </div>
-                <div>
-                    <button class="w-full uppercase bg-black font-semibold text-white py-4 text-xl leading-[1.125rem]"
-                        id="submit-info">Send</button>
+                <div class="send">
+                    <input
+                        class="w-full uppercase bg-black font-semibold text-white py-4 text-xl cursor-pointer leading-[1.125rem]"
+                        type="submit" value="Send">
                 </div>
             </form>
         </div>

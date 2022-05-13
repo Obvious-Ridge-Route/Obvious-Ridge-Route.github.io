@@ -3,6 +3,7 @@ module.exports = {
     './_includes/**/*.html',
     './_layouts/**/*.html',
     './_posts/*.html',
+    './assets/js/*.js',
     './*.html'
   ],
   darkMode: 'class',
@@ -14,7 +15,8 @@ module.exports = {
       'white-smoke': '#FBFBFB',
       'gray': '#F0F0F5',
       'grey-jo': '#A4A4A9',
-      'grey-yoda': 'rgba(11, 9, 9, 0.5)'
+      'grey-yoda': 'rgba(11, 9, 9, 0.5)',
+      'danger':'#FF3636'
     },
     minWidth: {
       '0': '0',

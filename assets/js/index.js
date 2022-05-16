@@ -15,24 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     logo.src = logo.dataset.src;
   }
-  const getMobileOS = () => {
-    const ua = navigator.userAgent
-    if (/android/i.test(ua)) {
-      return "Android"
-    }
-    if (/iPhone/.test(ua)) {
-      return "Iphone"
-    }
-    else if (/iPad|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)) {
-      return "iOS"
-    }
-    return "Other"
-  }
-  let os = getMobileOS();
   let button = document.querySelector("#learn-more");
   if(button){
     button.onclick = () => {
-      doScrolling("#works", os === 'Iphone' ? 300 : os === "iOS" ? 1000 : 50);
+      zenscroll.to(document.getElementById('works'))
     };
   }
   let btnGroup = document.querySelectorAll('.btn-group')
@@ -47,45 +33,10 @@ document.addEventListener('DOMContentLoaded', () => {
           a.addEventListener('click', e => {
             let str = e.target.dataset.href;
             let res = str.match(/#\w+/g).toString();
-            doScrolling(`${res}`, os === 'Iphone' ? 300 : os === "iOS" ? 1000 : 50)
+            zenscroll.to(document.querySelector(`${res}`))
           })
       })
-     
   })
-
-  function getElementY(query) {
-    return (
-      window.pageYOffset +
-      document.querySelector(query).getBoundingClientRect().top
-    );
-  }
-
-  function doScrolling(element, duration) {
-    var startingY = window.pageYOffset;
-    var elementY = getElementY(element);
-    var targetY =
-      document.body.scrollHeight - elementY < window.innerHeight
-        ? document.body.scrollHeight - window.innerHeight
-        : elementY;
-    var diff = targetY - startingY;
-    var easing = function (t) {
-      return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
-    };
-    var start;
-
-    if (!diff) return;
-    window.requestAnimationFrame(function step(timestamp) {
-      if (!start) start = timestamp;
-      var time = timestamp - start;
-      var percent = Math.min(time / duration, 1);
-      percent = easing(percent);
-      window.scrollTo(0, startingY + diff * percent);
-      if (time < duration) {
-        window.requestAnimationFrame(step);
-      }
-    });
-  }
-
     const form = document.getElementById('submit-data');
     const username = document.getElementById('fullname');
     const email = document.getElementById('email');
@@ -133,11 +84,11 @@ document.addEventListener('DOMContentLoaded', () => {
       openSuccessModal()
     });
     document.querySelector('.close-btn').addEventListener('click', e => {
-      modal.style.animation = 'fadeOut 1.5s';
-      modal.classList.add('opacity-0');
-      setTimeout(() => {
-        modal.classList.add('z-[-1]')
-        form.classList.remove('opacity-0')
-      },1500)
+        modal.style.animation = 'fadeOut 1.5s';
+        modal.classList.add('opacity-0');
+        setTimeout(() => {
+          modal.classList.add('z-[-1]')
+          form.classList.remove('opacity-0')
+        },1500)
     })
 })

@@ -53,6 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
     modal.classList.remove('opacity-0');
     modal.classList.remove('z-[-1]');
     form.classList.add('opacity-0');
+    message.value = '';
+    email.value = '';
+    username.value = '';
   }
 
   form.addEventListener('submit', function (e) {
@@ -88,8 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if (errorMessages.length > 0) {
       return errorMessages.map((message) => {
-        console.log(message);
-        let inputsDiv = e.target.querySelectorAll('.form-input');
+        let inputsDiv = document.querySelectorAll('.form-input');
         inputsDiv.forEach((el) => {
           let input = el.children[0];
           if (input.id === message.type) {

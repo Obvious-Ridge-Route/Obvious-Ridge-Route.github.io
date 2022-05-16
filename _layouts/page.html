@@ -14,11 +14,11 @@
                 <h1 class="text-4.5xl font-medium">{{item.herotitle}}</h1>
                 <p class="mt-4 font-medium">{{item.description}}</p>
                 <div class="mt-6">
-                    <button
+                    <a target="_blank" href="{{ item.link }}"
                         class="bg-black dark:bg-white flex gap-2 items-center text-white dark:text-black uppercase font-semibold py-4 px-6 justify-center">
-                        <a target='_blank' href="{{ item.link }}">Visit the website</a>
+                        Visit the website
                         <img class="dark:brightness-0" src="assets/images/icons/arrow-up-right.svg">
-                    </button>
+                    </a>
                 </div>
             </div>
             <div class="max-w-msm">
@@ -38,8 +38,24 @@
                         <h3 class="uppercase text-2xl leading-9 tracking-wider font-medium">Overview</h3>
                         <p class="mt-4 text-base leading-6">{{detail.desc}}</p>
                     </div>
+                    {% if id == 'miestro' %}
+                        <div class="mt-6">
+                            <h3 class="uppercase text-2xl leading-9 tracking-wider font-medium">App Features</h3>
+                            <ul class="mt-4">
+                                {% for feature in detail.features %}
+                                <li class="mb-2 text-base leading-6 relative pl-6">{{feature.title}}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endif %}
                     <div class="mt-6">
-                        <h3 class="uppercase text-2xl leading-9 tracking-wider font-medium">Technological stack</h3>
+                        <h3 class="uppercase text-2xl leading-9 tracking-wider font-medium">
+                            {% if id == 'concave' %}
+                            Services
+                            {% else %}
+                            Technological stack
+                            {% endif %}
+                        </h3>
                         <ul class="mt-4">
                             {% for tech in detail.techstack %}
                             <li class="mb-2 text-base leading-6 relative pl-6">{{tech.title}}</li>

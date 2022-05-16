@@ -1,7 +1,7 @@
 - id: sitespecs
   herotitle: Site Specs
   description: Why Site Specs? Increase productivity. Site Specs increases jobsite productivity ten fold. Less paperwork and more building.
-  heroimg: assets/images/sitespecs/sitespecs-hero.svg
+  heroimg: assets/images/sitespecs/sitespecs-hero.png
   icon: assets/images/sitespecs/sitespecs-small.svg
   link: https://sitespecs.io/
   overview: 
@@ -17,7 +17,7 @@
 - id: miestro
   herotitle: Miestro
   description: Miestro is an all-in-one system that makes it easy to create beautiful online classes, member sites, masterclasses and market them to your customers.
-  heroimg: assets/images/miestro/miestro-hero.svg
+  heroimg: assets/images/miestro/miestro-hero.png
   icon: assets/images/miestro/miestro-small.svg
   link: https://miestro.com/
   overview: 
@@ -28,13 +28,22 @@
         - title: CSS
         - title: HTML
         - title: JavaScript
+      features:
+        - title: E-commerce
+        - title: Subscriptions
+        - title: Video streaming
+        - title: Social & commenting
+        - title: Reporting
+        - title: Data exports
+        - title: PDF generation
+        - title: API integrations
   design: assets/images/miestro/miestro-design.png
 
 
 - id: ams
   herotitle: AdultMemberSites
   description: Create a professional adult membership site - no coding required. Subscriptions, chat, video library, custom domains and more -#OwnYourOwnBrand.
-  heroimg: assets/images/ams/ams-hero.svg
+  heroimg: assets/images/ams/ams-hero.png
   icon: assets/images/ams/ams-small.svg
   link: https://adultmembersites.com/
   overview: 
@@ -50,7 +59,7 @@
 - id: sustaindao
   herotitle: SustainDAO
   description: Uniting crypto anons, bitcoin investors, maximalists, miners, cypherpunks, counter culturalists, millennials, gen z, and your grandma on a mission to make bitcoin our planet's most sustainable asset class.
-  heroimg: assets/images/sustaindao/sustaindao-hero.svg
+  heroimg: assets/images/sustaindao/sustaindao-hero.png
   icon: assets/images/sustaindao/sustaindao-small.svg
   link: https://sustaindao.xyz/
   overview: 
@@ -66,7 +75,7 @@
 - id: concave
   herotitle: Concave
   description: Concave is a decentralized finance co-op that provides financial instruments for crypto anons and degens alike. We provided logo/branding design as well as UI/UX design.
-  heroimg: assets/images/concave/concave-hero.svg
+  heroimg: assets/images/concave/concave-hero.png
   icon: assets/images/concave/concave-small.png
   link: https://concave.lol/
   overview: 
@@ -97,7 +106,7 @@
 - id: frendao
   herotitle: Frendao
   description: FrenDAO is a charity NFT project that raised money for a fren in need.  This project was put together to raise funds to help a young man in his 20s with cancer.  
-  heroimg: assets/images/frendao/frendao-hero.svg
+  heroimg: assets/images/frendao/frendao-hero.png
   icon: assets/images/frendao/frendao-small.svg
   link: https://frendao.xyz/
   overview: 

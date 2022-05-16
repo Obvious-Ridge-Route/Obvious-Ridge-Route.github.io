@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
       modal.style.animation = 'fadeIn 2s';
       modal.classList.remove('opacity-0')
       modal.classList.remove('z-[-1]')
-      form.classList.add('hidden')
+      form.classList.add('opacity-0')
     }
 
     form.addEventListener('submit',function(e) {
@@ -133,8 +133,11 @@ document.addEventListener('DOMContentLoaded', () => {
       openSuccessModal()
     });
     document.querySelector('.close-btn').addEventListener('click', e => {
+      modal.style.animation = 'fadeOut 1.5s';
       modal.classList.add('opacity-0');
-      modal.classList.add('z-[-1]')
-      form.classList.remove('hidden')
+      setTimeout(() => {
+        modal.classList.add('z-[-1]')
+        form.classList.remove('opacity-0')
+      },1500)
     })
 })

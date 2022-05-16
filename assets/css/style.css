@@ -554,6 +554,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mb-10 {
   margin-bottom: 2.5rem;
 }
+.mb-20 {
+  margin-bottom: 5rem;
+}
 .inline-block {
   display: inline-block;
 }
@@ -577,6 +580,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .h-0 {
   height: 0px;
+}
+.h-80 {
+  height: 20rem;
 }
 .min-h-54 {
   min-height: 14rem;
@@ -979,6 +985,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 @media (min-width: 640px) {
 
+  .sm\:mb-20 {
+    margin-bottom: 5rem;
+  }
+
   .sm\:block {
     display: block;
   }
@@ -1030,6 +1040,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .lg\:mb-0 {
     margin-bottom: 0px;
+  }
+
+  .lg\:h-full {
+    height: 100%;
   }
 
   .lg\:w-\[37\.5rem\] {

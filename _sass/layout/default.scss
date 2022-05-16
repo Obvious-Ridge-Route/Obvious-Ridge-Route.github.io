@@ -11,6 +11,19 @@
 }
 
 
+@keyframes fadeOut {
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+
 
 .page-header {
     height: 100%;

@@ -75,10 +75,10 @@ title: Obvious Ridge Route
         <p class="mt-2 text-gray">Have an inquiry or some feedback for us? Fill out the form <br /> below to contact our
             team.</p>
     </div>
-    <div class="max-w-xl mx-auto flex mt-8 contact-container text-black flex-col lg:flex-row">
-        <div class="form w-full bg-white text-black flex justify-around flex-col p-8">
-            <h3 class="font-medium text-lg leading-7">Send us a Message</h3>
-            <form id="submit-data" class="mt-8" action="#">
+    <div class="max-w-xl mx-auto flex mt-8 contact-container text-black flex-col lg:flex-row relative">
+        <div class="form-wrapper w-full bg-white text-black flex justify-around flex-col p-8 overflow-hidden">
+            <form id="submit-data">
+                <h3 class="font-medium text-lg leading-7 mb-6">Send us a Message</h3>
                 <label class="mb-1 inline-block">Full name</label>
                 <div class="form-input w-full mb-6">
                     <input id="fullname" class="w-full outline-0 border-b border-grey-yoda" type="text" name="name"
@@ -103,7 +103,22 @@ title: Obvious Ridge Route
                         type="submit" value="Send">
                 </div>
             </form>
+            <div id="success-modal" class="opacity-0 absolute w-full lg:w-[37.5rem] h-full top-0 left-0 z-[-1]">
+                <div class="relative w-full h-full flex items-center justify-center pt-10 bg-white">
+                    <div class="flex flex-col justify-between items-center gap-3">
+                        <div class="icon">
+                            <img src="{{ site.baseurl }}/assets/images/success.svg" alt="">
+                        </div>
+                        <h1 class="font-medium text-2xl leading-7">Thank you!</h1>
+                        <p style="color:#6f6f6f;" class="text-lg leading-9">Your message has been
+                            sent.
+                        </p>
+                    </div>
+                    <span class="close-btn absolute top-3 right-5 cursor-pointer text-2xl">&#x2715;</span>
+                </div>
+            </div>
         </div>
+       
 
         <div class="contact bg-gray flex justify-around items-center px-5 py-8 flex-col">
             <div class="flex flex-col gap-2 xsm:gap-9 mb-5 lg:mb-0">

@@ -90,60 +90,51 @@ document.addEventListener('DOMContentLoaded', () => {
     const username = document.getElementById('fullname');
     const email = document.getElementById('email');
     const message = document.getElementById('message');
-
     let modal = document.getElementById('success-modal')
+
     function openSuccessModal(){
-      modal.classList.remove('hidden')
+      modal.style.animation = 'fadeIn 2s';
+      modal.classList.remove('opacity-0')
+      modal.classList.remove('z-[-1]')
+      form.classList.add('hidden')
     }
 
-    function showError(input, message) {
-       let error = input.nextElementSibling;
-       error.innerText = message;
-    }
-
-    function showSucces(input) {
-        input.nextElementSibling.innerText=''
-        let messages = document.querySelectorAll('.warning-message');
-        let isValid = [...messages].every(message => message.innerText.length === 0)
-        if(isValid){
-          openSuccessModal()
-        }
-      }
-
-    function checkEmail(input) {
-        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        if(re.test(input.value.trim())) {
-            showSucces(input)
-        }else {
-            showError(input,'Email is not invalid');
-        }
-    }
-
-    function checkLength(input, min ,max) {
-        if(input.value.length < min) {
-            showError(input, `${getFieldName(input)} must be at least ${min} characters`);
-        }else if(input.value.length > max) {
-            showError(input, `${getFieldName(input)} must be les than ${max} characters`);
-        }else {
-            showSucces(input);
-        }
-    }
-
-    //get FieldName
-    function getFieldName(input) {
-        return input.id.charAt(0).toUpperCase() + input.id.slice(1);
-    }
     form.addEventListener('submit',function(e) {
-        e.preventDefault();
-        checkLength(username,3,15);
-        checkLength(message,3,250);
-        checkEmail(email);
-    });
-
-    document.addEventListener('click', e => {
-      if(e.target.id === 'success-modal' || e.target.classList[0] === 'close-btn'){
-        modal.classList.add('hidden')
+      e.preventDefault()
+      let errorMessages = [];
+      if(username.value === '' || username.value.length < 3){
+        errorMessages.push({type:'fullname', value:'Username is required and should be at least 3 characters long'})
+      } else {
+        username.nextElementSibling.innerText=''
       }
+      const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      if(!re.test(email.value.trim())){
+        errorMessages.push({type:'email', value:'Email is not valid.'})
+      } else {
+        email.nextElementSibling.innerText=''
+      }
+      if(message.value === '' || message.value.length < 3){
+        errorMessages.push({type:'message', value:'Message is required and should be at least 3 characters long'})
+      } else {
+        message.nextElementSibling.innerText=''
+      }
+      if(errorMessages.length > 0){
+        return errorMessages.map(message => {
+          console.log(message)
+          let inputsDiv = e.target.querySelectorAll('.form-input')
+          inputsDiv.forEach(el => {
+            let input = el.children[0]
+            if(input.id === message.type){
+              input.nextElementSibling.innerText = message.value
+            }
+          })
+        })
+      }
+      openSuccessModal()
+    });
+    document.querySelector('.close-btn').addEventListener('click', e => {
+      modal.classList.add('opacity-0');
+      modal.classList.add('z-[-1]')
+      form.classList.remove('hidden')
     })
-
 })

@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     location: { pathname },
   } = window;
   switch (pathname) {
-    case pathname.startsWith('/index') ? pathname : '/':
     case '/sustaindao':
     case '/miestro':
     case '/concave':

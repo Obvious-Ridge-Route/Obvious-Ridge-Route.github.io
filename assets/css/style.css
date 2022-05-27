@@ -575,9 +575,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .min-h-54 {
   min-height: 14rem;
 }
-.min-h-27 {
-  min-height: 7rem;
-}
 .min-h-30 {
   min-height: 7.5rem;
 }

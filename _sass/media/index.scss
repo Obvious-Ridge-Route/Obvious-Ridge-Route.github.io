@@ -25,13 +25,6 @@
     }
 }
 
-@media screen and (max-width: 1000px) {
-    .page-header {
-        background-image: url("../images/small.png"), linear-gradient(#1f1f1f, #1f1f1f);
-        background-size: cover;
-    }
-}
-
 @media screen and (min-width: 1300px) {
     div.swiper-slide-active {
         min-width: 570px;

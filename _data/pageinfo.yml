@@ -4,11 +4,11 @@
   img: assets/images/sitespecs/sitespecs.svg
   link: /sitespecs
 
-- title: Adultmembersites.com
-  about: Adult Content Platform
+- title: mymember.site
+  about: The all-in-one site builder for content creators
   description: Adult content building platform in which users can deploy their own subscription content sites.  Extremely complex architecture with security, intuitive interface for the host and subscribers, and heavy data load.
-  img: assets/images/ams/ams.svg
-  link: /ams
+  img: assets/images/ams/landing-hero.png
+  link: /mms
 
 - title: Origin Reports
   about: Data Visualisation Platform

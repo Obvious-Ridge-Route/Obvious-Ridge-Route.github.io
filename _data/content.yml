@@ -40,14 +40,15 @@
   design: assets/images/miestro/miestro-design.png
 
 
-- id: ams
-  herotitle: AdultMemberSites
-  description: Create a professional adult membership site - no coding required. Subscriptions, chat, video library, custom domains and more -#OwnYourOwnBrand.
-  heroimg: assets/images/ams/ams-hero.png
-  icon: assets/images/ams/ams-small.svg
-  link: https://adultmembersites.com/
+- id: mms
+  herotitle: mymember.site
+  description: Create your own branded membership site where your fans can engage exclusively with you, and only you. -#OwnYourOwnBrand.
+  heroimg: assets/images/ams/ams-hero-v2.png
+  icon: assets/images/ams/ams.svg
+  link: https://mymember.site/
   overview: 
-    - img: assets/images/ams/ams-overview.png
+    # - img: assets/images/ams/ams-overview.png
+    - img: assets/images/ams/ams-overview-v2.png
       desc: Adult content building platform in which users can deploy their own subscription content sites.  Extremely complex architecture with security, intuitive interface for the host and subscribers, and heavy data load.
       techstack: 
         - title: Figma

@@ -37,7 +37,7 @@ same_as: []
 
 # Paste the form id from formspree.io (the part after /f/) to turn on the
 # homepage contact form. Leave empty to show only the email link.
-formspree_id: ""
+formspree_id: "xwlleyll"
 
 # Verification tokens from Google Search Console and Bing Webmaster Tools
 # (the content="..." value of their meta tag). Leave empty until you have them.

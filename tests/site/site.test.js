@@ -155,6 +155,8 @@ describe('homepage', () => {
         assert.ok(field, `missing ${name} field`);
         assert.ok(form.querySelector(`label[for="${field.id}"]`), `${name} needs a label`);
       }
+      assert.equal(form.querySelector('[name="name"]').getAttribute('maxlength'), '100', 'match the Formspree name limit');
+      assert.equal(form.querySelector('[name="message"]').getAttribute('maxlength'), '5000', 'match the Formspree message limit');
     } else {
       assert.equal(form, null, 'no formspree_id, so there should be no form');
     }

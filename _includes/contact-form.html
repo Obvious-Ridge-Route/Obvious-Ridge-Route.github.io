@@ -2,7 +2,7 @@
   <form class="form" action="https://formspree.io/f/{{ site.formspree_id }}" method="POST" novalidate data-contact-form>
     <div class="field">
       <label for="contact-name">Name</label>
-      <input class="input" id="contact-name" name="name" type="text" autocomplete="name" required aria-describedby="contact-name-error">
+      <input class="input" id="contact-name" name="name" type="text" autocomplete="name" maxlength="100" required aria-describedby="contact-name-error">
       <p class="field__error" id="contact-name-error" data-error-for="name"></p>
     </div>
     <div class="field">
@@ -23,7 +23,7 @@
     </div>
     <div class="field">
       <label for="contact-message">Message</label>
-      <textarea class="input" id="contact-message" name="message" rows="5" required aria-describedby="contact-message-error"></textarea>
+      <textarea class="input" id="contact-message" name="message" rows="5" maxlength="5000" required aria-describedby="contact-message-error"></textarea>
       <p class="field__error" id="contact-message-error" data-error-for="message"></p>
     </div>
     <div class="form__trap" aria-hidden="true">

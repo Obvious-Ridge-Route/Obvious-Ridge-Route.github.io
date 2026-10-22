@@ -1,0 +1,245 @@
+# Every project on the site, in display order.
+# Projects with `featured: true` (exactly three) are the large cards on the homepage.
+# The rest appear under "More work". Each id needs a page at <id>.html with
+# `layout: project` and `project: <id>`. README.md walks through adding one.
+
+- id: sitespecs-ai
+  featured: true
+  title: SiteSpecs AI
+  category: Agentic AI · Construction
+  summary: Expert AI agents and multi-step pipelines that read a contractor’s documents and return finished bid scopes, RFP responses, schedules, and safety audits.
+  intro: SiteSpecs AI gives construction companies expert agents trained on their own documents, data, and preferred websites. Each agent runs multi-step pipelines that read a full spec book, extract the work, and hand back a deliverable the team can send.
+  role: We designed and built SiteSpecs AI, including the agents, the pipelines that chain their steps, the integrations they work through, and the exports that land in the tools crews already use.
+  link: https://ai.sitespecs.io/
+  card:
+    src: /assets/images/projects/sitespecs-ai/card.webp
+    alt: SiteSpecs AI homepage with the headline “Put an expert AI agent on every crew” and status cards for bid scope, RFP, and safety agents
+  hero:
+    src: /assets/images/projects/sitespecs-ai/hero.webp
+    alt: SiteSpecs AI homepage showing pipeline status cards for a bid scope, an RFP response, and an OSHA site audit
+  overview:
+    src: /assets/images/projects/sitespecs-ai/overview.webp
+    alt: Diagram of a company’s documents, data, and websites training a SiteSpecs expert agent
+  delivered:
+    - Expert agents trained on each company’s documents, data, and preferred websites
+    - Twelve pipelines, including bid scope, submittal review, schedule of values, CPM schedule, RFP response, and safety audit
+    - Integrations with the Site Specs platform, Microsoft SharePoint, and Outlook, plus sourced web research
+    - Exports to Word, Excel, PDF, Primavera P6, and Microsoft Project
+  design:
+    src: /assets/images/projects/sitespecs-ai/design.webp
+    alt: "SiteSpecs AI pipeline in five steps: read the documents, extract the scope, build the bid scope, review and verify, deliver"
+
+- id: sitespecs
+  featured: true
+  title: Site Specs
+  category: Construction project management
+  summary: A construction management platform for field and office teams, with photos, checklists, submittals, RFIs, contracts, and accounting in one project record.
+  intro: Site Specs is a cloud platform and mobile app for general contractors, subcontractors, and property managers. Crews capture photos, checklists, and daily reports in the field while the office runs submittals, RFIs, contracts, and accounting from the same project.
+  role: We designed and built the platform across web and mobile, and have kept extending it as it grew from progress photos into full project management, used by thousands of companies on tens of thousands of projects.
+  link: https://sitespecs.io/
+  card:
+    src: /assets/images/projects/sitespecs/card.webp
+    alt: Site Specs dashboard with a project map, project totals, and billing, beside the mobile project list
+  hero:
+    src: /assets/images/projects/sitespecs/hero.webp
+    alt: Site Specs web dashboard with a map of company projects and the mobile app’s project list
+  overview:
+    src: /assets/images/projects/sitespecs/overview.webp
+    alt: Site Specs daily report with jobsite photos and a signature
+  delivered:
+    - iOS and Android apps for photos, checklists, daily reports, and documents in the field
+    - Web tools for submittals, RFIs, contracts, change management, and accounting
+    - A subcontractor database shared across every project
+    - Integrations with Procore, Adobe Sign, Stripe, Google Vision OCR, and NOAA weather data
+  gallery_title: Tools in the platform
+  gallery:
+    - src: /assets/images/projects/sitespecs/gallery-photos.webp
+      alt: Site Specs photos tool with a grid of tagged progress photos and the mobile camera view
+      caption: Photos
+    - src: /assets/images/projects/sitespecs/gallery-checklists.webp
+      alt: Site Specs excavation daily checklist on desktop and mobile
+      caption: Checklists
+    - src: /assets/images/projects/sitespecs/gallery-contracts.webp
+      alt: Site Specs project contracts table with statuses and amounts
+      caption: Contracts
+    - src: /assets/images/projects/sitespecs/gallery-submittals.webp
+      alt: Site Specs submittal record for a concrete cutting subcontractor
+      caption: Submittals
+    - src: /assets/images/projects/sitespecs/gallery-rfis.webp
+      alt: Site Specs form for creating a request for information
+      caption: RFIs
+    - src: /assets/images/projects/sitespecs/gallery-accounting.webp
+      alt: Site Specs voucher form and revenue summary
+      caption: Accounting
+
+- id: econ-incubator
+  featured: true
+  title: Kenneth C. Griffin Applied Economics Incubator
+  category: University of Chicago · Research website
+  summary: The public website for a University of Chicago research incubator, covering its two-year research programs, topics, conferences, and calls for papers.
+  intro: The Kenneth C. Griffin Applied Economics Incubator at the University of Chicago launches a two-year research program each year and convenes economists, industry experts, and students around it. Its website is where those programs, events, and calls for papers are published.
+  role: We designed and built the website, with an archive of research topics, event and conference pages, calls for papers, topic search, and an email sign-up for event notices.
+  link: https://econincubator.uchicago.edu/
+  card:
+    src: /assets/images/projects/econ-incubator/card.webp
+    alt: Kenneth C. Griffin Applied Economics Incubator homepage with a University of Chicago campus photo
+  hero:
+    src: /assets/images/projects/econ-incubator/hero.webp
+    alt: Incubator homepage with the site navigation and a University of Chicago campus photo
+  overview:
+    src: /assets/images/projects/econ-incubator/overview.webp
+    alt: Incubator topics page with a search field and cards for Spatial Dynamics and AI in the Workplace
+  delivered:
+    - Topic pages for each two-year research program
+    - Event, conference, and announcement listings
+    - Calls for papers and contact pages
+    - Topic search and an email sign-up for event notices
+  built_with:
+    - Qwik
+    - Tailwind CSS
+  design:
+    src: /assets/images/projects/econ-incubator/design.webp
+    alt: Incubator announcements for a student research assistantship and the AI in the Workplace conference
+
+- id: miestro
+  title: Miestro
+  category: Online training platform
+  summary: An all-in-one platform for creating online courses, member sites, and masterclasses, and selling them to an audience.
+  intro: Miestro lets professionals and teachers build online classes, member sites, and masterclasses, then market and sell them from one system.
+  role: We designed the product and built features across the course builder, the student experience, and creator reporting.
+  link: https://miestro.com/
+  card:
+    src: /assets/images/projects/miestro/card.webp
+    alt: Miestro homepage introducing online training on one platform
+  hero:
+    src: /assets/images/projects/miestro/hero.webp
+    alt: Miestro marketing site and course pages on desktop
+  overview:
+    src: /assets/images/projects/miestro/overview.webp
+    alt: Miestro marketing pages on mobile
+  delivered:
+    - E-commerce and subscriptions
+    - Video streaming for course content
+    - Social features and commenting
+    - Reporting and data exports
+    - PDF certificate generation
+    - API integrations
+  design:
+    src: /assets/images/projects/miestro/design.webp
+    alt: Miestro dashboard, course player, completion messages, and certificates
+
+- id: origin-reports
+  title: Origin Reports
+  category: Data visualization for journals
+  summary: Editorial office reporting that turns Editorial Manager and ScholarOne data into up to 200 charts and tables.
+  intro: Origin Reports helps journal editorial offices see the health of their manuscript pipeline. Teams upload CSV exports from Editorial Manager or ScholarOne Manuscripts and get professional charts and tables in a fraction of the time spent in Excel.
+  role: We designed the product and built the flow from upload to finished report, along with its marketing site.
+  link: https://originreports.org/
+  card:
+    src: /assets/images/projects/origin-reports/card.webp
+    alt: Origin Reports homepage for editorial office reporting
+  hero:
+    src: /assets/images/projects/origin-reports/hero.webp
+    alt: Origin Reports marketing site with a laptop showing a world map chart
+  overview:
+    src: /assets/images/projects/origin-reports/overview.webp
+    alt: Origin Reports pages on mobile
+  delivered:
+    - CSV upload for large Editorial Manager and ScholarOne data sets
+    - Up to 200 generated visualizations per data set
+    - Saved report templates and pre-designed reports
+    - Marketing site
+  design:
+    src: /assets/images/projects/origin-reports/design.webp
+    alt: Origin Reports chart builder and report screens
+
+- id: concave
+  title: Concave
+  category: DeFi protocol · Brand and interface design
+  summary: Brand identity and interface design for a community-driven DeFi protocol.
+  intro: Concave is a community-driven product and investment organization that develops DeFi products and manages a treasury on behalf of long-term stakers.
+  role: We designed the Concave logo and brand, and the interface for its website and app.
+  link: https://concave.lol/
+  card:
+    src: /assets/images/projects/concave/card.webp
+    alt: Concave homepage with the Concave wordmark and an illustrated machine
+  hero:
+    src: /assets/images/projects/concave/hero.webp
+    alt: Concave website and app screens
+  overview:
+    src: /assets/images/projects/concave/overview.webp
+    alt: Concave homepage and smart bonding screen on mobile
+  delivered:
+    - Logo and brand identity
+    - Interface design for the website and the staking and bonding app
+  design:
+    src: /assets/images/projects/concave/design.webp
+    alt: Concave app screens for staking, bonding, and treasury pages
+
+- id: sustaindao
+  title: SustainDAO
+  category: Sustainability DAO
+  summary: A DAO that uses governance to encourage bitcoin miners to run on renewable energy.
+  intro: SustainDAO is a decentralized autonomous organization working to make bitcoin a more sustainable asset class. Its governance rewards miners who operate on renewable energy.
+  role: We designed the website for desktop and mobile and built its front end.
+  link: https://sustaindao.xyz/
+  card:
+    src: /assets/images/projects/sustaindao/card.webp
+    alt: SustainDAO homepage with a green generative graphic
+  hero:
+    src: /assets/images/projects/sustaindao/hero.webp
+    alt: SustainDAO website with community statistics
+  overview:
+    src: /assets/images/projects/sustaindao/overview.webp
+    alt: SustainDAO homepage on mobile
+  delivered:
+    - Website design for desktop and mobile
+    - Front-end build of the public site
+  design:
+    src: /assets/images/projects/sustaindao/design.webp
+    alt: SustainDAO page designs on a dark background
+
+- id: frendao
+  title: FrenDAO
+  category: Charity NFT project
+  summary: A charity NFT project that raised funds for a young man in his twenties being treated for cancer.
+  intro: FrenDAO raised money for a young man in his twenties being treated for cancer. Supporters connected a crypto wallet, minted a Griffin NFT, and received a physical Griffin plush.
+  role: We designed and built the minting site, from wallet connection through the mint.
+  link: https://frendao.xyz/
+  card:
+    src: /assets/images/projects/frendao/card.webp
+    alt: FrenDAO mint page with the Griffin plush NFT
+  hero:
+    src: /assets/images/projects/frendao/hero.webp
+    alt: FrenDAO mint pages on desktop
+  overview:
+    src: /assets/images/projects/frendao/overview.webp
+    alt: FrenDAO mint page on mobile with the Griffin NFT
+  delivered:
+    - Wallet connection and NFT minting
+    - Mint pages for desktop and mobile
+
+- id: mms
+  title: mymember.site
+  category: Membership site builder
+  summary: A membership site builder for adult content creators.
+  intro: mymember.site is a site builder for adult content creators. Each creator launches a branded membership site with subscriptions, chat, a video library, and a custom domain, without writing code.
+  role: We designed and built the platform, including the creator site builder, the subscriber experience, and the architecture behind secure, media-heavy sites.
+  link: https://mymember.site/
+  card:
+    src: /assets/images/projects/mms/card.webp
+    alt: mymember.site homepage for its creator site builder
+  hero:
+    src: /assets/images/projects/mms/hero.webp
+    alt: mymember.site marketing page with two creator sites on mobile
+  overview:
+    src: /assets/images/projects/mms/overview.webp
+    alt: Two creator membership sites on mobile
+  delivered:
+    - Creator site builder with custom domains
+    - Subscriptions, chat, and a video library
+    - Creator analytics and affiliate reporting
+    - Secure architecture for heavy media loads
+  design:
+    src: /assets/images/projects/mms/design.webp
+    alt: mymember.site creator dashboards and media library screens

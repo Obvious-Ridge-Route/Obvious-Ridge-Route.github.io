@@ -1,25 +1,19 @@
 ---
-permalink: /404.html
 layout: default
+title: Page not found
+permalink: /404.html
+noindex: true
+sitemap: false
 ---
-
-<style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
-
-<div class="container">
-  <h1>404</h1>
-
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<section class="error-page" aria-labelledby="error-title">
+  <div class="error-page__ridge" aria-hidden="true"></div>
+  <div class="container error-page__inner">
+    <p class="eyebrow">404</p>
+    <h1 id="error-title">This page is off the route.</h1>
+    <p class="lead">The link may be out of date, or the page has moved.</p>
+    <div class="actions">
+      <a class="btn btn--primary sheen" href="{{ '/' | relative_url }}">Back to the homepage</a>
+      <a class="btn btn--ghost" href="{{ '/#work' | relative_url }}">See our work</a>
+    </div>
+  </div>
+</section>

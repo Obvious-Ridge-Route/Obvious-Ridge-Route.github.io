@@ -1,37 +1,38 @@
 {
   "name": "obvious-ridge-route",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Obvious Ridge Route studio website, built with Jekyll and Tailwind CSS and published by GitHub Pages.",
+  "type": "module",
+  "engines": {
+    "node": ">=20.9"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "run-p dev:{jekyll,css}",
-    "dev:jekyll": "bundle exec jekyll serve --port 3001 --host=0.0.0.0 --livereload",
-    "dev:css": "postcss _sass/main.scss --output assets/css/style.css --watch",
-    "jekyll:build": "JEKYLL_ENV=production bundle exec jekyll build",
-    "css:build": "NODE_ENV=production postcss _sass/main.scss --output assets/css/style.css"
+    "build:css": "postcss src/styles/main.css --output assets/css/site.css --no-map",
+    "watch:css": "postcss src/styles/main.css --output assets/css/site.css --no-map --watch",
+    "build": "npm run build:css && bundle exec jekyll build",
+    "serve": "bundle exec jekyll serve --livereload",
+    "dev": "run-p watch:css serve",
+    "docker:build": "sh scripts/jekyll-docker.sh build",
+    "docker:serve": "sh scripts/jekyll-docker.sh serve",
+    "test": "npm run test:unit && npm run test:site",
+    "test:unit": "node --test tests/unit/*.test.js",
+    "test:site": "node --test tests/site/*.test.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Obvious-Ridge-Route/Obvious-Ridge-Route.github.io.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Obvious-Ridge-Route/Obvious-Ridge-Route.github.io/issues"
-  },
-  "homepage": "https://github.com/Obvious-Ridge-Route/Obvious-Ridge-Route.github.io#readme",
+  "homepage": "https://obviousridgeroute.com",
+  "license": "UNLICENSED",
   "devDependencies": {
-    "autoprefixer": "^10.4.4",
-    "cssnano": "^5.1.7",
-    "postcss": "^8.4.12",
-    "postcss-cli": "^9.1.0",
-    "tailwindcss": "^3.0.24"
-  },
-  "dependencies": {
-    "npm-run-all": "^4.1.5",
-    "tailwindcss-dark-mode": "^1.1.7",
-    "tailwindcss-filters": "^3.0.0"
+    "autoprefixer": "^10.6.1",
+    "cssnano": "^7.1.9",
+    "linkedom": "^0.18.14",
+    "npm-run-all2": "^8.0.4",
+    "postcss": "^8.5.31",
+    "postcss-cli": "^11.0.1",
+    "tailwindcss": "^3.4.19",
+    "yaml": "^2.9.1"
   }
 }

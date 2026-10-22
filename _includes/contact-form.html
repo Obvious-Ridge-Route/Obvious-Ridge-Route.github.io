@@ -1,0 +1,41 @@
+<div class="contact__form">
+  <form class="form" action="https://formspree.io/f/{{ site.formspree_id }}" method="POST" novalidate data-contact-form>
+    <div class="field">
+      <label for="contact-name">Name</label>
+      <input class="input" id="contact-name" name="name" type="text" autocomplete="name" required aria-describedby="contact-name-error">
+      <p class="field__error" id="contact-name-error" data-error-for="name"></p>
+    </div>
+    <div class="field">
+      <label for="contact-email">Email</label>
+      <input class="input" id="contact-email" name="email" type="email" autocomplete="email" required aria-describedby="contact-email-error">
+      <p class="field__error" id="contact-email-error" data-error-for="email"></p>
+    </div>
+    <div class="field">
+      <label for="contact-need">What do you need?</label>
+      <select class="input" id="contact-need" name="need" required aria-describedby="contact-need-error">
+        <option value="">Choose one</option>
+        <option>Agentic AI</option>
+        <option>Product development</option>
+        <option>Design</option>
+        <option>Something else</option>
+      </select>
+      <p class="field__error" id="contact-need-error" data-error-for="need"></p>
+    </div>
+    <div class="field">
+      <label for="contact-message">Message</label>
+      <textarea class="input" id="contact-message" name="message" rows="5" required aria-describedby="contact-message-error"></textarea>
+      <p class="field__error" id="contact-message-error" data-error-for="message"></p>
+    </div>
+    <div class="form__trap" aria-hidden="true">
+      <label for="contact-gotcha">Leave this field empty</label>
+      <input id="contact-gotcha" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+    </div>
+    <button class="btn btn--primary sheen" type="submit">Send message</button>
+    <p class="form__status" role="status" aria-live="polite" data-form-status></p>
+    <p class="form__note">We use this only to reply.</p>
+  </form>
+  <div class="form__success" tabindex="-1" hidden data-form-success>
+    <h3>Message sent</h3>
+    <p>Thanks. We will reply to the address you gave us.</p>
+  </div>
+</div>

@@ -1,145 +1,160 @@
 ---
 layout: default
-title: Obvious Ridge Route
 ---
+{%- assign agentic = site.data.agentic -%}
+{%- assign featured = site.data.projects | where: "featured", true -%}
+{%- assign archive = site.data.projects | where_exp: "p", "p.featured != true" -%}
 
-<section class="relative page-header">
-    <div class="flex justify-center md:justify-start w-full">
-        <div class="content mt-24 px-6 md:px-36 xmd:text-center md:text-left text-white">
-            <h1>Obvious Ridge Route</h1>
-            <div class="text-lg mt-4 font-medium">
-                <p class="mb-4">Obvious Ridge Route is a global collective of collaborative <br /> talent
-                    that gets
-                    shit done.
-                </p>
-                <p>
-                    Our team is composed of experienced product managers, <br /> passionately creative UI/UX designers,
-                    and
-                    talented software <br /> developers.
-                </p>
-                <p class="mt-4">
-                    When software can't automate it, our business <br /> process outsource team gets the job done.
-                </p>
-            </div>
-
-            <div class="btn-wrapper mt-6">
-                <button
-                    class="border-0 outline-none cursor-pointer text-center font-semibold text-xl py-[0.6rem] px-[4.3rem] bg-white text-black"
-                    id="learn-more">Explore</button>
-            </div>
-        </div>
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero__media" aria-hidden="true">
+    <div class="hero__ridge" data-parallax></div>
+    <div class="hero__shade"></div>
+  </div>
+  <div class="container hero__inner">
+    <div class="hero__content">
+      <p class="eyebrow hero__eyebrow">Agentic AI · Software · Design</p>
+      <h1 class="hero__title" id="hero-title">Agentic AI and production software, built for real work.</h1>
+      <p class="lead hero__lead">Obvious Ridge Route designs and builds agents that carry work from source documents to finished deliverables, and the products teams use every day.</p>
+      <div class="actions hero__actions">
+        <a class="btn btn--primary sheen" href="#contact">Start a project</a>
+        <a class="btn btn--ghost" href="#work">View work</a>
+      </div>
     </div>
+  </div>
 </section>
-<section class="services pt-20" id="services">
-    <h3 class="text-center font-medium uppercase tracking-wider text-2xl mb-8">Services</h3>
-    <div
-        class="grid px-6 xl:px-0 xl:grid-cols-2 gap-8 place-content-center place-items-center max-w-2.5xl mx-auto mb-14">
-        {% for item in site.data.services %}
-        <div class="bg-black text-white p-8 min-h-54 ">
-            <div class="flex gap-4 items-center relative heading-wrapper">
-                <h3 class="font-semibold uppercase ml-10">{{item.title}}</h3>
-            </div>
-            <p class="mt-4">
-                {{item.description }}
-            </p>
-        </div>
-        {% endfor %}
-    </div>
-</section>
-<section class="main-content pt-5 px-6 xl:px-0" id="works">
-    <h3 class="text-center font-medium uppercase tracking-wider text-2xl mb-8">Work</h3>
-    <div class="grid gap-8 place-content-center place-items-center max-w-3xl mx-auto mb-14 ">
-        {% for item in site.data.pageinfo %}
-        <div
-            class="flex flex-col xl:flex-row justify-center gap-8 xl:gap-16 xl:w-full bg-gray p-6 xl:p-16 rounded-3xl items-center">
-            <div class="max-w-sm h-auto">
-                <img class="w-full h-full object-contain" src="{{ item.img }}" />
-            </div>
-            <div class="max-w-sm">
-                <h5 class="tracking-wider text-xl leading-7 font-semibold">{{ item.title }}</h5>
-                <span class="tracking-wider text-base leading-6 text-grey-jo font-medium">{{ item.about }}</span>
-                <p class="mt-4">{{ item.description }}</p>
 
-                <a class="flex mt-6 items-center gap-2 xl:justify-end text-black"
-                    href="{{ site.baseurl }}{{ item.link }}">View project
-                    <img src="assets/images/icons/arrow.svg" />
-                </a>
-            </div>
-        </div>
-        {% endfor %}
+<section class="section section--tight" id="agentic-ai" aria-labelledby="agentic-title">
+  <div class="container">
+    <div class="agentic glass sheen" data-reveal data-sheen-once>
+      <div class="agentic__grid" aria-hidden="true"></div>
+      <div class="agentic__intro">
+        <p class="eyebrow">{{ agentic.eyebrow }}</p>
+        <h2 class="agentic__title" id="agentic-title">{{ agentic.heading }}</h2>
+        <p class="lead">{{ agentic.body }}</p>
+      </div>
+      <ol class="steps" data-steps>
+        {%- for step in agentic.steps %}
+        <li class="step" data-step>
+          <span class="step__head">
+            <span class="step__num">{{ forloop.index | prepend: '0' }}</span>
+            {% include icon-star.html class="step__mark" %}
+          </span>
+          <h3 class="step__title">{{ step.title }}</h3>
+          <p class="step__body">{{ step.body }}</p>
+        </li>
+        {%- endfor %}
+      </ol>
+      <div class="steps__rail" aria-hidden="true"><span data-steps-progress></span></div>
+      <p class="agentic__proof">
+        {{ agentic.proof }}
+        <a class="link-arrow" href="{{ agentic.proof_link | relative_url }}">{{ agentic.proof_label }}</a>
+      </p>
     </div>
+  </div>
 </section>
-<section class="contact-us pb-12 px-6 bg-black text-white" id="contact">
-    <div class="text-center pt-6">
-        <h1 class="font-medium text-xl md:text-3xl">Contact Us</h1>
-        <p class="mt-2 text-gray">Have an inquiry or some feedback for us? Fill out the form <br /> below to contact our
-            team.</p>
-    </div>
-    <div class="max-w-xl mx-auto flex mt-8 contact-container text-black flex-col lg:flex-row relative">
-        <div class="form-wrapper w-full bg-white text-black flex justify-around flex-col p-8 overflow-hidden">
-            <form id="submit-data">
-                <h3 class="font-medium text-lg leading-7 mb-6">Send us a Message</h3>
-                <label class="mb-1 inline-block">Full name</label>
-                <div class="form-input w-full mb-6">
-                    <input id="fullname" class="w-full outline-0 border-b border-grey-yoda" type="text" name="name"
-                        placeholder="Enter your full name">
-                    <span class="mt-2 text-danger text-sm leading-5 warning-message"></span>
-                </div>
-                <label class="mb-1 inline-block">Email</label>
-                <div class="form-input w-full mb-6">
-                    <input id="email" class="w-full outline-0 border-b border-grey-yoda" type="email" name="email"
-                        placeholder="Enter your e-mail">
-                    <span class="mt-2 text-danger text-sm leading-5 warning-message"></span>
-                </div>
-                <label class="mb-1 inline-block">Your message</label>
-                <div class="form-input w-full mb-6">
-                    <textarea id="message" class="w-full outline-0 border-b border-grey-yoda" maxlength="300"
-                        placeholder="Enter your message"></textarea>
-                    <span class="mt-2 text-danger text-sm leading-5 warning-message"></span>
-                </div>
-                <div class="send">
-                    <input
-                        class="w-full uppercase bg-black font-semibold text-white py-4 text-xl cursor-pointer leading-[1.125rem]"
-                        type="submit" value="Send">
-                </div>
-            </form>
-            <div id="success-modal" class="opacity-0 absolute w-full lg:w-[37.5rem] h-80 lg:h-full top-0 left-0 z-[-1]">
-                <div class="relative w-full h-full flex items-center justify-center pt-10 bg-white">
-                    <div class="flex flex-col justify-between items-center gap-3">
-                        <div class="icon">
-                            <img src="{{ site.baseurl }}/assets/images/success.svg" alt="">
-                        </div>
-                        <h1 class="font-medium text-2xl leading-7">Thank you!</h1>
-                        <p style="color:#6f6f6f;" class="text-lg leading-9">Your message has been
-                            sent.
-                        </p>
-                    </div>
-                    <span class="close-btn absolute top-3 right-5 cursor-pointer text-2xl">&#x2715;</span>
-                </div>
-            </div>
-        </div>
-       
 
-        <div class="contact bg-gray flex justify-around items-center px-5 py-8 flex-col">
-            <div class="flex flex-col gap-2 xsm:gap-9 mb-5 lg:mb-0">
-                <h3 class="text-lg leading-7 font-medium">Contact Information</h3>
-                <div class="flex flex-col gap-6 sm:mb-20">
-                    <div class="flex items-center gap-3">
-                        <img src="assets/images/icons/email.svg" />
-                        <span class="text-sm">mike@obviousreidgeroute.com</span>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <img src="assets/images/icons/location.svg" />
-                        <span class="text-sm">United States, Illinois, Chicago</span>
-                    </div>
-                </div>
-            </div>
-            <div class="hidden sm:block">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11895.177849209758!2d-87.64595454713786!3d41.88164315021113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2cda3388b6dd%3A0x942c920a8b709156!2sWest%20Loop%2C%20Chicago%2C%20IL%2C%20USA!5e0!3m2!1sen!2s!4v1650624633911!5m2!1sen!2s"
-                    width="320" height="164" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </div>
+<section class="section" id="capabilities" aria-labelledby="capabilities-title">
+  <div class="container">
+    <header class="section-head" data-reveal>
+      <p class="eyebrow">Capabilities</p>
+      <h2 id="capabilities-title">What we build</h2>
+    </header>
+    <div class="cap-grid">
+      {%- for cap in site.data.capabilities %}
+      <article class="cap glass sheen{% if cap.featured %} cap--featured{% endif %}" data-reveal style="--reveal-delay: {{ forloop.index0 | times: 70 }}ms">
+        {%- if cap.featured %}
+        <p class="cap__tag">{% include icon-star.html class="cap__star" %} Lead capability</p>
+        {%- endif %}
+        <h3 class="cap__title">{{ cap.title }}</h3>
+        <p class="cap__summary">{{ cap.summary }}</p>
+        {%- if cap.points %}
+        <ul class="ticks">
+          {%- for point in cap.points %}
+          <li>{{ point }}</li>
+          {%- endfor %}
+        </ul>
+        {%- endif %}
+        {%- if cap.link %}
+        <a class="link-arrow cap__link" href="{{ cap.link | relative_url }}">{{ cap.link_label }}</a>
+        {%- endif %}
+      </article>
+      {%- endfor %}
     </div>
+  </div>
+</section>
+
+<section class="section" id="work" aria-labelledby="work-title">
+  <div class="container">
+    <header class="section-head" data-reveal>
+      <p class="eyebrow">Selected work</p>
+      <h2 id="work-title">Work</h2>
+    </header>
+    <div class="work-grid">
+      {%- for p in featured %}
+      <a class="work-card glass sheen{% if forloop.first %} work-card--lead{% endif %}" href="{{ '/' | append: p.id | relative_url }}" data-reveal style="--reveal-delay: {{ forloop.index0 | times: 80 }}ms">
+        <div class="work-card__media">
+          <img src="{{ p.card.src | relative_url }}" alt="{{ p.card.alt }}" loading="lazy" decoding="async">
+        </div>
+        <div class="work-card__body">
+          <p class="eyebrow">{{ p.category }}</p>
+          <h3 class="work-card__title">{{ p.title }}</h3>
+          <p class="work-card__summary">{{ p.summary }}</p>
+          <span class="link-arrow">View case study</span>
+        </div>
+      </a>
+      {%- endfor %}
+    </div>
+
+    <h3 class="subhead" data-reveal>More work</h3>
+    <ul class="archive glass" data-reveal>
+      {%- for p in archive %}
+      <li>
+        <a class="archive__row" href="{{ '/' | append: p.id | relative_url }}">
+          <span class="archive__title">{{ p.title }}</span>
+          <span class="archive__summary">{{ p.summary }}</span>
+          <span class="archive__arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="process" aria-labelledby="process-title">
+  <div class="container">
+    <header class="section-head" data-reveal>
+      <p class="eyebrow">How we work</p>
+      <h2 id="process-title">From the first call to the work in use</h2>
+    </header>
+    <ol class="process">
+      {%- for item in site.data.process %}
+      <li class="process__item" data-reveal style="--reveal-delay: {{ forloop.index0 | times: 90 }}ms">
+        <span class="process__num">{{ forloop.index | prepend: '0' }}</span>
+        <h3 class="process__title">{{ item.title }}</h3>
+        <p class="process__body">{{ item.body }}</p>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="contact" aria-labelledby="contact-title">
+  <div class="container">
+    {%- assign has_form = false -%}
+    {%- if site.formspree_id and site.formspree_id != "" -%}{%- assign has_form = true -%}{%- endif -%}
+    <div class="contact glass{% if has_form %} contact--with-form{% endif %}" data-reveal>
+      <div class="contact__intro">
+        <p class="eyebrow">Contact</p>
+        <h2 class="contact__title" id="contact-title">Start a project</h2>
+        <p class="lead">Tell us about the work you want an agent or a product to take on, and we will reply by email.</p>
+        <div class="actions">
+          <a class="btn btn--primary sheen" href="mailto:{{ site.email }}">Email {{ site.email }}</a>
+        </div>
+        <p class="contact__location">{{ site.location }}. Working with teams remotely.</p>
+      </div>
+      {%- if has_form %}
+      {% include contact-form.html %}
+      {%- endif %}
+    </div>
+  </div>
 </section>

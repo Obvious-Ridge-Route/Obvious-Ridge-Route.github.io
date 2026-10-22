@@ -1,0 +1,10 @@
+# Header, mobile menu, and footer links.
+
+- label: Work
+  href: /#work
+- label: Agentic AI
+  href: /#agentic-ai
+- label: Capabilities
+  href: /#capabilities
+- label: Contact
+  href: /#contact

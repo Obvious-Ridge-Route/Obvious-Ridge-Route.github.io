@@ -1,0 +1,125 @@
+---
+layout: default
+---
+{%- assign project = site.data.projects | where: "id", page.project | first -%}
+{%- assign all = site.data.projects -%}
+{%- assign total = all | size -%}
+{%- assign current_index = 0 -%}
+{%- for p in all -%}{%- if p.id == project.id -%}{%- assign current_index = forloop.index0 -%}{%- endif -%}{%- endfor -%}
+{%- assign domain = project.link | remove: "https://" | remove: "http://" | split: "/" | first -%}
+
+<article class="case">
+  <header class="case-hero">
+    <div class="case-hero__ridge" aria-hidden="true"></div>
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="{{ '/#work' | relative_url }}">Work</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">{{ project.title }}</span>
+      </nav>
+      <p class="eyebrow">{{ project.category }}</p>
+      <h1 class="case-hero__title">{{ project.title }}</h1>
+      <p class="lead case-hero__lead">{{ project.intro }}</p>
+      <div class="actions">
+        <a class="btn btn--primary sheen" href="{{ project.link }}" target="_blank" rel="noopener noreferrer">
+          Visit {{ domain }} <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span>
+        </a>
+        <a class="btn btn--ghost" href="{{ '/#work' | relative_url }}">All work</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <figure class="frame glass case-figure" data-reveal>
+      <div class="frame__media frame__media--wide">
+        <img src="{{ project.hero.src | relative_url }}" alt="{{ project.hero.alt }}" fetchpriority="high" decoding="async">
+      </div>
+    </figure>
+  </div>
+
+  <section class="section section--tight" aria-labelledby="overview-title">
+    <div class="container">
+      <div class="case-overview glass" data-reveal>
+        <div class="case-overview__text">
+          <h2 id="overview-title">Overview</h2>
+          <p>{{ project.role }}</p>
+          <h3>What we delivered</h3>
+          <ul class="ticks">
+            {%- for item in project.delivered %}
+            <li>{{ item }}</li>
+            {%- endfor %}
+          </ul>
+          {%- if project.built_with %}
+          <h3>Built with</h3>
+          <p>{{ project.built_with | join: ", " }}</p>
+          {%- endif %}
+        </div>
+        <figure class="case-overview__figure">
+          <div class="frame__media frame__media--tall">
+            <img src="{{ project.overview.src | relative_url }}" alt="{{ project.overview.alt }}" loading="lazy" decoding="async">
+          </div>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  {%- if project.gallery %}
+  <section class="section section--tight" aria-labelledby="gallery-title">
+    <div class="container">
+      <h2 class="case-section-title" id="gallery-title" data-reveal>{{ project.gallery_title | default: "Inside the product" }}</h2>
+      <div class="gallery">
+        {%- for shot in project.gallery %}
+        <figure class="frame glass sheen gallery__item" data-reveal style="--reveal-delay: {{ forloop.index0 | modulo: 3 | times: 80 }}ms">
+          <div class="frame__media frame__media--shot">
+            <img src="{{ shot.src | relative_url }}" alt="{{ shot.alt }}" loading="lazy" decoding="async">
+          </div>
+          <figcaption>{{ shot.caption }}</figcaption>
+        </figure>
+        {%- endfor %}
+      </div>
+    </div>
+  </section>
+  {%- endif %}
+
+  {%- if project.design %}
+  <section class="section section--tight" aria-labelledby="design-title">
+    <div class="container">
+      <h2 class="case-section-title" id="design-title" data-reveal>Design</h2>
+      <figure class="frame glass" data-reveal>
+        <div class="frame__media frame__media--wide">
+          <img src="{{ project.design.src | relative_url }}" alt="{{ project.design.alt }}" loading="lazy" decoding="async">
+        </div>
+      </figure>
+    </div>
+  </section>
+  {%- endif %}
+
+  <section class="section section--tight" aria-labelledby="more-title">
+    <div class="container">
+      <h2 class="case-section-title" id="more-title" data-reveal>More work</h2>
+      <ul class="more-work">
+        {%- for offset in (1..3) %}
+        {%- assign i = current_index | plus: offset | modulo: total -%}
+        {%- assign other = all[i] %}
+        <li data-reveal style="--reveal-delay: {{ forloop.index0 | times: 80 }}ms">
+          <a class="more-work__card glass sheen" href="{{ '/' | append: other.id | relative_url }}">
+            <span class="eyebrow">{{ other.category }}</span>
+            <span class="more-work__title">{{ other.title }}</span>
+            <span class="link-arrow">View case study</span>
+          </a>
+        </li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="cta-band glass" data-reveal>
+        <h2>Have work like this in mind?</h2>
+        <p class="lead">Tell us what you want built or automated.</p>
+        <a class="btn btn--primary sheen" href="{{ '/#contact' | relative_url }}">Start a project</a>
+      </div>
+    </div>
+  </section>
+</article>

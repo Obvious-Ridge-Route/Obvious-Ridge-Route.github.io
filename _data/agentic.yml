@@ -1,0 +1,19 @@
+# The Agentic AI band under the homepage hero.
+
+eyebrow: Agentic AI development
+heading: We build agents that do the work, rather than chat windows that only describe it.
+body: They read a company’s documents and data, run a pipeline, and hand back a deliverable.
+
+steps:
+  - title: Read the source
+    body: Specs, drawings, contracts, email, and the systems your team already keeps.
+  - title: Extract the work
+    body: Every requirement, line item, and deadline, pulled out and organized.
+  - title: Draft the deliverable
+    body: A bid scope, proposal, schedule, or report, written from your own past work.
+  - title: Check and hand it off
+    body: Cross-checked against the source, then delivered as Word, Excel, PDF, or into your tools.
+
+proof: SiteSpecs AI does this for construction, from bid scopes and RFP responses to safety audits.
+proof_link: /sitespecs-ai
+proof_label: Read the SiteSpecs AI case study

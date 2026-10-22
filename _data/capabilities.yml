@@ -1,0 +1,24 @@
+# Homepage capabilities, in order. Keep Agentic AI development first: it is the
+# lead capability and renders as the wide featured card.
+
+- title: Agentic AI development
+  featured: true
+  summary: Agents and pipelines that read a company’s documents and data and return a finished deliverable, not a chat transcript.
+  points:
+    - Agents trained on your documents, data, and tools
+    - Multi-step pipelines that run a job end to end
+    - Output in the formats your team already uses
+  link_label: How we build agents
+  link: /#agentic-ai
+
+- title: Software development
+  summary: Web and mobile products, from the first interface through deployment and the releases after it.
+
+- title: UI/UX design
+  summary: Interfaces for operational software with a lot of data on screen, from enterprise tools to data visualization.
+
+- title: Web3
+  summary: Protocol, DAO, and NFT products taken from design through a public launch.
+
+- title: Business process outsourcing
+  summary: Data entry, virtual assistants, and customer and technical support for the work that should not be software.

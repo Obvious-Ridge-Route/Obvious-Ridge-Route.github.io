@@ -4,3 +4,6 @@ _site
 .jekyll-metadata
 /node_modules
 vendor
+.bundle
+.DS_Store
+__pycache__/

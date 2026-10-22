@@ -1,0 +1,73 @@
+name: CI
+
+# Builds the site with the same github-pages gem that GitHub Pages uses and runs
+# every test. Today GitHub Pages publishes main itself (branch build), so this
+# workflow is the safety check. To publish from here instead, set Settings >
+# Pages > Source to "GitHub Actions" and add the repository variable
+# PAGES_DEPLOY=actions; the deploy job then runs only after the tests pass.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Build and test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Unit tests (content, copy, config, scripts, stylesheet)
+        run: npm run test:unit
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+
+      - name: Build with the GitHub Pages gem
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
+          PAGES_REPO_NWO: ${{ github.repository }}
+          JEKYLL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Built-site tests (pages, links, images, metadata)
+        run: npm run test:site
+
+      - name: Upload the site for deployment
+        if: github.ref == 'refs/heads/main' && vars.PAGES_DEPLOY == 'actions'
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: test
+    if: github.ref == 'refs/heads/main' && vars.PAGES_DEPLOY == 'actions'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

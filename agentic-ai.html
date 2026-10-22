@@ -1,0 +1,134 @@
+---
+layout: default
+permalink: /agentic-ai
+service: agentic-ai
+last_modified_at: 2026-10-22
+---
+{%- assign agentic = site.data.agentic -%}
+{%- assign proof = site.data.projects | where: "id", "sitespecs-ai" | first -%}
+
+<article class="service">
+  <header class="case-hero">
+    <div class="case-hero__ridge" aria-hidden="true"></div>
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Agentic AI</span>
+      </nav>
+      <p class="eyebrow">Lead capability</p>
+      <h1 class="case-hero__title">{{ agentic.page.heading }}</h1>
+      <p class="lead case-hero__lead">{{ agentic.page.lead }}</p>
+      <div class="actions">
+        <a class="btn btn--primary sheen" href="{{ '/#contact' | relative_url }}">Start a project</a>
+        <a class="btn btn--ghost" href="{{ agentic.proof_link | relative_url }}">See SiteSpecs AI</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="section section--tight" aria-labelledby="steps-title">
+    <div class="container">
+      <div class="agentic glass sheen" data-reveal data-sheen-once>
+        <div class="agentic__grid" aria-hidden="true"></div>
+        <div class="agentic__intro">
+          <p class="eyebrow">How an agent works</p>
+          <h2 class="agentic__title" id="steps-title">{{ agentic.heading }}</h2>
+          <p class="lead">{{ agentic.body }}</p>
+        </div>
+        {% include agentic-steps.html %}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight" aria-labelledby="uses-title">
+    <div class="container">
+      <header class="section-head" data-reveal>
+        <p class="eyebrow">Use cases</p>
+        <h2 id="uses-title">{{ agentic.use_cases_title }}</h2>
+        <p class="lead section-head__lead">{{ agentic.use_cases_intro }}</p>
+      </header>
+      <ul class="use-grid">
+        {%- for item in agentic.use_cases %}
+        <li class="use glass sheen" data-reveal style="--reveal-delay: {{ forloop.index0 | modulo: 3 | times: 70 }}ms">
+          <h3 class="use__title">{{ item.title }}</h3>
+          <p class="use__body">{{ item.body }}</p>
+        </li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--tight" aria-labelledby="connects-title">
+    <div class="container">
+      <div class="io glass" data-reveal>
+        <div class="io__col">
+          <h2 class="io__title" id="connects-title">{{ agentic.connects_title }}</h2>
+          <ul class="ticks">
+            {%- for item in agentic.connects %}
+            <li>{{ item }}</li>
+            {%- endfor %}
+          </ul>
+        </div>
+        <div class="io__col">
+          <h2 class="io__title">{{ agentic.outputs_title }}</h2>
+          <ul class="chips">
+            {%- for item in agentic.outputs %}
+            <li class="chip">{{ item }}</li>
+            {%- endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight" aria-labelledby="engagement-title">
+    <div class="container">
+      <header class="section-head" data-reveal>
+        <p class="eyebrow">How we work</p>
+        <h2 id="engagement-title">How an engagement runs</h2>
+      </header>
+      <ol class="process">
+        {%- for item in site.data.process %}
+        <li class="process__item" data-reveal style="--reveal-delay: {{ forloop.index0 | times: 90 }}ms">
+          <span class="process__num">{{ forloop.index | prepend: '0' }}</span>
+          <h3 class="process__title">{{ item.title }}</h3>
+          <p class="process__body">{{ item.body }}</p>
+        </li>
+        {%- endfor %}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section--tight" aria-labelledby="proof-title">
+    <div class="container">
+      <h2 class="case-section-title" id="proof-title" data-reveal>In production</h2>
+      <div class="work-grid work-grid--rest-0">
+        {% include work-card.html project=proof lead=true %}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight" aria-labelledby="faq-title">
+    <div class="container">
+      <h2 class="case-section-title" id="faq-title" data-reveal>{{ agentic.faq_title }}</h2>
+      <div class="faq glass" data-reveal>
+        {%- for item in agentic.faq %}
+        <details class="faq__item"{% if forloop.first %} open{% endif %}>
+          <summary class="faq__question"><h3>{{ item.question }}</h3></summary>
+          <p class="faq__answer">{{ item.answer }}</p>
+        </details>
+        {%- endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="cta-band glass" data-reveal>
+        <h2>Have work an agent could take on?</h2>
+        <p class="lead">Tell us about the documents and the finished result, and we will reply by email.</p>
+        <a class="btn btn--primary sheen" href="{{ '/#contact' | relative_url }}">Start a project</a>
+      </div>
+    </div>
+  </section>
+</article>

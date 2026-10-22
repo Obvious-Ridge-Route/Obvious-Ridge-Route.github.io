@@ -1,8 +1,9 @@
 # Site settings. Restart `jekyll serve` after editing this file.
 
 title: Obvious Ridge Route
+short_name: ORR
 tagline: Agentic AI and software development
-description: Obvious Ridge Route designs and builds production software and agentic AI systems for operating businesses.
+description: Obvious Ridge Route is a Chicago software studio that designs and builds agentic AI systems and production software for operating businesses.
 url: "https://obviousridgeroute.com"
 baseurl: ""
 repository: Obvious-Ridge-Route/Obvious-Ridge-Route.github.io
@@ -10,10 +11,25 @@ lang: en-US
 
 email: mike@obviousridgeroute.com
 location: Chicago, Illinois
+founder: Mike Reilly
+founding_year: 2013
+
+# Public profiles (LinkedIn, GitHub, Clutch). Each URL is added to the
+# structured data search engines and AI assistants read.
+same_as: []
 
 # Paste the form id from formspree.io (the part after /f/) to turn on the
 # homepage contact form. Leave empty to show only the email link.
 formspree_id: ""
+
+# Verification tokens from Google Search Console and Bing Webmaster Tools
+# (the content="..." value of their meta tag). Leave empty until you have them.
+google_site_verification: ""
+bing_site_verification: ""
+
+# IndexNow tells Bing and other search engines about updated pages. The key is
+# public by design; its key file must stay at the site root.
+indexnow_key: ff3c58f3ea218dbd56b563a6bfc0ea7d
 
 social_image: /assets/images/ridge-1280.jpg
 

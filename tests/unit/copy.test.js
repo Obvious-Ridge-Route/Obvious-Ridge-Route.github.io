@@ -6,14 +6,15 @@ const SOURCES = [
   ...files('_data', (path) => path.endsWith('.yml')),
   ...files('_includes', (path) => path.endsWith('.html')),
   ...files('_layouts', (path) => path.endsWith('.html')),
-  ...files('.', (path) => !path.includes('/') && path.endsWith('.html')),
+  ...files('.', (path) => !path.includes('/') && /\.(html|txt)$/.test(path)),
   '_config.yml',
 ];
 
 describe('site copy', () => {
   it('scans the content sources', () => {
-    assert.ok(SOURCES.includes('index.html'));
-    assert.ok(SOURCES.includes('_data/projects.yml'));
+    for (const path of ['index.html', 'agentic-ai.html', '_data/projects.yml', 'llms.txt', 'llms-full.txt', 'robots.txt']) {
+      assert.ok(SOURCES.includes(path), `${path} is not scanned`);
+    }
   });
 
   for (const path of SOURCES) {

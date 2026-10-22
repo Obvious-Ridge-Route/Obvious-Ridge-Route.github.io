@@ -1,0 +1,12 @@
+{%- assign p = include.project -%}
+<a class="work-card glass sheen{% if include.lead %} work-card--lead{% endif %}" href="{{ '/' | append: p.id | relative_url }}" data-reveal style="--reveal-delay: {{ include.delay | default: 0 }}ms">
+  <div class="work-card__media">
+    <img src="{{ p.card.src | relative_url }}" alt="{{ p.card.alt }}" loading="lazy" decoding="async">
+  </div>
+  <div class="work-card__body">
+    <p class="eyebrow">{{ p.category }}</p>
+    <h3 class="work-card__title">{{ p.title }}</h3>
+    <p class="work-card__summary">{{ p.summary }}</p>
+    <span class="link-arrow">View case study</span>
+  </div>
+</a>

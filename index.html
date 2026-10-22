@@ -1,9 +1,13 @@
 ---
 layout: default
+seo_title: Agentic AI and Software Development
+description: Chicago software studio founded in 2013. We build agentic AI systems that turn documents and data into finished work, plus web and mobile products.
+last_modified_at: 2026-10-22
 ---
 {%- assign agentic = site.data.agentic -%}
 {%- assign featured = site.data.projects | where: "featured", true -%}
 {%- assign archive = site.data.projects | where_exp: "p", "p.featured != true" -%}
+{%- assign rest_count = featured | size | minus: 1 -%}
 
 <section class="hero" aria-labelledby="hero-title">
   <div class="hero__media" aria-hidden="true">
@@ -32,22 +36,11 @@ layout: default
         <h2 class="agentic__title" id="agentic-title">{{ agentic.heading }}</h2>
         <p class="lead">{{ agentic.body }}</p>
       </div>
-      <ol class="steps" data-steps>
-        {%- for step in agentic.steps %}
-        <li class="step" data-step>
-          <span class="step__head">
-            <span class="step__num">{{ forloop.index | prepend: '0' }}</span>
-            {% include icon-star.html class="step__mark" %}
-          </span>
-          <h3 class="step__title">{{ step.title }}</h3>
-          <p class="step__body">{{ step.body }}</p>
-        </li>
-        {%- endfor %}
-      </ol>
-      <div class="steps__rail" aria-hidden="true"><span data-steps-progress></span></div>
+      {% include agentic-steps.html %}
       <p class="agentic__proof">
         {{ agentic.proof }}
         <a class="link-arrow" href="{{ agentic.proof_link | relative_url }}">{{ agentic.proof_label }}</a>
+        <a class="link-arrow" href="{{ agentic.page_link | relative_url }}">{{ agentic.page_label }}</a>
       </p>
     </div>
   </div>
@@ -74,8 +67,16 @@ layout: default
           {%- endfor %}
         </ul>
         {%- endif %}
-        {%- if cap.link %}
-        <a class="link-arrow cap__link" href="{{ cap.link | relative_url }}">{{ cap.link_label }}</a>
+        {%- if cap.link or cap.case_study %}
+        <p class="cap__links">
+          {%- if cap.link %}
+          <a class="link-arrow" href="{{ cap.link | relative_url }}">{{ cap.link_label }}</a>
+          {%- endif %}
+          {%- if cap.case_study %}
+          {%- assign study = site.data.projects | where: "id", cap.case_study | first %}
+          <a class="link-arrow" href="{{ '/' | append: study.id | relative_url }}">Case study: {{ study.title }}</a>
+          {%- endif %}
+        </p>
         {%- endif %}
       </article>
       {%- endfor %}
@@ -89,19 +90,10 @@ layout: default
       <p class="eyebrow">Selected work</p>
       <h2 id="work-title">Work</h2>
     </header>
-    <div class="work-grid">
+    <div class="work-grid work-grid--rest-{{ rest_count }}">
       {%- for p in featured %}
-      <a class="work-card glass sheen{% if forloop.first %} work-card--lead{% endif %}" href="{{ '/' | append: p.id | relative_url }}" data-reveal style="--reveal-delay: {{ forloop.index0 | times: 80 }}ms">
-        <div class="work-card__media">
-          <img src="{{ p.card.src | relative_url }}" alt="{{ p.card.alt }}" loading="lazy" decoding="async">
-        </div>
-        <div class="work-card__body">
-          <p class="eyebrow">{{ p.category }}</p>
-          <h3 class="work-card__title">{{ p.title }}</h3>
-          <p class="work-card__summary">{{ p.summary }}</p>
-          <span class="link-arrow">View case study</span>
-        </div>
-      </a>
+      {%- assign delay = forloop.index0 | times: 80 %}
+      {% include work-card.html project=p lead=forloop.first delay=delay %}
       {%- endfor %}
     </div>
 

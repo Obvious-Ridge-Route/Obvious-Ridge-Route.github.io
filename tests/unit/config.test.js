@@ -65,9 +65,31 @@ describe('Jekyll config', () => {
     assert.equal(typeof site.formspree_id, 'string');
   });
 
-  it('loads one stylesheet and the module script from the head', () => {
+  it('loads one stylesheet, self-hosted fonts, and the module script from the head', () => {
     const head = read('_includes/head.html');
-    assert.equal((head.match(/rel="stylesheet" href="\{\{ '\/assets\/css\//g) ?? []).length, 1);
+    assert.equal((head.match(/rel="stylesheet"/g) ?? []).length, 1, 'only site.css should be a stylesheet');
+    assert.doesNotMatch(head, /fonts\.(googleapis|gstatic)\.com/, 'fonts are self-hosted in assets/fonts');
     assert.match(head, /type="module" src="\{\{ '\/assets\/js\/site\.js'/);
+    for (const weight of [400, 500, 600]) {
+      assert.ok(exists(`assets/fonts/poppins-${weight}-latin.woff2`), `missing Poppins ${weight}`);
+    }
+    assert.ok(exists('assets/fonts/OFL.txt'), 'keep the font license beside the fonts');
+  });
+
+  it('states the company facts used in structured data', () => {
+    assert.ok(site.founder, 'founder is required');
+    assert.match(String(site.founding_year), /^\d{4}$/);
+    assert.ok(Array.isArray(site.same_as), 'same_as must be a list');
+    for (const url of site.same_as) assert.match(url, /^https:\/\//);
+    assert.equal(typeof site.google_site_verification, 'string');
+    assert.equal(typeof site.bing_site_verification, 'string');
+  });
+
+  it('publishes the IndexNow key file at the site root', () => {
+    assert.match(site.indexnow_key, /^[0-9a-f]{32}$/);
+    const keyFile = `${site.indexnow_key}.txt`;
+    assert.ok(exists(keyFile), `missing ${keyFile}`);
+    assert.equal(read(keyFile).trim(), site.indexnow_key);
+    assert.ok(!site.exclude.includes(keyFile));
   });
 });

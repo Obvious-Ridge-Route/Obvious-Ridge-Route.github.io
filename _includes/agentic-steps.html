@@ -1,0 +1,13 @@
+<ol class="steps" data-steps>
+  {%- for step in site.data.agentic.steps %}
+  <li class="step" data-step>
+    <span class="step__head">
+      <span class="step__num">{{ forloop.index | prepend: '0' }}</span>
+      {% include icon-star.html class="step__mark" %}
+    </span>
+    <h3 class="step__title">{{ step.title }}</h3>
+    <p class="step__body">{{ step.body }}</p>
+  </li>
+  {%- endfor %}
+</ol>
+<div class="steps__rail" aria-hidden="true"><span data-steps-progress></span></div>

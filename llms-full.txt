@@ -1,0 +1,78 @@
+---
+layout: null
+sitemap: false
+---
+{%- assign agentic = site.data.agentic -%}
+# {{ site.title }}: full text
+
+> {{ site.title }} ({{ site.short_name }}) is a {{ site.location | split: ',' | first }} software studio founded in {{ site.founding_year }} by {{ site.founder }}. It designs and builds agentic AI systems and production software. Contact: {{ site.email }}. Website: {{ site.url }}/
+
+## {{ agentic.page.heading }}
+
+URL: {{ agentic.page_link | absolute_url }}
+
+{{ agentic.page.lead }}
+
+### How an agent works
+
+{{ agentic.heading }} {{ agentic.body }}
+{% for step in agentic.steps %}
+{{ forloop.index }}. {{ step.title }}: {{ step.body }}
+{%- endfor %}
+
+### {{ agentic.use_cases_title }}
+
+{{ agentic.use_cases_intro }}
+{% for item in agentic.use_cases %}
+- {{ item.title }}: {{ item.body }}
+{%- endfor %}
+
+### {{ agentic.connects_title }}
+{% for item in agentic.connects %}
+- {{ item }}
+{%- endfor %}
+
+### {{ agentic.outputs_title }}
+
+{{ agentic.outputs | join: ', ' }}.
+
+### How an engagement runs
+{% for item in site.data.process %}
+{{ forloop.index }}. {{ item.title }}: {{ item.body }}
+{%- endfor %}
+
+### {{ agentic.faq_title }}
+{% for item in agentic.faq %}
+**{{ item.question }}**
+{{ item.answer }}
+{% endfor %}
+## Capabilities
+{% for cap in site.data.capabilities %}
+- {{ cap.title }}: {{ cap.summary }}
+{%- endfor %}
+
+## Case studies
+{% for p in site.data.projects %}
+### {{ p.title }}
+
+URL: {{ '/' | append: p.id | absolute_url }}
+Category: {{ p.category }}
+{%- if p.link %}
+Live site: {{ p.link }}
+{%- elsif p.launch_url %}
+Launching at: {{ p.launch_url }}
+{%- endif %}
+
+{{ p.intro }}
+
+{{ p.role }}
+
+What we delivered:
+{% for item in p.delivered %}
+- {{ item }}
+{%- endfor %}
+{%- if p.built_with %}
+
+Built with: {{ p.built_with | join: ', ' }}
+{%- endif %}
+{% endfor %}

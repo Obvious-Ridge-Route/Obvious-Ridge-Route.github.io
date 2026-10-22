@@ -1,4 +1,5 @@
-# The Agentic AI band under the homepage hero.
+# Agentic AI: the band under the homepage hero, and the /agentic-ai page.
+# Keep every claim grounded in work we have shipped (SiteSpecs AI).
 
 eyebrow: Agentic AI development
 heading: We build agents that do the work, rather than chat windows that only describe it.
@@ -17,3 +18,60 @@ steps:
 proof: SiteSpecs AI does this for construction, from bid scopes and RFP responses to safety audits.
 proof_link: /sitespecs-ai
 proof_label: Read the SiteSpecs AI case study
+page_link: /agentic-ai
+page_label: How we build agents
+
+# /agentic-ai -------------------------------------------------------------------
+
+page:
+  seo_title: Agentic AI Development Services
+  description: Obvious Ridge Route builds AI agents and multi-step pipelines that read your documents and data and deliver finished work, from bid scopes to reports.
+  heading: Agentic AI development
+  lead: We design and build AI agents that carry real work from source documents to a finished deliverable, then hand it to your team to review and send.
+
+use_cases_title: Work that agents take on
+use_cases_intro: These are pipelines we built and run in production for construction companies. The same approach fits any operation that runs on documents.
+use_cases:
+  - title: Bid scopes
+    body: A division-by-division scope of work built from the specs, drawings, and addenda.
+  - title: RFP responses
+    body: Every requirement extracted, and a response drafted section by section from past proposals.
+  - title: Submittal reviews
+    body: A submittal checked for compliance against the controlling spec section.
+  - title: Schedules of values
+    body: An AIA G703-compatible schedule of values with a cash flow projection.
+  - title: CPM schedules
+    body: A critical path schedule exported for Primavera P6 and Microsoft Project.
+  - title: Safety audits
+    body: An OSHA-cited site audit scored from jobsite photos, with corrective actions assigned.
+
+connects_title: Connected to the tools you use
+connects:
+  - The Site Specs construction platform
+  - Microsoft SharePoint document libraries
+  - Microsoft Outlook email
+  - Sourced research on the live web
+outputs_title: Delivered as standard files
+outputs:
+  - Word
+  - Excel
+  - PDF
+  - Primavera P6 (.xer)
+  - Microsoft Project
+
+faq_title: Questions about agentic AI development
+faq:
+  - question: What is agentic AI development?
+    answer: It is the work of building AI agents that carry out multi-step tasks on their own. An agent reads source material, decides the next step, uses the tools and systems it is connected to, and returns a finished result for a person to review.
+  - question: How is an AI agent different from a chatbot?
+    answer: A chatbot answers questions in a conversation. An agent runs a job. It reads a spec book or a mailbox, extracts what matters, drafts a deliverable such as a bid scope or a report, checks it against the source, and saves the file where your team works.
+  - question: What kind of work suits an agent?
+    answer: Repetitive, document-heavy work with a clear finished product, such as bid scopes, RFP responses, submittal reviews, schedules, safety audits, and reports. If a task has several steps and an expert can describe what done looks like, it is a good candidate for a pipeline.
+  - question: What systems can the agents connect to?
+    answer: The agents we built for SiteSpecs AI work inside the Site Specs platform, Microsoft SharePoint, and Outlook, and run sourced research on the live web. On a new project we connect them to the systems your team already uses.
+  - question: What do the agents produce?
+    answer: Standard files your team can open anywhere, including Word documents, Excel workbooks, PDFs, Primavera P6 schedules, and Microsoft Project files.
+  - question: How does a project start?
+    answer: With a conversation about the work and the documents behind it. We then design and build the agents with your team in short steps you can review, launch them, and stay available to extend them.
+  - question: Who is Obvious Ridge Route?
+    answer: Obvious Ridge Route is a software studio in Chicago, Illinois, founded in 2013 by Mike Reilly. It designs and builds agentic AI systems and production software, and works with teams remotely.

@@ -6,7 +6,8 @@ layout: default
 {%- assign total = all | size -%}
 {%- assign current_index = 0 -%}
 {%- for p in all -%}{%- if p.id == project.id -%}{%- assign current_index = forloop.index0 -%}{%- endif -%}{%- endfor -%}
-{%- assign domain = project.link | remove: "https://" | remove: "http://" | split: "/" | first -%}
+{%- assign site_url = project.link | default: project.launch_url -%}
+{%- assign domain = site_url | remove: "https://" | remove: "http://" | remove: "www." | split: "/" | first -%}
 
 <article class="case">
   <header class="case-hero">
@@ -21,9 +22,13 @@ layout: default
       <h1 class="case-hero__title">{{ project.title }}</h1>
       <p class="lead case-hero__lead">{{ project.intro }}</p>
       <div class="actions">
+        {%- if project.link %}
         <a class="btn btn--primary sheen" href="{{ project.link }}" target="_blank" rel="noopener noreferrer">
           Visit {{ domain }} <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span>
         </a>
+        {%- else %}
+        <p class="launch-badge"><span class="launch-badge__dot" aria-hidden="true"></span>Launching at {{ domain }}</p>
+        {%- endif %}
         <a class="btn btn--ghost" href="{{ '/#work' | relative_url }}">All work</a>
       </div>
     </div>
@@ -52,6 +57,9 @@ layout: default
           {%- if project.built_with %}
           <h3>Built with</h3>
           <p>{{ project.built_with | join: ", " }}</p>
+          {%- endif %}
+          {%- if project.category contains "Agentic AI" %}
+          <p class="case-overview__more"><a class="link-arrow" href="{{ site.data.agentic.page_link | relative_url }}">{{ site.data.agentic.page_label }}</a></p>
           {%- endif %}
         </div>
         <figure class="case-overview__figure">

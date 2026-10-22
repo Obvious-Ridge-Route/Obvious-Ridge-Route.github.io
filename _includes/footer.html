@@ -5,7 +5,7 @@
         <img class="brand__mark" src="{{ '/assets/images/icons/logo-white.svg' | relative_url }}" alt="" width="22" height="33">
         <span class="brand__name">Obvious Ridge Route</span>
       </a>
-      <p class="site-footer__note">{{ site.tagline }}. {{ site.location }}.</p>
+      <p class="site-footer__note">{{ site.title }} is a {{ site.location | split: ',' | first }} software studio founded in {{ site.founding_year }} by {{ site.founder }} that designs and builds agentic AI systems and production software.</p>
     </div>
     <nav aria-label="Footer">
       <ul class="site-footer__links">

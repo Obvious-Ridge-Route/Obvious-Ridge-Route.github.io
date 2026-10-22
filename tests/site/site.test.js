@@ -110,7 +110,7 @@ describe('homepage', () => {
     assert.match(firstCard?.textContent ?? '', /Agentic AI/);
   });
 
-  it('shows three featured projects and lists the rest under More work', () => {
+  it('shows the featured projects in order and lists the rest under More work', () => {
     const all = projects();
     const featured = all.filter((project) => project.featured);
     assert.deepEqual(
@@ -128,6 +128,13 @@ describe('homepage', () => {
     assert.ok(site.email.endsWith(`@${domain()}`));
   });
 
+  it('links each capability to a real case study', () => {
+    const ids = new Set(projects().map((project) => `/${project.id}`));
+    const links = [...document.querySelectorAll('.cap__links a')].map((link) => link.getAttribute('href'));
+    assert.ok(links.some((href) => ids.has(href)));
+    assert.ok(links.includes('/agentic-ai'));
+  });
+
   it('only renders the contact form when a Formspree id is configured', () => {
     const form = document.querySelector('[data-contact-form]');
     if (site.formspree_id) {
@@ -142,4 +149,20 @@ describe('homepage', () => {
       assert.equal(form, null, 'no formspree_id, so there should be no form');
     }
   });
+});
+
+describe('case study site links', () => {
+  for (const project of projects()) {
+    it(`${project.id} links to its live site, or says where it is launching`, () => {
+      const { document } = loadPage(`_site/${project.id}.html`);
+      const external = [...document.querySelectorAll('.case-hero a[target="_blank"]')].map((link) => link.getAttribute('href'));
+      if (project.link) {
+        assert.deepEqual(external, [project.link]);
+      } else {
+        assert.deepEqual(external, [], 'an unlaunched project must not link to its preview');
+        const domainName = new URL(project.launch_url).hostname.replace(/^www\./, '');
+        assert.equal(document.querySelector('.launch-badge')?.textContent.trim(), `Launching at ${domainName}`);
+      }
+    });
+  }
 });

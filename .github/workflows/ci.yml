@@ -57,6 +57,33 @@ jobs:
         with:
           path: _site
 
+  indexnow:
+    name: Notify search engines (IndexNow)
+    needs: test
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: read
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Wait for GitHub Pages to publish this commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for attempt in $(seq 1 30); do
+            set -- $(gh api "repos/${{ github.repository }}/pages/builds/latest" --jq '"\(.status) \(.commit)"' 2>/dev/null || echo "unknown none")
+            echo "attempt $attempt: status=$1 commit=$2"
+            if [ "$1" = built ] && [ "$2" = "${{ github.sha }}" ]; then exit 0; fi
+            sleep 20
+          done
+          echo "::notice::Pages did not report this commit as built within 10 minutes; submitting anyway."
+
+      - name: Submit the sitemap to IndexNow
+        continue-on-error: true
+        run: python3 scripts/indexnow.py
+
   deploy:
     name: Deploy to GitHub Pages
     needs: test

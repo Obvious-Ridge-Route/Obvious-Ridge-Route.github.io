@@ -1,11 +1,17 @@
 # Every project on the site, in display order.
-# Projects with `featured: true` (exactly three) are the large cards on the homepage.
-# The rest appear under "More work". Each id needs a page at <id>.html with
-# `layout: project` and `project: <id>`. README.md walks through adding one.
+# Projects with `featured: true` (three or four, agentic AI work first) are the
+# large cards on the homepage; the rest appear under "More work". Each id needs
+# a page at <id>.html with `layout: project` and `project: <id>`, and an
+# og.jpg link preview beside its images. README.md walks through adding one.
+#
+# `link` is the live site. Before a site launches, use `launch_url` instead:
+# the case study then says "Launching at <domain>" without linking anywhere.
+# `seo_title` (before " | Obvious Ridge Route") and `seo_description` are optional.
 
 - id: sitespecs-ai
   featured: true
   title: SiteSpecs AI
+  seo_title: "SiteSpecs AI: Agentic AI for Construction"
   category: Agentic AI · Construction
   summary: Expert AI agents and multi-step pipelines that read a contractor’s documents and return finished bid scopes, RFP responses, schedules, and safety audits.
   intro: SiteSpecs AI gives construction companies expert agents trained on their own documents, data, and preferred websites. Each agent runs multi-step pipelines that read a full spec book, extract the work, and hand back a deliverable the team can send.
@@ -32,6 +38,7 @@
 - id: sitespecs
   featured: true
   title: Site Specs
+  seo_title: "Site Specs: Construction Management Platform"
   category: Construction project management
   summary: A construction management platform for field and office teams, with photos, checklists, submittals, RFIs, contracts, and accounting in one project record.
   intro: Site Specs is a cloud platform and mobile app for general contractors, subcontractors, and property managers. Crews capture photos, checklists, and daily reports in the field while the office runs submittals, RFIs, contracts, and accounting from the same project.
@@ -75,6 +82,7 @@
 - id: econ-incubator
   featured: true
   title: Kenneth C. Griffin Applied Economics Incubator
+  seo_title: Griffin Applied Economics Incubator Website
   category: University of Chicago · Research website
   summary: The public website for a University of Chicago research incubator, covering its two-year research programs, topics, conferences, and calls for papers.
   intro: The Kenneth C. Griffin Applied Economics Incubator at the University of Chicago launches a two-year research program each year and convenes economists, industry experts, and students around it. Its website is where those programs, events, and calls for papers are published.
@@ -101,8 +109,51 @@
     src: /assets/images/projects/econ-incubator/design.webp
     alt: Incubator announcements for a student research assistantship and the AI in the Workplace conference
 
+- id: fh-paschen
+  featured: true
+  title: F.H. Paschen
+  seo_title: "F.H. Paschen: Construction Company Website"
+  category: Construction · Corporate website
+  summary: A new website for a national infrastructure builder, with more than 90 projects filterable by market and location, plus markets, services, and careers.
+  intro: F.H. Paschen is a national infrastructure builder headquartered in Chicago, with offices in ten states. It works as general contractor, construction manager, and design-builder in aviation, education, healthcare, heavy civil, multi-family housing, municipal, transit, and water.
+  role: We designed and built the company’s new website, which replaces its WordPress site at fhpaschen.com and puts its project portfolio, markets, and careers in front of clients and recruits.
+  launch_url: https://fhpaschen.com/
+  card:
+    src: /assets/images/projects/fh-paschen/card.webp
+    alt: F.H. Paschen homepage with the headline “F.H. Paschen is a National Infrastructure Builder” over a transit station at night
+  hero:
+    src: /assets/images/projects/fh-paschen/hero.webp
+    alt: F.H. Paschen homepage with a video hero of a lit transit station canopy beside a train
+  overview:
+    src: /assets/images/projects/fh-paschen/overview.webp
+    alt: F.H. Paschen homepage and the Damen Green Line Elevated Station project page on phones
+  delivered:
+    - A portfolio of more than 90 project pages, filterable by market and location, with media galleries and award highlights
+    - Pages for eight markets, services, job order contracting, safety, leadership, history, and community involvement
+    - Careers and college recruiting pages that send applicants to Workable
+    - A Plan Room link to the company’s BuildingConnected bid board, and a contact form
+  built_with:
+    - Next.js
+    - Strapi
+    - Tailwind CSS
+  gallery_title: Inside the site
+  gallery:
+    - src: /assets/images/projects/fh-paschen/gallery-projects.webp
+      alt: F.H. Paschen projects page with market filters, a location filter, and highlighted projects
+      caption: Projects
+    - src: /assets/images/projects/fh-paschen/gallery-project-page.webp
+      alt: Damen Green Line Elevated Station project page with an award badge, market, client, and location
+      caption: Project page
+    - src: /assets/images/projects/fh-paschen/gallery-markets.webp
+      alt: Markets We Serve carousel with multi-family housing, municipal, and transit projects
+      caption: Markets
+    - src: /assets/images/projects/fh-paschen/gallery-commitments.webp
+      alt: Commitments to safety, diversity, and community above the contact form and a crane at dusk
+      caption: Commitments and contact
+
 - id: miestro
   title: Miestro
+  seo_title: "Miestro: Online Training Platform"
   category: Online training platform
   summary: An all-in-one platform for creating online courses, member sites, and masterclasses, and selling them to an audience.
   intro: Miestro lets professionals and teachers build online classes, member sites, and masterclasses, then market and sell them from one system.
@@ -130,6 +181,7 @@
 
 - id: origin-reports
   title: Origin Reports
+  seo_title: "Origin Reports: Editorial Data Visualization"
   category: Data visualization for journals
   summary: Editorial office reporting that turns Editorial Manager and ScholarOne data into up to 200 charts and tables.
   intro: Origin Reports helps journal editorial offices see the health of their manuscript pipeline. Teams upload CSV exports from Editorial Manager or ScholarOne Manuscripts and get professional charts and tables in a fraction of the time spent in Excel.
@@ -155,6 +207,7 @@
 
 - id: concave
   title: Concave
+  seo_title: "Concave: DeFi Brand and Interface Design"
   category: DeFi protocol · Brand and interface design
   summary: Brand identity and interface design for a community-driven DeFi protocol.
   intro: Concave is a community-driven product and investment organization that develops DeFi products and manages a treasury on behalf of long-term stakers.
@@ -178,6 +231,7 @@
 
 - id: sustaindao
   title: SustainDAO
+  seo_title: "SustainDAO: Sustainable Bitcoin Mining DAO"
   category: Sustainability DAO
   summary: A DAO that uses governance to encourage bitcoin miners to run on renewable energy.
   intro: SustainDAO is a decentralized autonomous organization working to make bitcoin a more sustainable asset class. Its governance rewards miners who operate on renewable energy.
@@ -201,6 +255,7 @@
 
 - id: frendao
   title: FrenDAO
+  seo_title: "FrenDAO: Charity NFT Project"
   category: Charity NFT project
   summary: A charity NFT project that raised funds for a young man in his twenties being treated for cancer.
   intro: FrenDAO raised money for a young man in his twenties being treated for cancer. Supporters connected a crypto wallet, minted a Griffin NFT, and received a physical Griffin plush.
@@ -221,6 +276,7 @@
 
 - id: mms
   title: mymember.site
+  seo_title: "mymember.site: Membership Site Builder"
   category: Membership site builder
   summary: A membership site builder for adult content creators.
   intro: mymember.site is a site builder for adult content creators. Each creator launches a branded membership site with subscriptions, chat, a video library, and a custom domain, without writing code.

@@ -72,12 +72,17 @@ layout: default
   </section>
 
   {%- if project.gallery %}
+  {%- assign shot_count = project.gallery | size -%}
+  {%- assign by_three = shot_count | modulo: 3 -%}
+  {%- assign by_two = shot_count | modulo: 2 -%}
+  {%- assign columns = 3 -%}
+  {%- if by_three != 0 and by_two == 0 %}{% assign columns = 2 %}{% endif %}
   <section class="section section--tight" aria-labelledby="gallery-title">
     <div class="container">
       <h2 class="case-section-title" id="gallery-title" data-reveal>{{ project.gallery_title | default: "Inside the product" }}</h2>
-      <div class="gallery">
+      <div class="gallery{% if columns == 2 %} gallery--pairs{% endif %}">
         {%- for shot in project.gallery %}
-        <figure class="frame glass sheen gallery__item" data-reveal style="--reveal-delay: {{ forloop.index0 | modulo: 3 | times: 80 }}ms">
+        <figure class="frame glass sheen gallery__item" data-reveal style="--reveal-delay: {{ forloop.index0 | modulo: columns | times: 80 }}ms">
           <div class="frame__media frame__media--shot">
             <img src="{{ shot.src | relative_url }}" alt="{{ shot.alt }}" loading="lazy" decoding="async">
           </div>

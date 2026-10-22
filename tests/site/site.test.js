@@ -166,3 +166,16 @@ describe('case study site links', () => {
     });
   }
 });
+
+describe('case study galleries', () => {
+  for (const project of projects().filter((p) => p.gallery?.length)) {
+    it(`${project.id} fills every gallery row`, () => {
+      const { document } = loadPage(`_site/${project.id}.html`);
+      const gallery = document.querySelector('.gallery');
+      const columns = gallery.classList.contains('gallery--pairs') ? 2 : 3;
+      const shots = gallery.querySelectorAll('.gallery__item').length;
+      assert.equal(shots, project.gallery.length);
+      assert.equal(shots % columns, 0, `${shots} images leave a partial row; use 2, 3, 4, 6, 8, or 9`);
+    });
+  }
+});

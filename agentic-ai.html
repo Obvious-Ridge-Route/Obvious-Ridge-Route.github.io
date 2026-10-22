@@ -81,6 +81,24 @@ last_modified_at: 2026-10-22
     </div>
   </section>
 
+  <section class="section section--tight" aria-labelledby="security-title">
+    <div class="container">
+      <header class="section-head" data-reveal>
+        <p class="eyebrow">Security</p>
+        <h2 id="security-title">{{ agentic.security_title }}</h2>
+        <p class="lead section-head__lead">{{ agentic.security_intro }}</p>
+      </header>
+      <ul class="use-grid">
+        {%- for item in agentic.security %}
+        <li class="use glass sheen" data-reveal style="--reveal-delay: {{ forloop.index0 | modulo: 3 | times: 70 }}ms">
+          <h3 class="use__title">{{ item.title }}</h3>
+          <p class="use__body">{{ item.body }}</p>
+        </li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </section>
+
   <section class="section section--tight" aria-labelledby="engagement-title">
     <div class="container">
       <header class="section-head" data-reveal>

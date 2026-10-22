@@ -6,9 +6,10 @@ sitemap: false
 {%- assign archive = site.data.projects | where_exp: "p", "p.featured != true" -%}
 # {{ site.title }}
 
-> {{ site.title }} ({{ site.short_name }}) is a {{ site.location | split: ',' | first }} software studio founded in {{ site.founding_year }} by {{ site.founder }}. It designs and builds agentic AI systems, meaning AI agents and multi-step pipelines that read a company's documents and data and return finished work, along with web and mobile products and the interfaces around them.
+> {{ site.title }} ({{ site.short_name }}) is a {{ site.location | split: ',' | first }} software studio founded in {{ site.founding_year }} by {{ site.founder }}. It designs and builds secure agentic AI systems, meaning AI agents and multi-step pipelines that read a company's documents and data and return finished work, along with web and mobile products optimized for search engines and AI assistants, and the interfaces around them.
 
 - Lead capability: agentic AI development. Agents read source documents, extract the work, draft the deliverable, and check it against the source before handing it off.
+- Security: {{ site.data.agentic.security | map: 'body' | join: ' ' }}
 - In production: SiteSpecs AI, agentic AI for construction with twelve pipelines, including bid scopes, RFP responses, submittal reviews, CPM schedules, and safety audits.
 - Location: {{ site.location }}. Works with teams remotely.
 - Contact: {{ site.email }} or {{ '/#contact' | absolute_url }}
@@ -17,7 +18,7 @@ sitemap: false
 
 - [Agentic AI development]({{ site.data.agentic.page_link | absolute_url }}): {{ site.data.agentic.page.description }}
 {%- for cap in site.data.capabilities offset: 1 %}
-- {{ cap.title }}: {{ cap.summary }}
+- {{ cap.title }}: {{ cap.summary }}{% if cap.points %} {{ cap.points | join: '. ' }}.{% endif %}
 {%- endfor %}
 
 ## Featured case studies

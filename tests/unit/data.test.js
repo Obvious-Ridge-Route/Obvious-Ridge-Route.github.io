@@ -118,6 +118,10 @@ describe('homepage data', () => {
     for (const cap of capabilities) {
       assert.ok(cap.title && cap.summary, 'capability needs a title and summary');
       if (cap.case_study) assert.ok(ids.has(cap.case_study), `${cap.title}: unknown case_study "${cap.case_study}"`);
+      for (const point of cap.points ?? []) {
+        assert.equal(typeof point, 'string', `${cap.title}: points must be plain text`);
+        assert.ok(point.length <= 90, `${cap.title}: keep "${point}" short enough to scan`);
+      }
     }
   });
 
@@ -141,6 +145,13 @@ describe('homepage data', () => {
       assert.ok(item.answer.length >= 40, `answer to "${item.question}" is too short to quote`);
     }
     assert.equal(frontMatter('agentic-ai.html').permalink, agentic.page_link);
+  });
+
+  it('explains on the Agentic AI page how proprietary data is protected', () => {
+    const agentic = yaml('_data/agentic.yml');
+    assert.ok(agentic.security_title && agentic.security_intro, 'the security section needs a title and intro');
+    assert.ok(agentic.security?.length >= 3, 'list at least three security points');
+    for (const item of agentic.security) assert.ok(item.title && item.body);
   });
 
   it('links the navigation to pages and sections that exist', () => {

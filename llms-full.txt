@@ -5,7 +5,7 @@ sitemap: false
 {%- assign agentic = site.data.agentic -%}
 # {{ site.title }}: full text
 
-> {{ site.title }} ({{ site.short_name }}) is a {{ site.location | split: ',' | first }} software studio founded in {{ site.founding_year }} by {{ site.founder }}. It designs and builds agentic AI systems and production software. Contact: {{ site.email }}. Website: {{ site.url }}/
+> {{ site.title }} ({{ site.short_name }}) is a {{ site.location | split: ',' | first }} software studio founded in {{ site.founding_year }} by {{ site.founder }}. It designs and builds secure agentic AI systems and production software. Contact: {{ site.email }}. Website: {{ site.url }}/
 
 ## {{ agentic.page.heading }}
 
@@ -36,6 +36,13 @@ URL: {{ agentic.page_link | absolute_url }}
 
 {{ agentic.outputs | join: ', ' }}.
 
+### {{ agentic.security_title }}
+
+{{ agentic.security_intro }}
+{% for item in agentic.security %}
+- {{ item.title }}: {{ item.body }}
+{%- endfor %}
+
 ### How an engagement runs
 {% for item in site.data.process %}
 {{ forloop.index }}. {{ item.title }}: {{ item.body }}
@@ -48,7 +55,7 @@ URL: {{ agentic.page_link | absolute_url }}
 {% endfor %}
 ## Capabilities
 {% for cap in site.data.capabilities %}
-- {{ cap.title }}: {{ cap.summary }}
+- {{ cap.title }}: {{ cap.summary }}{% if cap.points %} {{ cap.points | join: '. ' }}.{% endif %}
 {%- endfor %}
 
 ## Case studies

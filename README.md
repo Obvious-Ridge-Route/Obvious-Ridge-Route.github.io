@@ -9,8 +9,8 @@ The name is a climbing reference: the obvious route up a ridge. The night ridge 
 | Path | What it holds |
 | --- | --- |
 | `_data/projects.yml` | Every project, in display order. Three or four with `featured: true` are the large homepage cards; the rest are listed under More work. |
-| `_data/capabilities.yml` | Homepage capabilities. Agentic AI development stays first. Each can point at a case study. |
-| `_data/agentic.yml` | The Agentic AI band under the hero and the whole `/agentic-ai` page, including its FAQ. |
+| `_data/capabilities.yml` | Homepage capabilities. Agentic AI development stays first. Each can point at a case study and list short points. |
+| `_data/agentic.yml` | The Agentic AI band under the hero and the whole `/agentic-ai` page, including its security section and FAQ. The header comment lists the security claims the owner has confirmed. |
 | `_data/process.yml`, `_data/navigation.yml` | How we work, and the header and footer links. |
 | `index.html`, `agentic-ai.html` | The homepage and the Agentic AI service page. |
 | `<project-id>.html` | One short file per case study; the content comes from `projects.yml`. |
@@ -72,7 +72,7 @@ Copy lives in `_data/` and the HTML files. Styles live in `src/styles/main.css` 
 
 The site is built to be found and quoted by search engines and by AI assistants such as ChatGPT, Claude, Perplexity, and Copilot.
 
-- **Structured data.** `_includes/structured-data.html` adds one JSON-LD graph to every page: the organization (founder, founding year, Chicago, services), the website, each case study as a `CreativeWork` with breadcrumbs, and the `/agentic-ai` page as a `Service` with an `FAQPage` that matches the visible FAQ.
+- **Structured data.** `_includes/structured-data.html` adds one JSON-LD graph to every page: the organization (founder, founding year, Chicago, services, and the `knows_about` topics in `_config.yml`), the website, each case study as a `CreativeWork` with breadcrumbs, and the `/agentic-ai` page as a `Service` with an `FAQPage` that matches the visible FAQ.
 - **`llms.txt` and `llms-full.txt`.** A short summary and the full text of the site in Markdown, generated from `_data`, so they never drift from the pages.
 - **`robots.txt`.** Allows every crawler and names the AI search and assistant crawlers explicitly.
 - **Sitemap.** `jekyll-sitemap` publishes `/sitemap.xml` with each page's `last_modified_at`.
@@ -100,7 +100,7 @@ npm run docker:build
 npm test                 # unit tests, then built-site tests (needs a _site build)
 ```
 
-`npm run test:unit` checks content data, title and description lengths, banned slang and profanity, GitHub Pages compatibility, fonts and the IndexNow key, the contact and step logic, color contrast, and that the compiled CSS matches its sources. `npm run test:site` checks the built pages: one `h1` each, metadata, images and alt text, internal links and section anchors, external link safety, launch-pending projects, structured data and the FAQ, the sitemap dates, `robots.txt`, `llms.txt`, and that no repository files are published.
+`npm run test:unit` checks content data, title and description lengths, banned slang and profanity, GitHub Pages compatibility, fonts and the IndexNow key, the contact and step logic, color contrast, and that the compiled CSS matches its sources. `npm run test:site` checks the built pages: one `h1` each, metadata, images and alt text, internal links and section anchors, external link safety, launch-pending projects, capability points, the Agentic AI security section, structured data and the FAQ, the sitemap dates, `robots.txt`, `llms.txt`, and that no repository files are published.
 
 ## Deploy
 
@@ -124,6 +124,7 @@ Coding agents add a row here for every change they make, newest first. Note what
 
 | Date | Agent | Change | Verification |
 | --- | --- | --- | --- |
+| 2026-10-22 | Cursor agent (Claude) | Added the owner-confirmed agentic security points (secure agent harnesses, AI models that protect proprietary data, knowledge bases siloed per company) to the lead capability, the Agentic AI band, a new `/agentic-ai` security section, two FAQ entries, the SiteSpecs AI case study, and both `llms` files. Added SEO, GEO, and consent-based analytics points to the Software development capability, and F.H. Paschen's cookie consent and Google Analytics (verified in its code) to its case study. Moved `knowsAbout` into `_config.yml` and added "secure" to the company definition. Three-card grids no longer leave a card alone at tablet width. The Econ Incubator case study is unchanged until its analytics are confirmed. | `npm run test:unit` (74 passing) and `npm run test:site` (157 passing) on a `github-pages` 232 / Jekyll 3.10 build, including a new check that caught `llms.txt` running sentences together; checked the homepage and `/agentic-ai` in the browser at 1286px, 820px, and 390px. |
 | 2026-10-22 | Cursor agent (Claude) | Galleries with 2, 4, or 8 images now use two columns so no image sits alone on the last row; F.H. Paschen's four screenshots show as a 2×2 grid. Added a site test that every gallery fills its rows. | `npm run test:unit` and `npm run test:site` on a `github-pages` 232 / Jekyll 3.10 build; checked `/fh-paschen` and `/sitespecs` galleries in the browser. |
 | 2026-10-22 | Cursor agent (Claude) | Added the F.H. Paschen website as a fourth featured case study (captured from the preview at a 1440px desktop width so its navigation renders as designed, and shown as "Launching at fhpaschen.com" with no preview link). Added the `/agentic-ai` service page with use cases, connections, outputs, and an FAQ. Added SEO and AI-assistant support: JSON-LD (organization with founder Mike Reilly and 2013, website, case studies, breadcrumbs, service, FAQ), `llms.txt`, `llms-full.txt`, named AI crawlers in `robots.txt`, sitemap dates, keyword-first titles, per-project link previews, verification settings, and an IndexNow job in CI. Self-hosted Poppins, added an app icon, linked capabilities to case studies, and added a Formspree claim link for the contact form. | `npm run test:unit` (73 passing) and `npm run test:site` (152 passing) on a `github-pages` 232 / Jekyll 3.10 build; checked the homepage, `/agentic-ai`, and `/fh-paschen` in the browser at 1120px, and the main pages at 390px for overflow. |
 | 2026-10-22 | Cursor agent (Claude) | Rebuilt the site around agentic AI development: new dark glass design with sheen, scroll reveal, and scroll-linked Agentic AI steps; a generated high-resolution night ridge hero; SiteSpecs AI and the Kenneth C. Griffin Applied Economics Incubator added, and Site Specs refreshed from sitespecs.io; professional rewrite of all copy; single projects data file; all images converted to WebP (about 80 MB down to 5 MB); Formspree-ready contact form that never fakes success; fixed email domain, logo link, nav links, metadata, sitemap, and 404; removed Swiper, Sass, and the unused Minima theme; set `theme: null` so the default Primer theme cannot replace the stylesheet; added unit and built-site tests, a Docker build script, and CI. | `npm run test:unit` (57 passing) and `npm run test:site` (85 passing) on a `github-pages` 232 / Jekyll 3.10 build; checked in the browser at 1120px and 390px, including the mobile menu and Escape-to-close. |

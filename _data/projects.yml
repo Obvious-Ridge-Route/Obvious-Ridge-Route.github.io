@@ -28,6 +28,7 @@
     alt: Diagram of a company’s documents, data, and websites training a SiteSpecs expert agent
   delivered:
     - Expert agents trained on each company’s documents, data, and preferred websites
+    - Secure agent harnesses on AI models that protect proprietary data, with each company’s knowledge base siloed to that company and its users
     - Twelve pipelines, including bid scope, submittal review, schedule of values, CPM schedule, RFP response, and safety audit
     - Integrations with the Site Specs platform, Microsoft SharePoint, and Outlook, plus sourced web research
     - Exports to Word, Excel, PDF, Primavera P6, and Microsoft Project
@@ -132,10 +133,12 @@
     - Pages for eight markets, services, job order contracting, safety, leadership, history, and community involvement
     - Careers and college recruiting pages that send applicants to Workable
     - A Plan Room link to the company’s BuildingConnected bid board, and a contact form
+    - A cookie consent banner, with Google Analytics loaded only after a visitor accepts
   built_with:
     - Next.js
     - Strapi
     - Tailwind CSS
+    - Google Analytics
   gallery_title: Inside the site
   gallery:
     - src: /assets/images/projects/fh-paschen/gallery-projects.webp

@@ -1,9 +1,15 @@
 # Agentic AI: the band under the homepage hero, and the /agentic-ai page.
 # Keep every claim grounded in work we have shipped (SiteSpecs AI).
+#
+# Security claims are limited to what the owner has confirmed: the agent
+# harnesses are secure, the AI models used protect a company's proprietary
+# data, and each company's knowledge base is siloed to that company and its
+# users. Add certifications, hosting, or encryption claims only once the owner
+# confirms them.
 
 eyebrow: Agentic AI development
 heading: We build agents that do the work, rather than chat windows that only describe it.
-body: They read a company’s documents and data, run a pipeline, and hand back a deliverable.
+body: They read a company’s documents and data, run a pipeline, and hand back a deliverable. Each runs in a secure harness, on AI models that protect proprietary data.
 
 steps:
   - title: Read the source
@@ -25,7 +31,7 @@ page_label: How we build agents
 
 page:
   seo_title: Agentic AI Development Services
-  description: Obvious Ridge Route builds AI agents and multi-step pipelines that read your documents and data and deliver finished work, from bid scopes to reports.
+  description: Obvious Ridge Route builds secure AI agents and pipelines that read your documents and data and deliver finished work, with proprietary data protected.
   heading: Agentic AI development
   lead: We design and build AI agents that carry real work from source documents to a finished deliverable, then hand it to your team to review and send.
 
@@ -59,6 +65,16 @@ outputs:
   - Primavera P6 (.xer)
   - Microsoft Project
 
+security_title: Built to protect proprietary data
+security_intro: Agents work with a company’s most sensitive documents, so we build for enterprise security from the start.
+security:
+  - title: Secure agent harnesses
+    body: "Each agent runs inside a harness we build for enterprise security: the software around the model that supplies its documents and tools and runs each step."
+  - title: Proprietary data protected
+    body: Agents run on AI models that protect a company’s proprietary data, from the documents they read to the deliverables they produce.
+  - title: Siloed knowledge bases
+    body: Each company’s knowledge base, including what its agents learn over time, is siloed to that company and its users.
+
 faq_title: Questions about agentic AI development
 faq:
   - question: What is agentic AI development?
@@ -69,9 +85,13 @@ faq:
     answer: Repetitive, document-heavy work with a clear finished product, such as bid scopes, RFP responses, submittal reviews, schedules, safety audits, and reports. If a task has several steps and an expert can describe what done looks like, it is a good candidate for a pipeline.
   - question: What systems can the agents connect to?
     answer: The agents we built for SiteSpecs AI work inside the Site Specs platform, Microsoft SharePoint, and Outlook, and run sourced research on the live web. On a new project we connect them to the systems your team already uses.
+  - question: How do you protect our proprietary data?
+    answer: Every agent runs inside a secure harness we build, on AI models that protect a company’s proprietary data. Each company’s knowledge base, including what its agents learn, is siloed to that company and its users.
+  - question: What is an agent harness?
+    answer: A harness is the software around an AI model that turns it into an agent. It gives the agent its documents and tools, runs each step of the pipeline, checks the result against the source, and hands it off. We build ours for enterprise security.
   - question: What do the agents produce?
     answer: Standard files your team can open anywhere, including Word documents, Excel workbooks, PDFs, Primavera P6 schedules, and Microsoft Project files.
   - question: How does a project start?
     answer: With a conversation about the work and the documents behind it. We then design and build the agents with your team in short steps you can review, launch them, and stay available to extend them.
   - question: Who is Obvious Ridge Route?
-    answer: Obvious Ridge Route is a software studio in Chicago, Illinois, founded in 2013 by Mike Reilly. It designs and builds agentic AI systems and production software, and works with teams remotely.
+    answer: Obvious Ridge Route is a software studio in Chicago, Illinois, founded in 2013 by Mike Reilly. It designs and builds secure agentic AI systems and production software, and works with teams remotely.

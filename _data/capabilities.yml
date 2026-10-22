@@ -1,6 +1,8 @@
 # Homepage capabilities, in order. Keep Agentic AI development first: it is the
 # lead capability and renders as the wide featured card. `case_study` is the id
 # of the project in _data/projects.yml that best shows the capability.
+# `points` are optional short ticks on the card; llms.txt and llms-full.txt
+# list them too.
 
 - title: Agentic AI development
   featured: true
@@ -9,12 +11,18 @@
     - Agents trained on your documents, data, and tools
     - Multi-step pipelines that run a job end to end
     - Output in the formats your team already uses
+    - Secure agent harnesses, on AI models that protect your proprietary data
+    - A knowledge base siloed to your company and its users
   link_label: How we build agents
   link: /agentic-ai
   case_study: sitespecs-ai
 
 - title: Software development
   summary: Web and mobile products, from the first interface through deployment and the releases after it.
+  points:
+    - "Search engine optimization (SEO): structured data, sitemaps, and page metadata"
+    - Generative engine optimization (GEO), so AI assistants can read and cite your site
+    - Cookie consent, with Google Analytics running only after a visitor accepts
   case_study: sitespecs
 
 - title: UI/UX design

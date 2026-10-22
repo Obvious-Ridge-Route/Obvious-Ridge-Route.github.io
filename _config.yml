@@ -3,7 +3,7 @@
 title: Obvious Ridge Route
 short_name: ORR
 tagline: Agentic AI and software development
-description: Obvious Ridge Route is a Chicago software studio that designs and builds agentic AI systems and production software for operating businesses.
+description: Obvious Ridge Route is a Chicago software studio that designs and builds secure agentic AI systems and production software for operating businesses.
 url: "https://obviousridgeroute.com"
 baseurl: ""
 repository: Obvious-Ridge-Route/Obvious-Ridge-Route.github.io
@@ -13,6 +13,23 @@ email: mike@obviousridgeroute.com
 location: Chicago, Illinois
 founder: Mike Reilly
 founding_year: 2013
+
+# Topics the structured data lists as what the company knows about.
+knows_about:
+  - Agentic AI
+  - AI agents
+  - AI agent harnesses
+  - Multi-step AI pipelines
+  - Enterprise AI data security
+  - Software development
+  - Web and mobile app development
+  - Search engine optimization
+  - Generative engine optimization
+  - Web analytics
+  - UI/UX design
+  - Web3
+  - Construction technology
+  - Business process outsourcing
 
 # Public profiles (LinkedIn, GitHub, Clutch). Each URL is added to the
 # structured data search engines and AI assistants read.

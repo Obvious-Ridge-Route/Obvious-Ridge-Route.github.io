@@ -9,6 +9,7 @@ Read `README.md` first. It explains the structure, how to add or launch a projec
 - Run `npm run test:unit`, build the site (`npm run build` or `npm run docker:build`), then run `npm run test:site`. Do not commit with failing tests.
 - GitHub Pages runs its own Jekyll 3.10 with a fixed plugin list. Do not add `_plugins/`, Sass, or gems the `github-pages` gem does not include. Keep `theme: null` in `_config.yml`. Jekyll 3 include parameters cannot take filters; assign first.
 - Keep the professional voice: no slang, crypto shorthand, or profanity, and no claims the work does not show. Agentic AI development stays the lead capability and the first featured project.
+- Security claims about agentic work stay within the confirmed facts in the `_data/agentic.yml` header comment. Add certifications, hosting, or encryption claims only after the owner confirms them.
 - Keep the night ridge in the hero and the dark glass theme. Do not animate `backdrop-filter`, and keep the reduced-motion and reduced-transparency fallbacks working.
 - Images go through `scripts/optimize_image.py`, stay under 500 KB, and need descriptive alt text. Every project needs an `og.jpg` link preview.
 - Never link to a client's unlaunched preview site; use `launch_url` until it is live.

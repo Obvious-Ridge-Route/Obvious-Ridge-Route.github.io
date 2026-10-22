@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, it } from 'node:test';
-import { SITE, bannedMatches, builtPages, config, domain, loadPage, projects, read, resolveSitePath } from '../helpers.js';
+import { SITE, bannedMatches, builtPages, config, domain, loadPage, projects, read, resolveSitePath, yaml } from '../helpers.js';
 
 const pages = builtPages();
 const site = config();
@@ -135,6 +135,16 @@ describe('homepage', () => {
     assert.ok(links.includes('/agentic-ai'));
   });
 
+  it('lists every capability point on its card', () => {
+    const cards = [...document.querySelectorAll('.cap')];
+    for (const cap of yaml('_data/capabilities.yml')) {
+      const card = cards.find((el) => el.querySelector('.cap__title')?.textContent.trim() === cap.title);
+      assert.ok(card, `no card for ${cap.title}`);
+      const ticks = [...card.querySelectorAll('.ticks li')].map((li) => li.textContent.trim());
+      assert.deepEqual(ticks, cap.points ?? [], `${cap.title} points`);
+    }
+  });
+
   it('only renders the contact form when a Formspree id is configured', () => {
     const form = document.querySelector('[data-contact-form]');
     if (site.formspree_id) {
@@ -165,6 +175,18 @@ describe('case study site links', () => {
       }
     });
   }
+});
+
+describe('Agentic AI page', () => {
+  it('explains how proprietary data is protected', () => {
+    const { document } = loadPage('_site/agentic-ai.html');
+    const agentic = yaml('_data/agentic.yml');
+    const section = document.querySelector('[aria-labelledby="security-title"]');
+    assert.ok(section, 'missing the security section');
+    assert.equal(section.querySelector('h2')?.textContent.trim(), agentic.security_title);
+    const titles = [...section.querySelectorAll('.use h3')].map((title) => title.textContent.trim());
+    assert.deepEqual(titles, agentic.security.map((item) => item.title));
+  });
 });
 
 describe('case study galleries', () => {

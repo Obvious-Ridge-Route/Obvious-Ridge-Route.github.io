@@ -34,17 +34,7 @@
         "addressRegion": "IL",
         "addressCountry": "US"
       },
-      "knowsAbout": [
-        "Agentic AI",
-        "AI agents",
-        "Multi-step AI pipelines",
-        "Software development",
-        "Web and mobile app development",
-        "UI/UX design",
-        "Web3",
-        "Construction technology",
-        "Business process outsourcing"
-      ],
+      "knowsAbout": {{ site.knows_about | jsonify }},
       {%- if site.same_as and site.same_as.size > 0 %}
       "sameAs": {{ site.same_as | jsonify }},
       {%- endif %}

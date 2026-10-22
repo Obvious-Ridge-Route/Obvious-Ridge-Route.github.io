@@ -79,6 +79,8 @@ describe('Jekyll config', () => {
   it('states the company facts used in structured data', () => {
     assert.ok(site.founder, 'founder is required');
     assert.match(String(site.founding_year), /^\d{4}$/);
+    assert.ok(Array.isArray(site.knows_about) && site.knows_about.length > 0, 'knows_about must list topics');
+    for (const topic of site.knows_about) assert.equal(typeof topic, 'string');
     assert.ok(Array.isArray(site.same_as), 'same_as must be a list');
     for (const url of site.same_as) assert.match(url, /^https:\/\//);
     assert.equal(typeof site.google_site_verification, 'string');

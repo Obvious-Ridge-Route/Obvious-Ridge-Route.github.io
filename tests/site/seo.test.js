@@ -31,6 +31,7 @@ describe('structured data', () => {
       assert.equal(org.name, site.title);
       assert.equal(org.founder?.name, site.founder);
       assert.equal(org.foundingDate, String(site.founding_year));
+      assert.deepEqual(org.knowsAbout, site.knows_about);
       assert.equal(org.url, `${site.url}/`);
       assert.ok(resolveSitePath(new URL(org.logo.url).pathname), 'organization logo is missing from _site');
       assert.ok(org.makesOffer.length >= 3, 'organization should list its services');
@@ -120,11 +121,29 @@ describe('files for crawlers and AI assistants', () => {
     for (const item of yaml('_data/agentic.yml').faq) assert.ok(full.includes(item.question));
   });
 
+  it('tells AI assistants about security and every capability point', () => {
+    const llms = built('llms.txt');
+    const full = built('llms-full.txt');
+    const agentic = yaml('_data/agentic.yml');
+    assert.ok(full.includes(`### ${agentic.security_title}`), 'llms-full.txt is missing the security section');
+    for (const item of agentic.security) {
+      assert.ok(llms.includes(item.body), `llms.txt is missing: ${item.body}`);
+      assert.ok(full.includes(item.body), `llms-full.txt is missing: ${item.body}`);
+    }
+    for (const cap of yaml('_data/capabilities.yml')) {
+      for (const point of cap.points ?? []) {
+        assert.ok(full.includes(point), `llms-full.txt is missing: ${point}`);
+        if (!cap.featured) assert.ok(llms.includes(point), `llms.txt is missing: ${point}`);
+      }
+    }
+  });
+
   it('renders the text files completely, in a professional voice', () => {
     for (const file of ['llms.txt', 'llms-full.txt', 'robots.txt']) {
       const text = built(file);
       assert.doesNotMatch(text, /\{\{|\{%/, `${file} has unrendered Liquid`);
       assert.doesNotMatch(text, /^---$/m, `${file} still has front matter`);
+      assert.doesNotMatch(text, /[a-z]\.[A-Z][a-z]/, `${file} runs two sentences together`);
       assert.deepEqual(bannedMatches(text), [], `${file} has banned words`);
     }
   });
